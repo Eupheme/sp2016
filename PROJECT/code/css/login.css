@@ -1,7 +1,7 @@
 html, body {
     height: 100%;
     margin: 0;
-	background-color: #b3b3ff;
+	background-color: #b3c6ff;
 }
 
 #login {
@@ -50,11 +50,11 @@ html, body {
 #login #form button {
 	text-transform: uppercase;
 	outline: 0;
-	background: gray;
+	background: #990000;
 	width: 100%;
 	border: 0;
 	padding: 12px;
-	color: #FFFFFF;
+	color: white;
 	font-size: 14px;
 	-webkit-transition: all 0.3 ease;
 	transition: all 0.3 ease;
@@ -63,7 +63,7 @@ html, body {
 }
 
 #login #form button:hover,.form button:active,.form button:focus {
-  background: #9999ff;
+  background: #cc0000;
 }
 
 #login #form .message {
@@ -71,7 +71,12 @@ html, body {
   color: gray;
   font-size: 14px;
 }
+
 #login #form .message a {
-  color: #6666ff;
+  color: #990000;
   text-decoration: none;
+}
+
+#login #form .message a:hover {
+  color: #cc0000;
 }

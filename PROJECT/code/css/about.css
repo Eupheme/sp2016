@@ -18,6 +18,7 @@ html, body {
 	margin-right: 30px;
 	margin-top: 5px;
 	right: 0;
+	font-size: 1em;
 }
 
 #page {
@@ -36,7 +37,6 @@ html, body {
     background: #b3c6ff;
     width: 230px;
 	z-index: 101;
-	
 	border-right: 1.5px solid grey;
 }
 
@@ -64,10 +64,11 @@ html, body {
     border: 1px solid #b3c6ff;
     color: white;
     text-decoration: none;
+    display: inline-block;
     font-size: 13px;
 	text-align: left;
 	padding-left: 80px;
- }
+}
  
 #page #side input[type=button]:hover {
 	background-color: #ccd9ff;
@@ -78,11 +79,35 @@ html, body {
 	background-color: #ccd9ff;
 	color: #990000;
 }
-
+ 
 #page #content h2{
 	color: #990000;
 	font-size: 30px;
 	margin-left: 100px;
 	padding-top: 55px;
 	padding-bottom: 30px;
+}
+
+#page #content #centered {
+	width:80%;
+	height:100%;
+	margin:0 auto ;
+	overflow:auto;
+}
+
+#page #content #centered #text {
+	color: black;
+	text-align: justify;
+	float:left;
+	width:55%;
+	height:100%;
+}
+
+#page #content #centered #picture {
+	height:100%;
+	margin-left:60%;
+}
+
+#page #content #centered #picture img {
+	max-width: 100%;
 }

@@ -1,6 +1,7 @@
 html, body {
     height: 90%;
     margin: 0;
+	padding: 0;
 }
 
 #banner {
@@ -36,7 +37,6 @@ html, body {
     background: #b3c6ff;
     width: 230px;
 	z-index: 101;
-	
 	border-right: 1.5px solid grey;
 }
 
@@ -85,4 +85,73 @@ html, body {
 	margin-left: 100px;
 	padding-top: 55px;
 	padding-bottom: 30px;
+}
+
+#page #content #centered {
+	width:60%;
+	height:100%;
+	margin:0 auto ;
+	overflow:auto;
+}
+
+#page #content #centered #picture {
+	height:100%;
+	float: left;
+	width: 35%;
+}
+
+#page #content #centered #picture img {
+	max-width: 100%;
+}
+
+#page #content #centered #text {
+	color: black;
+	text-align: justify;
+	height:100%;
+	margin-left:45%;
+}
+
+#page #content #centered #text #sUsername {
+	color: #990000;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 26px;
+	margin-bottom: 30px;
+}
+
+#page #content #centered #text p {
+	color: black;
+	text-decoration: none;
+	text-transform: capitalize;
+	font-size: 16px;
+	margin-bottom: 20px;
+}
+
+#page #content #centered #editbutton {
+	width:50%;
+	margin:0 auto;
+	overflow: hidden;
+	position : absolute;
+    bottom : 40px;
+    height : 30px;
+}
+
+#page #content #centered #editbutton input[type=button] {
+	overflow: hidden;
+	float: right;
+    height: 30px;
+    width: 120px;
+	background-color: #990000;
+    border: 1px solid #990000;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+	text-align: center;
+	margin-right: 30px;
+}
+
+#page #content #centered #editbutton input[type=button]:hover {
+	background-color: #cc0000;
+	color: white;
 }

@@ -1,7 +1,7 @@
 html, body {
     height: 100%;
     margin: 0;
-	background-color: #b3b3ff;
+	background-color: #b3c6ff;
 }
 
 #register {
@@ -50,7 +50,7 @@ html, body {
 #register #form button {
 	text-transform: uppercase;
 	outline: 0;
-	background: gray;
+	background: #990000;
 	width: 100%;
 	border: 0;
 	padding: 12px;
@@ -63,7 +63,7 @@ html, body {
 }
 
 #register #form button:hover,.form button:active,.form button:focus {
-  background: #9999ff;
+  background: #cc0000;
 }
 
 #register #form .message {
@@ -72,6 +72,6 @@ html, body {
   font-size: 14px;
 }
 #register #form .message a {
-  color: #6666ff;
+  color: #990000;
   text-decoration: none;
 }
