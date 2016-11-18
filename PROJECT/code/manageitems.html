@@ -2,8 +2,8 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>STATISTICS</title>
-        <link href="css/statistics.css" rel="stylesheet" type="text/css"/>
+        <title>MANAGE ITEMS</title>
+        <link href="css/manageitems.css" rel="stylesheet" type="text/css"/>
         <script src="js/toggletabs.js"></script>
     </head>
 
@@ -19,11 +19,11 @@
                 </div>
                 <br />
                 <hr>
-                <input type="button" onclick="location.href='manageitems.html';" value="MANAGE ITEMS" />
+                <input type="button" id="highlight" onclick="location.href='manageitems.html';" value="MANAGE ITEMS" />
                 <input type="button" onclick="location.href='manageusers.html';" value="MANAGE USERS" />
                 <input type="button" onclick="location.href='borrowing.html';" value="BORROWING" />
                 <hr>
-                <input type="button" id="highlight" onclick="location.href='statistics.html';" value="STATISTICS" />
+                <input type="button" onclick="location.href='statistics.html';" value="STATISTICS" />
                 <input type="button" onclick="location.href='search.html';" value="SEARCH" />
                 <hr>
                 <input type="button" onclick="location.href='settings.html';" value="SETTINGS" />
@@ -32,17 +32,45 @@
                 <hr>
             </div>
             <div id="content">
-                <h2> STATISTICS </h2>
+                <h2> MANAGE ITEMS </h2>
                 <div class="tabs">
                     <ul id="tabButtons">
-                        <li><a href="#tab1" class="active">TRANSACTION HISTORY</a></li>
-                        <li><a href="#tab2">ITEM STATISTICS</a></li>
-                        <li><a href="#tab3">USER STATISTICS</a></li>
+                        <li><a href="#tab1" class="active">NEW ITEM</a></li>
+                        <li><a href="#tab2">EDIT/DELETE ITEM</a></li>
+                        <li><a href="#tab3">REQUESTED ITEMS</a></li>
                     </ul>
 
                     <div id="tab1">
+                        <img src="#">
+                        <input type="text" placeholder="add title" name="title" required>
+                        <input type="text" placeholder="add author(s)" name="author" required>
+                        <input type="text" placeholder="add ISBN/ISSN" name="ISBN" required>
+                        <input type="text" placeholder="YYYY" name="year" required>
+                        <input type="text" placeholder="MM" name="month" required>
+                        <input type="text" placeholder="DD" name="day" required>
+                        <p>choose subject (dropdown)</p>
+                        <input type="text" placeholder="OR new subject" name="newsubject" required>
+                        <textarea name="content">add description</textarea>
+                        <input type="button" onclick="location.href='manageitems.html';" value="SUBMIT" />
+                    </div>
+
+                    <div id="tab2">
+                        <img src="#">
+                        <input type="text" placeholder="title" name="title" required>
+                        <input type="text" placeholder="author(s)" name="author" required>
+                        <input type="text" placeholder="ISBN/ISSN" name="ISBN" required>
+                        <input type="text" placeholder="YYYY" name="year" required>
+                        <input type="text" placeholder="MM" name="month" required>
+                        <input type="text" placeholder="DD" name="day" required>
+                        <p>choose subject (dropdown)</p>
+                        <input type="text" placeholder="OR new subject" name="newsubject" required>
+                        <textarea name="content">description</textarea>
+                        <input type="button" onclick="location.href='manageitems.html';" value="SUBMIT" />
+                    </div>
+
+                    <div id="tab3">
                         <p> ORDER BY: </p>
-                        <ul id = "leftbutton">
+                        <ul>
                             <li>
                                 <input type="radio" name="orderby" value="username" id="radio1" checked="checked"/>
                                 <label for="radio1">username</label>
@@ -52,10 +80,6 @@
                                 <label for="radio2">author</label>
                             </li>
                             <li>
-                                <input type="radio" name="status" value="borrowed only" id="radio5"/>
-                                <label for "radio5">borrowed only</label>
-                            </li>
-                            <li>
                                 <input type="radio" name="orderby" value="date" id="radio3"/>
                                 <label for "radio3">date</label>
                             </li>
@@ -63,24 +87,9 @@
                                 <input type="radio" name="orderby" value="title" id="radio4"/>
                                 <label for "radio4">title</label>
                             </li>
-                            <li>
-                                <input type="radio" name="status" value="returned only" id="radio6"/>
-                                <label for "radio6">returned only</label>
-                            </li>
                         </ul>
 
-                        <ul id="rightbutton">
-                            <li>
-                                <input type="radio" name="ascdesc" value="ascending" id="radio7" checked="checked"/>
-                                <label for "radio7">ascending</label>
-                            </li>
-
-                            <li>
-                                <input type="radio" name="ascdesc" value="descending" id="radio8"/>
-                                <label for "radio8">descending</label>
-                            </li>						
-                        </ul>
-                        <table id="trTable">
+                        <table id="itemTable">
                             <tbody>
                                 <tr>
                                     <th>username</th>
@@ -96,7 +105,7 @@
                                     <td>Christopher Paolini</td>
                                     <td>9780552552110</td>
                                     <td>24.10.2016</td> 
-                                    <td>borrowed</td>
+                                    <td>requested</td>
                                 </tr>
                                 <tr>
                                     <td>Anne1847</td>
@@ -104,7 +113,7 @@
                                     <td>Chris Packham</td>
                                     <td>9781785033483</td>
                                     <td>13.10.2016</td> 
-                                    <td>borrowed</td>
+                                    <td>requested</td>
                                 </tr>
                                 <tr>
                                     <td>Eupheme</td>
@@ -112,7 +121,7 @@
                                     <td>Lev Grossman</td>
                                     <td>9780099534440</td>
                                     <td>11.11.2016</td> 
-                                    <td>returned</td>
+                                    <td>requested</td>
                                 </tr>
                                 <tr>
                                     <td>L4rchy</td>
@@ -120,7 +129,7 @@
                                     <td>George R.R. Martin</td>
                                     <td>9780007548231</td>
                                     <td>26.10.2016</td> 
-                                    <td>borrowed</td>
+                                    <td>requested</td>
                                 </tr>
                                 <tr>
                                     <td>Anne1847</td>
@@ -128,54 +137,21 @@
                                     <td>Chris Packham</td>
                                     <td>9781785033483</td>
                                     <td>01.11.2016</td> 
-                                    <td>returned</td>
+                                    <td>requested</td>
                                 </tr>
                             </tbody>
                         </table>
-
-                    </div>
-
-                    <div id="tab2">
-                        <p> ITEMS ADDED BY MONTH:</p>
-                        <canvas id="mycanvas"></canvas>
-                        <p> TOP THREE BORROWED ITEMS:</p>
-                        <ul id = "borroweditems">
+                        <ul>
                             <li>
-                                <input type="radio" name="borrowed" value="all" id="radio9" checked="checked"/>
-                                <label for="radio9">all time</label>
+                                <input type="radio" name="request" value="accept" id="accept" checked="checked"/>
+                                <label for="accept">accept</label>
                             </li>
                             <li>
-                                <input type="radio" name="borrowed" value="month" id="radio10"/>
-                                <label for="radio10">month</label>
+                                <input type="radio" name="request" value="deny" id="deny"/>
+                                <label for="accept">deny</label>
                             </li>
                         </ul>
-                        
-                        <img src="#">
-                        <img src="#">
-                        <img src="#">
-                    </div>
-                    <div id="tab3">
-                        <p> USER ACTIVITY:</p>
-                        <form method="get">
-                            <input type="text" class="searchbar" placeholder="Search.."/>
-                        </form>
-                        <img src="#">
-                        <canvas id="mycanvas"></canvas>
-                        <p> TOP THREE BORROWED ITEMS:</p>
-                        <ul id = "borroweditems">
-                            <li>
-                                <input type="radio" name="borrowed" value="all" id="radio9" checked="checked"/>
-                                <label for="radio9">all time</label>
-                            </li>
-                            <li>
-                                <input type="radio" name="borrowed" value="month" id="radio10"/>
-                                <label for="radio10">month</label>
-                            </li>
-                        </ul>
-                        
-                        <img src="#">
-                        <img src="#">
-                        <img src="#">
+                        <input type="button" onclick="location.href='settings.html';" value="SUBMIT" />
                     </div>
 
                 </div>
