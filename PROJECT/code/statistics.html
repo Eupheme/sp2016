@@ -4,9 +4,8 @@
         <meta charset="utf-8">
         <title>STATISTICS</title>
         <link href="css/statistics.css" rel="stylesheet" type="text/css"/>
-        <script src="js/toggletabs.js"></script>
+        <script src="js/toggle.js"></script>
     </head>
-
     <body>
         <div id="banner">
             <p> username </p>
@@ -33,14 +32,13 @@
             </div>
             <div id="content">
                 <h2> STATISTICS </h2>
-                <div class="tabs">
+                <div id="tabs">
                     <ul id="tabButtons">
-                        <li><a href="#tab1" class="active">TRANSACTION HISTORY</a></li>
-                        <li><a href="#tab2">ITEM STATISTICS</a></li>
-                        <li><a href="#tab3">USER STATISTICS</a></li>
+                        <li><a href="javascript:void(0)" class="tablinks" onclick="openTab(event, 'tab1')">TRANSACTION HISTORY</a></li>
+                        <li><a href="javascript:void(0)" class="tablinks" onclick="openTab(event, 'tab2')">ITEM STATISTICS</a></li>
+                        <li><a href="javascript:void(0)" class="tablinks" onclick="openTab(event, 'tab3')">USER STATISTICS</a></li>
                     </ul>
-
-                    <div id="tab1">
+                    <div id="tab1" class="tabcontent">
                         <p> ORDER BY: </p>
                         <ul id = "leftbutton">
                             <li>
@@ -98,6 +96,7 @@
                                     <td>24.10.2016</td> 
                                     <td>borrowed</td>
                                 </tr>
+                                <!-- delete block -->
                                 <tr>
                                     <td>Anne1847</td>
                                     <td>Fingers in the Sparkle Jar: A Memoir</td> 
@@ -130,54 +129,123 @@
                                     <td>01.11.2016</td> 
                                     <td>returned</td>
                                 </tr>
+                                <!-- delete block -->
                             </tbody>
                         </table>
-
                     </div>
-
-                    <div id="tab2">
+                    <div id="tab2" class="tabcontent">
                         <p> ITEMS ADDED BY MONTH:</p>
                         <canvas id="mycanvas"></canvas>
                         <p> TOP THREE BORROWED ITEMS:</p>
-                        <ul id = "borroweditems">
-                            <li>
-                                <input type="radio" name="borrowed" value="all" id="radio9" checked="checked"/>
-                                <label for="radio9">all time</label>
-                            </li>
-                            <li>
-                                <input type="radio" name="borrowed" value="month" id="radio10"/>
-                                <label for="radio10">month</label>
-                            </li>
-                        </ul>
-                        
-                        <img src="#">
-                        <img src="#">
-                        <img src="#">
+                        <div id="leftside">
+                            <ul id = "borroweditems">
+                                <li>
+                                    <input type="radio" name="borrowed" value="all" id="borrowed1" checked OnClick="showMenu(0)"/>
+                                    <label for="borrowed1">all time</label>
+                                </li>
+                                <li>
+                                    <input type="radio" name="borrowed" value="month" id="borrowed2" OnClick="showMenu(1)"/>
+                                    <label for="borrowed2">month, year</label>
+                                </li>
+                            </ul>
+                            <div id="dropdowns">
+                                <select id="selectmenu1">
+                                    <option selected disabled class="hideoption">Select month</option>
+                                    <!-- DEFAULT VALUE: today -->
+                                    <option>January</option>
+                                    <option>February</option>
+                                    <option>March</option>
+                                    <option>April</option>
+                                    <option>May</option>
+                                    <option>June</option>
+                                    <option>July</option>
+                                    <option>August</option>
+                                    <option>September</option>
+                                    <option>October</option>
+                                    <option>November</option>
+                                    <option>December</option>
+                                </select>
+                                <select id="selectmenu2">
+                                    <option selected disabled class="hideoption">Select year</option>
+                                    <!-- FROM first borrowed book TO today -->
+                                    <!-- DEFAULT VALUE: today -->
+                                    <option>2013</option>
+                                    <option>2014</option>
+                                    <option>2015</option>
+                                    <option>2016</option>
+                                    <!-- REPLACE BLOCK -->
+                                </select>
+                            </div>
+                        </div>
+                        <div id="rightside">
+                            <img src="https://goo.gl/Pq42Lm">
+                            <img src="https://cdn.pastemagazine.com/www/system/images/photo_albums/best-book-covers-so-far/large/screen-shot-2016-07-13-at-122806-pm.png?1384968217">
+                            <img src="https://s-media-cache-ak0.pinimg.com/564x/7a/d2/c3/7ad2c3be35fc75f6e284ec6e44a3edf7.jpg">
+                        </div>
                     </div>
-                    <div id="tab3">
+                    <div id="tab3" class="tabcontent">
                         <p> USER ACTIVITY:</p>
-                        <form method="get">
-                            <input type="text" class="searchbar" placeholder="Search.."/>
-                        </form>
-                        <img src="#">
-                        <canvas id="mycanvas"></canvas>
+                        <div id="toppart">
+                            <div id="search">
+                                <form method="get">
+                                    <input type="text" class="searchbar" placeholder="Search user.."/>
+                                </form>
+                                <img src="https://s-media-cache-ak0.pinimg.com/236x/1f/73/ef/1f73ef29799e15a21403822d3361c4f2.jpg">
+                                <h5>USERNAME</h5>
+                                <h6>NAME</h6>
+                            </div>
+                            <div id="canvasSide">
+                                <canvas id="mycanvas2"></canvas>
+                            </div>
+                        </div>
                         <p> TOP THREE BORROWED ITEMS:</p>
-                        <ul id = "borroweditems">
-                            <li>
-                                <input type="radio" name="borrowed" value="all" id="radio9" checked="checked"/>
-                                <label for="radio9">all time</label>
-                            </li>
-                            <li>
-                                <input type="radio" name="borrowed" value="month" id="radio10"/>
-                                <label for="radio10">month</label>
-                            </li>
-                        </ul>
-                        
-                        <img src="#">
-                        <img src="#">
-                        <img src="#">
-                    </div>
+                        <div id="leftside">
+                            <ul id = "borroweditems">
+                                <li>
+                                    <input type="radio" name="borrowed-u" value="all" id="borrowed3" checked OnClick="showMenu(2)"/>
+                                    <label for="borrowed3">all time</label>
+                                </li>
+                                <li>
+                                    <input type="radio" name="borrowed-u" value="month" id="borrowed4" OnClick="showMenu(3)"/>
+                                    <label for="borrowed4">month, year</label>
+                                </li>
+                            </ul>
+                            <div id="dropdowns">
+                                <select id="selectmenu3">
+                                    <option selected disabled class="hideoption">Select month</option>
+                                    <!-- DEFAULT VALUE: today -->
+                                    <option>January</option>
+                                    <option>February</option>
+                                    <option>March</option>
+                                    <option>April</option>
+                                    <option>May</option>
+                                    <option>June</option>
+                                    <option>July</option>
+                                    <option>August</option>
+                                    <option>September</option>
+                                    <option>October</option>
+                                    <option>November</option>
+                                    <option>December</option>
+                                </select>
+                                <select id="selectmenu4">
+                                    <option selected disabled class="hideoption">Select year</option>
+                                    <!-- FROM first borrowed book TO today -->
+                                    <!-- DEFAULT VALUE: today -->
+                                    <option>2013</option>
+                                    <option>2014</option>
+                                    <option>2015</option>
+                                    <option>2016</option>
+                                    <!-- REPLACE BLOCK -->
+                                </select>
+                            </div>
+                        </div>
+                        <div id="rightside">
+                            <img src="https://goo.gl/Pq42Lm">
+                            <img src="https://cdn.pastemagazine.com/www/system/images/photo_albums/best-book-covers-so-far/large/screen-shot-2016-07-13-at-122806-pm.png?1384968217">
+                            <img src="https://s-media-cache-ak0.pinimg.com/564x/7a/d2/c3/7ad2c3be35fc75f6e284ec6e44a3edf7.jpg">
+                        </div>
 
+                    </div>
                 </div>
             </div>
         </div>

@@ -4,9 +4,8 @@
         <meta charset="utf-8">
         <title>MANAGE ITEMS</title>
         <link href="css/manageitems.css" rel="stylesheet" type="text/css"/>
-        <script src="js/toggletabs.js"></script>
+        <script src="js/toggle.js"></script>
     </head>
-
     <body>
         <div id="banner">
             <p> username </p>
@@ -33,28 +32,51 @@
             </div>
             <div id="content">
                 <h2> MANAGE ITEMS </h2>
-                <div class="tabs">
+                <div id="tabs">
                     <ul id="tabButtons">
-                        <li><a href="#tab1" class="active">NEW ITEM</a></li>
-                        <li><a href="#tab2">EDIT/DELETE ITEM</a></li>
-                        <li><a href="#tab3">REQUESTED ITEMS</a></li>
+                        <li><a href="javascript:void(0)" class="tablinks" onclick="openTab(event, 'tab1')">NEW ITEM</a></li>
+                        <li><a href="javascript:void(0)" class="tablinks" onclick="openTab(event, 'tab2')">EDIT/DELETE ITEM</a></li>
+                        <li><a href="javascript:void(0)" class="tablinks" onclick="openTab(event, 'tab3')">REQUESTED ITEMS</a></li>
                     </ul>
+                    <div id="tab1" class="tabcontent">
+                        <div id="toppart">
+                            <div id="floatleft">
+                                <!-- UPLOAD PICTURE (with php?)-->
+                                <img src="https://goo.gl/Pq42Lm">
+                            </div>
+                            <div id="floatright">
+                                <input type="text" placeholder="add title" name="title" required>
+                                <input type="text" placeholder="add author(s)" name="author" required>
+                                <input type="text" placeholder="add ISBN/ISSN" name="ISBN" required>
+                                <div id="date">
+                                    <!-- CHECK FOR INVALID DATE! -->
+                                    <input type="number" placeholder="YYYY" name="year" min="2000" max="2016" required>
+                                    <input type="number" placeholder="MM" name="month" min="1" max="12" required>
+                                    <input type="number" placeholder="DD" name="day" min="1" max="31" required>
+                                    <!-- CHECK FOR INVALID DATE! -->
+                                </div>
+                                <select id="selectmenu5">
+                                    <option selected disabled class="hideoption">Select subject</option>
+                                    <!-- READ from database -->
+                                    <option>subject 1</option>
+                                    <option>subject 2</option>
+                                    <option>subject 3</option>
+                                    <option>subject 4</option>
+                                    <!-- REPLACE BLOCK -->
+                                </select>
+                                <input id="newsubject" type="text" placeholder="OR new subject" name="newsubject" required>
 
-                    <div id="tab1">
-                        <img src="#">
-                        <input type="text" placeholder="add title" name="title" required>
-                        <input type="text" placeholder="add author(s)" name="author" required>
-                        <input type="text" placeholder="add ISBN/ISSN" name="ISBN" required>
-                        <input type="text" placeholder="YYYY" name="year" required>
-                        <input type="text" placeholder="MM" name="month" required>
-                        <input type="text" placeholder="DD" name="day" required>
-                        <p>choose subject (dropdown)</p>
-                        <input type="text" placeholder="OR new subject" name="newsubject" required>
-                        <textarea name="content">add description</textarea>
-                        <input type="button" onclick="location.href='manageitems.html';" value="SUBMIT" />
+                            </div>
+                        </div>
+                        <div id="bottompart">
+                            <textarea name="content" placeholder="add description"></textarea>
+                        </div>
+                        <div id="addbutton">
+                            <input type="button" onclick="location.href='manageitems.html';" value="SUBMIT" />
+                        </div>
+
                     </div>
-
-                    <div id="tab2">
+                    <div id="tab2" class="tabcontent">
                         <img src="#">
                         <input type="text" placeholder="title" name="title" required>
                         <input type="text" placeholder="author(s)" name="author" required>
@@ -67,10 +89,9 @@
                         <textarea name="content">description</textarea>
                         <input type="button" onclick="location.href='manageitems.html';" value="SUBMIT" />
                     </div>
-
-                    <div id="tab3">
+                    <div id="tab3" class="tabcontent">
                         <p> ORDER BY: </p>
-                        <ul>
+                        <ul id="leftbutton">
                             <li>
                                 <input type="radio" name="orderby" value="username" id="radio1" checked="checked"/>
                                 <label for="radio1">username</label>
@@ -88,6 +109,17 @@
                                 <label for "radio4">title</label>
                             </li>
                         </ul>
+                        <ul id="rightbutton">
+                            <li>
+                                <input type="radio" name="ascdesc" value="ascending" id="radio5" checked="checked"/>
+                                <label for "radio5">ascending</label>
+                            </li>
+
+                            <li>
+                                <input type="radio" name="ascdesc" value="descending" id="radio6"/>
+                                <label for "radio6">descending</label>
+                            </li>						
+                        </ul>
 
                         <table id="itemTable">
                             <tbody>
@@ -99,6 +131,7 @@
                                     <th>date</th> 
                                     <th>status</th>
                                 </tr>
+                                <!-- delete block -->
                                 <tr>
                                     <td>Nephena</td>
                                     <td>Eldest</td> 
@@ -139,21 +172,24 @@
                                     <td>01.11.2016</td> 
                                     <td>requested</td>
                                 </tr>
+                                <!-- delete block -->
                             </tbody>
                         </table>
-                        <ul>
+
+                        <ul id="bottombutton">
                             <li>
                                 <input type="radio" name="request" value="accept" id="accept" checked="checked"/>
                                 <label for="accept">accept</label>
                             </li>
                             <li>
                                 <input type="radio" name="request" value="deny" id="deny"/>
-                                <label for="accept">deny</label>
-                            </li>
+                                <label for="deny">deny</label>
+                            </li>					
                         </ul>
-                        <input type="button" onclick="location.href='settings.html';" value="SUBMIT" />
+                        <div id="submitbutton">
+                            <input type="button" onclick="location.href='manageitems.html';" value="SUBMIT" />
+                        </div>
                     </div>
-
                 </div>
             </div>
         </div>
