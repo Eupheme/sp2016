@@ -1,0 +1,147 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>MANAGE USERS</title>
+        <link href="css/manageusers.css" rel="stylesheet" type="text/css"/>
+        <script src="js/toggle.js"></script>
+    </head>
+
+    <body>
+        <div id="banner">
+            <p> username </p>
+        </div>
+        <div id="page">
+            <div id="side">
+                <div id="logo">
+                    <img src="https://goo.gl/RXSMxe" height="50px" width="50px">
+                    library
+                </div>
+                <br />
+                <hr>
+                <input type="button" onclick="location.href='manageitems.html';" value="MANAGE ITEMS" />
+                <input type="button" id="highlight" onclick="location.href='manageusers.html';" value="MANAGE USERS" />
+                <input type="button" onclick="location.href='borrowing.html';" value="BORROWING" />
+                <hr>
+                <input type="button" onclick="location.href='statistics.html';" value="STATISTICS" />
+                <input type="button" onclick="location.href='search.html';" value="SEARCH" />
+                <hr>
+                <input type="button" onclick="location.href='settings.html';" value="SETTINGS" />
+                <input type="button" onclick="location.href='about.html';" value="INFO" />
+                <input type="button" onclick="location.href='login.html';" value="LOG OUT" />
+                <hr>
+            </div>
+            <div id="content">
+                <h2> MANAGE USERS </h2>
+                <div class="tabs">
+                    <ul id="tabButtons">
+                        <li><a href="#tab1" class="active">USER INFORMATION</a></li>
+                        <li><a href="#tab2">APPROVE USERS</a></li>
+                    </ul>
+
+                    <div id="tab1">
+                        <form method="get">
+                            <input type="text" class="searchbar" placeholder="Search user.."/>
+
+                            <img src="#">
+                            <p id = "sUsername">USERNAME </p>
+                            <p id = "sUserid">USER ID </p>
+                            <p id = "sName">SURNAME, NAME</p>
+                            <p id = "sAge">AGE</p>
+                            <p id = "sEmail">EMAIL</p>
+                            <p id = "sMember">MEMBER SINCE: DATE</p>
+                        </form>
+
+                    </div>
+
+                    <div id="tab2">
+                        <p> ORDER BY: </p>
+                        <ul>
+                            <li>
+                                <input type="radio" name="orderby" value="username" id="radio1" checked="checked"/>
+                                <label for="radio1">username</label>
+                            </li>
+                            <li>
+                                <input type="radio" name="orderby" value="author" id="radio2"/>
+                                <label for="radio2">author</label>
+                            </li>
+                            <li>
+                                <input type="radio" name="orderby" value="date" id="radio3"/>
+                                <label for "radio3">date</label>
+                            </li>
+                            <li>
+                                <input type="radio" name="orderby" value="title" id="radio4"/>
+                                <label for "radio4">title</label>
+                            </li>
+                        </ul>
+
+                        <table id="itemTable">
+                            <tbody>
+                                <tr>
+                                    <th>username</th>
+                                    <th>name</th> 
+                                    <th>age</th>
+                                    <th>email</th>
+                                    <th>address</th> 
+                                    <th>status</th>
+                                </tr>
+                                <tr>
+                                    <td>Nephena</td>
+                                    <td>name, surname</td> 
+                                    <td>18</td>
+                                    <td>nephena@mail.com</td>
+                                    <td>address</td> 
+                                    <td>pending</td>
+                                </tr>
+                                <tr>
+                                    <td>Nephena</td>
+                                    <td>name, surname</td> 
+                                    <td>18</td>
+                                    <td>nephena@mail.com</td>
+                                    <td>address</td> 
+                                    <td>pending</td>
+                                </tr>
+                                <tr>
+                                    <td>Nephena</td>
+                                    <td>name, surname</td> 
+                                    <td>18</td>
+                                    <td>nephena@mail.com</td>
+                                    <td>address</td> 
+                                    <td>pending</td>
+                                </tr>
+                                <tr>
+                                    <td>Nephena</td>
+                                    <td>name, surname</td> 
+                                    <td>18</td>
+                                    <td>nephena@mail.com</td>
+                                    <td>address</td> 
+                                    <td>pending</td>
+                                </tr>
+                                <tr>
+                                    <td>Nephena</td>
+                                    <td>name, surname</td> 
+                                    <td>18</td>
+                                    <td>nephena@mail.com</td>
+                                    <td>address</td> 
+                                    <td>pending</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <ul>
+                            <li>
+                                <input type="radio" name="request" value="approve" id="approve" checked="checked"/>
+                                <label for="approve">approve</label>
+                            </li>
+                            <li>
+                                <input type="radio" name="request" value="deny" id="deny"/>
+                                <label for="accept">deny</label>
+                            </li>
+                        </ul>
+                        <input type="button" onclick="location.href='settings.html';" value="SUBMIT" />
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,352 @@
+html, body {
+    height: 90%;
+    margin: 0;
+}
+
+#banner {
+	width: 100%;
+	background-color: #b3c6ff;
+	height: 5vh;
+	z-index: 100;
+	position: fixed;
+	top: 0;
+	border-bottom: 1.5px solid grey;
+}
+
+#banner p {
+	text-align: right;
+	margin-right: 30px;
+	margin-top: 5px;
+	right: 0;
+}
+
+#page {
+	margin-left: 230px;
+	margin-top: 5vh;
+	background-color: white;
+	z-index: -1;
+	min-height: 100%;
+}
+
+#page #side {
+    position: fixed;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: #b3c6ff;
+    width: 230px;
+	z-index: 101;
+	
+	border-right: 1.5px solid grey;
+}
+
+#page #side #logo {
+	margin-top: 15px;
+	margin-left: 15px;
+	background: #b3c6ff;
+	font-size: 30px;
+}
+
+#page #side hr {
+    border: 0;
+    height: 1px;
+    background-color: grey;
+}
+
+#page #side input[type=button] {
+    display: inline-block;
+    background-image: url('https://goo.gl/A1BorP');
+    background-repeat: no-repeat;
+    background-position: center left 25px;
+    height: 50px;
+    width: 100%;
+	background-color: #b3c6ff;
+    border: 1px solid #b3c6ff;
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+	text-align: left;
+	padding-left: 80px;
+ }
+ 
+#page #side input[type=button]:hover {
+	background-color: #ccd9ff;
+	color: #990000;
+}
+
+#page #side #highlight {
+	background-color: #ccd9ff;
+	color: #990000;
+}
+
+#page #content h2{
+	color: #990000;
+	font-size: 30px;
+	margin-left: 100px;
+	padding-top: 55px;
+}
+
+#page #content #tabs{
+	overflow:hidden;
+	clear:both;
+	width: 80%;
+	margin: 0 auto;
+}
+
+#page #content #tabs #tabButtons {
+	width: 100%;
+	height: 40px;
+	padding: 0;
+	margin-top: 2px;
+	margin-bottom: 20px;
+}
+
+#page #content #tabs #tabButtons ul {
+	list-style: none; 
+	margin: 0; 
+	padding: 0; 
+	display: inline-block; 
+	float:left;
+	margin-left: 100px;
+}
+
+#page #content #tabs #tabButtons li {
+    display: inline-block;
+	float:left;
+	width: calc(99%/3);
+	background-color: #b3c6ff;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+	text-align: center;
+}
+
+#page #content #tabs #tabButtons li a{
+    text-decoration: none;
+    color: #FFFFFF;
+    display: block;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+ 
+#page #content #tabs #tabButtons li:hover {
+    text-decoration: none;
+    background-color: #ccd9ff;
+	color: #990000;
+}
+
+#page #content #tabs #tabButtons li a.active{
+	text-decoration: none;
+	color: #990000;
+	background: #ccd9ff;
+	border-bottom: 1px solid #990000;
+}
+
+#page #content #tabs .tabcontent{
+	clear: both;
+	padding:5px;
+	font-size:13px;
+	display:none;
+}
+
+#page #content #tabs #tab1 #toppart{
+    height:200px;
+    width: 100%;
+}
+
+#page #content #tabs #tab1 #toppart #floatleft{
+    float:left;
+    margin-left: 15px;
+    width: 30%;
+}
+
+#page #content #tabs #tab1 #toppart #floatright{
+    float:left;
+    margin-left: 15px;
+    width: 65%;
+}
+
+#page #content #tabs #tab1 #toppart #floatleft img {
+    display: inline-block;
+    float:left;
+	width: auto;
+	height: auto;
+	max-width:200px;
+	max-height:226px;
+    margin-left: 17%;
+}
+
+#page #content #tabs #tab1 #toppart #floatright input[type=text]{
+    display: block;
+    width: 81%;
+    height: 25px;
+    margin-top: 15px;
+    text-align: left;
+    padding: 0px 0px 0px 10px;
+}
+
+#page #content #tabs #tab1 #toppart #floatright #date{
+    display: block;
+    margin-bottom: -15px;
+}
+
+#page #content #tabs #tab1 #toppart #floatright #date input[type=number]{
+    display: inline-block;
+    height: 30px;
+    width: 80px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-align: center;
+    padding: 0px 0px 0px 0px;
+}
+
+#page #content #tabs #tab1 #toppart #floatright #selectmenu5{
+    width: 40%;
+    height: 30px;
+	background: #ccd9ff ;
+	color: #990000;
+	border-radius: 2px;
+	padding: 4px;
+    border:0px solid #ccd9ff;
+	box-shadow: inset 0 0 5px rgba(000,000,000, 0.5);
+}
+
+#page #content #tabs #tab1 #toppart #floatright #newsubject{
+    display: inline-block;
+    width: 40%;
+    height: 25px;
+    margin-top: 15px;
+    text-align: left;
+    padding: 0px 0px 0px 10px;
+}
+
+#page #content #tabs #tab1 #bottompart{
+    height:200px;
+    width: 100%;
+    margin-top: 30px;
+}
+
+#page #content #tabs #tab1 #bottompart textarea {
+    width: 80%;
+    float:left;
+    display:block;
+    height: 130px;
+    margin-left: 60px;
+    resize: none;
+    margin-top: 15px;
+}
+
+
+#page #content #tabs #tab1 #addbutton, #tab3 #submitbutton {
+	width:60%;
+	margin:0 auto;
+	overflow: hidden;
+	position : absolute;
+    bottom : 25px;
+    height : 30px;
+}
+
+#page #content #tabs #tab1 #addbutton input[type=button], #tab3 #submitbutton input[type=button] {
+	overflow: hidden;
+	float: right;
+    height: 30px;
+    width: 110px;
+	background-color: #990000;
+    border: 1px solid #990000;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+	text-align: center;
+    
+}
+
+#page #content #tabs #tab1 #addbutton input[type=button]:hover, #tab3 #submitbutton input[type=button]:hover {
+	background-color: #cc0000;
+	color: white;
+}
+
+/* tab2 */
+
+#page #content #tabs #tab3 p{
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 16px;
+    margin-top: 0px;
+}
+
+#page #content #tabs #tab3 label{
+    vertical-align: 15%;
+    text-decoration: none;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+#page #content #tabs #tab3 #leftbutton{
+    list-style-type: none;
+    width: 20em;
+    margin-left: 20px;
+    padding-bottom: 20px;
+    float: left;
+    margin-top: 10px;
+}
+
+#page #content #tabs #tab3 #rightbutton{
+    list-style-type: none;
+    width: 10em;
+    padding-bottom: 20px;
+    float: left;
+    margin-top: 10px;
+}
+
+#page #content #tabs #tab3 #leftbutton li{
+    float: left;
+    width: 10em;
+}
+
+#page #content #tabs #tab3 #rightbutton li{
+    float: left;
+    width: 10em;
+    margin-left: 50px;
+}
+
+#page #content #tabs #tab3 #itemTable {
+    font-size: 115%;
+    overflow: auto;
+    width: 100%;
+    font-size: 14px;
+    margin: 0 auto;
+}
+
+#page #content #tabs #tab3 #itemTable th {
+    background-color: #990000;
+    color: white;
+    font-weight: normal;
+    text-transform: uppercase;
+    padding: 10px 15px;
+    text-align: center;
+}
+
+#page #content #tabs #tab3 #itemTable td {
+    background-color: #f2f2f2;
+    color: #808080;
+    padding: 10px 10px;
+}
+
+#page #content #tabs #tab3 #itemTable tr:hover td{
+    background-color: white;
+    color: #808080;
+}
+
+#page #content #tabs #tab3 #bottombutton{
+    list-style-type: none;
+    width: 20em;
+    margin-left: 20px;
+    padding-bottom: 20px;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+#page #content #tabs #tab3 #bottombutton li{
+    float: left;
+    width: 10em;
+}

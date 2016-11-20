@@ -1,0 +1,150 @@
+html, body {
+    height: 90%;
+    margin: 0;
+}
+
+#banner {
+	width: 100%;
+	background-color: #b3c6ff;
+	height: 5vh;
+	z-index: 100;
+	position: fixed;
+	top: 0;
+	border-bottom: 1.5px solid grey;
+}
+
+#banner p {
+	text-align: right;
+	margin-right: 30px;
+	margin-top: 5px;
+	right: 0;
+}
+
+#page {
+	margin-left: 230px;
+	margin-top: 5vh;
+	background-color: white;
+	z-index: -1;
+	min-height: 100%;
+}
+
+#page #side {
+    position: fixed;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: #b3c6ff;
+    width: 230px;
+	z-index: 101;
+	
+	border-right: 1.5px solid grey;
+}
+
+#page #side #logo {
+	margin-top: 15px;
+	margin-left: 15px;
+	background: #b3c6ff;
+	font-size: 30px;
+}
+
+#page #side hr {
+    border: 0;
+    height: 1px;
+    background-color: grey;
+}
+
+#page #side input[type=button] {
+    display: inline-block;
+    background-image: url('https://goo.gl/A1BorP');
+    background-repeat: no-repeat;
+    background-position: center left 25px;
+    height: 50px;
+    width: 100%;
+	background-color: #b3c6ff;
+    border: 1px solid #b3c6ff;
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+	text-align: left;
+	padding-left: 80px;
+ }
+ 
+#page #side input[type=button]:hover {
+	background-color: #ccd9ff;
+	color: #990000;
+}
+
+#page #side #highlight {
+	background-color: #ccd9ff;
+	color: #990000;
+}
+
+#page #content h2{
+	color: #990000;
+	font-size: 30px;
+	margin-left: 100px;
+	padding-top: 55px;
+}
+
+#page #content #tabs{
+	overflow:hidden;
+	clear:both;
+	width: 80%;
+	margin: 0 auto;
+}
+
+#page #content #tabs #tabButtons {
+	width: 100%;
+	height: 40px;
+	padding: 0;
+	margin-top: 2px;
+	margin-bottom: 20px;
+}
+
+#page #content #tabs #tabButtons ul {
+	list-style: none; 
+	margin: 0; 
+	padding: 0; 
+	display: inline-block; 
+	float:left;
+	margin-left: 100px;
+}
+
+#page #content #tabs #tabButtons li {
+    display: inline-block;
+	float:left;
+	width: calc(99%/2);
+	background-color: #b3c6ff;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+	text-align: center;
+}
+
+#page #content #tabs #tabButtons li a{
+    text-decoration: none;
+    color: #FFFFFF;
+    display: block;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+ 
+#page #content #tabs #tabButtons li:hover {
+    text-decoration: none;
+    background-color: #ccd9ff;
+	color: #990000;
+}
+
+#page #content #tabs #tabButtons li a.active{
+	text-decoration: none;
+	color: #990000;
+	background: #ccd9ff;
+	border-bottom: 1px solid #990000;
+}
+
+#page #content #tabs .tabcontent{
+	clear: both;
+	padding:5px;
+	font-size:13px;
+	display:none;
+}
