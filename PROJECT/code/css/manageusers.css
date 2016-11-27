@@ -1,150 +1,283 @@
-html, body {
-    height: 90%;
-    margin: 0;
-}
-
-#banner {
-	width: 100%;
-	background-color: #b3c6ff;
-	height: 5vh;
-	z-index: 100;
-	position: fixed;
-	top: 0;
-	border-bottom: 1.5px solid grey;
-}
-
-#banner p {
-	text-align: right;
-	margin-right: 30px;
-	margin-top: 5px;
-	right: 0;
-}
-
-#page {
-	margin-left: 230px;
-	margin-top: 5vh;
-	background-color: white;
-	z-index: -1;
-	min-height: 100%;
-}
-
-#page #side {
-    position: fixed;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background: #b3c6ff;
-    width: 230px;
-	z-index: 101;
-	
-	border-right: 1.5px solid grey;
-}
-
-#page #side #logo {
-	margin-top: 15px;
-	margin-left: 15px;
-	background: #b3c6ff;
-	font-size: 30px;
-}
-
-#page #side hr {
-    border: 0;
-    height: 1px;
-    background-color: grey;
-}
-
-#page #side input[type=button] {
-    display: inline-block;
-    background-image: url('https://goo.gl/A1BorP');
-    background-repeat: no-repeat;
-    background-position: center left 25px;
-    height: 50px;
-    width: 100%;
-	background-color: #b3c6ff;
-    border: 1px solid #b3c6ff;
-    color: white;
-    text-decoration: none;
-    font-size: 13px;
-	text-align: left;
-	padding-left: 80px;
- }
- 
-#page #side input[type=button]:hover {
-	background-color: #ccd9ff;
-	color: #990000;
-}
-
-#page #side #highlight {
-	background-color: #ccd9ff;
-	color: #990000;
-}
-
-#page #content h2{
-	color: #990000;
-	font-size: 30px;
-	margin-left: 100px;
-	padding-top: 55px;
-}
-
-#page #content #tabs{
-	overflow:hidden;
-	clear:both;
-	width: 80%;
-	margin: 0 auto;
-}
-
-#page #content #tabs #tabButtons {
-	width: 100%;
-	height: 40px;
-	padding: 0;
-	margin-top: 2px;
-	margin-bottom: 20px;
-}
-
-#page #content #tabs #tabButtons ul {
-	list-style: none; 
-	margin: 0; 
-	padding: 0; 
-	display: inline-block; 
-	float:left;
-	margin-left: 100px;
-}
-
 #page #content #tabs #tabButtons li {
+    width: calc(99%/2);
+}
+
+#page #navigation #manageusers {
+    background-image: url('../pictures/icons/manageusers-red.png');
+    background-color: #ccd9ff !important;
+    color: #990000 !important;
+}
+
+#page #content #tabs #tab1 #search {
+    width: 80%;
+    margin: 0 auto;
+}
+
+#page #content #tabs #tab1 #search form {
+    overflow: hidden; 
+    width: 100%;
+    outline: none;
+}
+
+#page #content #tabs #tab1 #search label {
+    display: block;
+    font-weight: bold;
+    font-size: small;
+    text-transform: uppercase;
+    font-size: 0.7em;
+    margin-bottom: 0.35em;
+    float:left;
+    color: dimgray;
+}
+
+#page #content #tabs #tab1 #search input.searchbar {
+    float: left; 
+    height: 30px; 
+    width: 100%;
+    padding: 8px 13px 8px 40px;
+    background: #fff; 
+    border: 1px solid red;
+    color: black;
+    background-image: url(../pictures/icons/search-gray.png);
+    background-size: 28px,28px;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    font-size: 16px;
+}
+
+#page #content #tabs #tab1 hr {
+    border: 0;
+    height: 10px;
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 30px;
+    box-shadow: 0 10px 10px -10px #8c8b8b inset;
+}
+
+#page #content #tabs #tab1 #userwrapper {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+    font-weight: bold;
+    text-align: center;
+    width: 80%;
+    min-width: 240px;
+    margin: 0 auto;
+    background-color: #e6ecff;
+    border: 1px solid #f2f2f2;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+#page #content #tabs #tab1 #userwrapper > * {
+    flex: auto;
+    padding: 10px;
+}
+
+#page #content #tabs #tab1 #userwrapper #userimage {
+    width: 230px;
+}
+
+#page #content #tabs #tab1 #userwrapper #userimage img {
+    max-height: 250px;
+    max-width: 230px;
+    height: auto;
+    width: auto;
+    margin: 0 auto;
+}
+
+#page #content #tabs #tab1 #userwrapper #usertext {
+    color: black;
+    text-decoration: none;
+    text-transform: capitalize;
+    font-size: 16px;
+    margin: 20px;
+    text-align: left;
+}
+
+#page #content #tabs #tab1 #userwrapper #usertext #sUsername {
+    color: #990000;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 26px;
+    margin-bottom: 30px;
+}
+
+#page #content #tabs #tab1 #userwrapper #usertext #adminbutton input[type=button] {
+    margin-top: 20px;
+}
+
+@media all and (min-width: 500px) {
+    #userimage { flex: 1; }
+    #usertext { flex: 1; }
+}
+
+@media all and (min-width: 600px) {
+    #userimage { order: 1; }
+    #usertext { order: 2; }
+}
+
+#page #content #tabs #tab2 p {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 16px;
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
+#page #content #tab2 #itemwrapper {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+    flex-wrap: wrap;
+    width: 90%;
+    margin: 0 auto;
+}
+
+#page #content #tab2 label {
+    vertical-align: 15%;
+    text-decoration: none;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+#page #content #tab2 #itemwrapper ul {
+    list-style-type: none;
+    float: left;
+    max-width: 10em;
+    margin-bottom: 20px;
+}
+
+#page #content #tab2 #itemwrapper ul li {
+    float: left;
+    min-width: 10em;
+}
+
+#page #content #tab2 #itemwrapper #first {
+    margin-right: 30px;
+}
+
+@media all and (min-width: 499px) {
+    #first { flex: 1; }
+    #second { flex: 1; }
+}
+
+@media all and (min-width: 500px) {
+    #first { order: 1; }
+    #second { order: 2; }
+}
+
+#page #content #tabs #tab2 #itemTable {
+    overflow-x: auto !important;
+}
+
+#page #content #tabs #tab2 #itemTable table {
+    width: 100%;
+    font-size: 14px;
+    margin: 0 auto;
+}
+
+#page #content #tabs #tab2 #itemTable th {
+    background-color: #990000;
+    color: white;
+    font-weight: normal;
+    text-transform: uppercase;
+    padding: 10px 15px;
+    text-align: center;
+}
+
+#page #content #tabs #tab2 #itemTable td {
+    background-color: #f2f2f2;
+    color: #808080;
+    padding: 10px 10px;
+}
+
+#page #content #tabs #tab2 #itemTable tr:hover td {
+    background-color: white;
+    color: #808080;
+}
+
+#page #content #tabs #tab2 #itemTable tr.selected td {
+    background-color: #cccccc;
+    color: #666666;
+}
+
+#page #content #tabs #tab2 #itemTable tr.selected:hover td {
+    background-color: #bfbfbf;
+    color: #666666;
+}
+
+#page #content #tabs #tab2 #pages ul {
+    list-style-type: none;
+    max-width: 240px;
+    padding-top: 20px;
+    margin: 0 auto;
+}
+
+#page #content #tabs #tab2 #pages a {
     display: inline-block;
-	float:left;
-	width: calc(99%/2);
-	background-color: #b3c6ff;
+    padding: 10px 18px;
+    color: #222;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+#page #content #tabs #tab2 #pages a:hover {
+    background-color: #cc0000;
+    color: #fff;
+}
+
+#page #content #tabs #tab2 #pages .active {
+    background-color: #990000;
+    color: #fff;
+}
+
+#page #content #tabs #tab2 #acceptuser {
+    list-style-type: none;
+    width: 24em;
+    margin-left: 20px;
+    margin-bottom: 100px;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+#page #content #tabs #tab2 #acceptuser li{
+    float: left;
+    width: 12em;
+}
+
+#page #content #tabs #tab2 #submitbutton {
+    width:80%;
+    margin:0 auto;
+    height : 30px;
+    margin-top: 60px;
+}
+
+#page #content #tabs #tab1 #userwrapper #usertext #adminbutton input[type=button], #tab2 #submitbutton input[type=button] {
+    display: inline-block;
+    float: right;
+    height: 30px;
+    width: 110px;
+    background-color: #990000;
+    border: 1px solid #990000;
     color: white;
     text-decoration: none;
-    font-size: 18px;
-	text-align: center;
+    font-size: 14px;
+    text-align: center;
+    margin-right: 10px;    
 }
 
-#page #content #tabs #tabButtons li a{
-    text-decoration: none;
-    color: #FFFFFF;
-    display: block;
-	padding-top: 5px;
-	padding-bottom: 5px;
-}
- 
-#page #content #tabs #tabButtons li:hover {
-    text-decoration: none;
-    background-color: #ccd9ff;
-	color: #990000;
-}
-
-#page #content #tabs #tabButtons li a.active{
-	text-decoration: none;
-	color: #990000;
-	background: #ccd9ff;
-	border-bottom: 1px solid #990000;
-}
-
-#page #content #tabs .tabcontent{
-	clear: both;
-	padding:5px;
-	font-size:13px;
-	display:none;
+#page #content #tabs #tab1 #userwrapper #usertext #adminbutton input[type=button]:hover, #tab2 #submitbutton input[type=button]:hover {
+    background-color: #cc0000;
+    color: white;
 }

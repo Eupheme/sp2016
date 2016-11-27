@@ -1,29 +1,55 @@
-window.addEventListener("load", function() {
-	showTabs(".tabs")
+window.addEventListener("load", function () {
+    var i, alltabs, batch, sibs;
+    alltabs = document.querySelectorAll('.tablinks');
+
+    for (i = 0; i < alltabs.length; i++) {        
+        //activate first button in batch
+        batch = getButtons(alltabs[i].parentNode, alltabs[i].className);
+        batch[0].className += " active";        
+
+        //display first tab in batch
+        sibs = getSiblings(batch[0].parentNode.parentNode, 'tabcontent');
+        sibs[0].style.display = "block";
+        i += batch.length - 1;
+    }
 });
 
-function showTabs(selector) {
-
-    tab_lists = document.querySelectorAll(selector + " li a");
-    divs = document.querySelector(selector).getElementsByTagName("div");
-    for (var i = 0; i < tab_lists.length; i++) {
-        if (tab_lists[i].classList.contains('active')) {
-            divs[i].style.display = "block";
+function getSiblings(el, filter) {
+    var siblings = [];
+    while (el = el.nextSibling) {
+        if (el.className === filter) {
+            siblings.push(el);
         }
     }
+    return siblings;
+}
 
-    for (i = 0; i < tab_lists.length; i++) {
-        document.querySelectorAll(".tabs li a")[i].addEventListener('click', function(e) {
-            for (i = 0; i < divs.length; i++) {
-                divs[i].style.display = "none";
+function getButtons(el, filter) {
+    el = el.parentNode.firstChild;
+    var buttons = [];
+    do {
+        if (el.className !== undefined) {
+            string = el.children[0].className;
+            if (string.match(filter)) {
+                buttons.push(el.children[0]);
             }
-            for (i = 0; i < tab_lists.length; i++) {
-                tab_lists[i].classList.remove("active");
-            }
-            clicked_tab = e.target || e.srcElement;
-            clicked_tab.classList.add('active');
-            div_to_show = clicked_tab.getAttribute('href');
-            document.querySelector(div_to_show).style.display = "block";
-        });
+        }
+    }
+    while (el = el.nextSibling);
+    return buttons;
+}
+
+
+function openTab(evt) {
+    var i, tabs, buttons;
+    tabs = getSiblings(evt.currentTarget.parentNode.parentNode, 'tabcontent')
+    buttons = getButtons(evt.currentTarget.parentNode, 'tablinks')
+    for (i = 0; i < tabs.length; i++) {
+        tabs[i].style.display = "none";
+        buttons[i].className = buttons[i].className.replace(" active", "");
+        if (buttons[i] == evt.currentTarget){
+            tabs[i].style.display = "block";
+            evt.currentTarget.className += " active";
+        }
     }
 }

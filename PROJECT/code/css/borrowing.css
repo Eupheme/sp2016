@@ -1,150 +1,143 @@
-html, body {
-    height: 90%;
-    margin: 0;
-}
-
-#banner {
-	width: 100%;
-	background-color: #b3c6ff;
-	height: 5vh;
-	z-index: 100;
-	position: fixed;
-	top: 0;
-	border-bottom: 1.5px solid grey;
-}
-
-#banner p {
-	text-align: right;
-	margin-right: 30px;
-	margin-top: 5px;
-	right: 0;
-}
-
-#page {
-	margin-left: 230px;
-	margin-top: 5vh;
-	background-color: white;
-	z-index: -1;
-	min-height: 100%;
-}
-
-#page #side {
-    position: fixed;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background: #b3c6ff;
-    width: 230px;
-	z-index: 101;
-	
-	border-right: 1.5px solid grey;
-}
-
-#page #side #logo {
-	margin-top: 15px;
-	margin-left: 15px;
-	background: #b3c6ff;
-	font-size: 30px;
-}
-
-#page #side hr {
-    border: 0;
-    height: 1px;
-    background-color: grey;
-}
-
-#page #side input[type=button] {
-    display: inline-block;
-    background-image: url('https://goo.gl/A1BorP');
-    background-repeat: no-repeat;
-    background-position: center left 25px;
-    height: 50px;
-    width: 100%;
-	background-color: #b3c6ff;
-    border: 1px solid #b3c6ff;
-    color: white;
-    text-decoration: none;
-    font-size: 13px;
-	text-align: left;
-	padding-left: 80px;
- }
- 
-#page #side input[type=button]:hover {
-	background-color: #ccd9ff;
-	color: #990000;
-}
-
-#page #side #highlight {
-	background-color: #ccd9ff;
-	color: #990000;
-}
-
-#page #content h2{
-	color: #990000;
-	font-size: 30px;
-	margin-left: 100px;
-	padding-top: 55px;
-}
-
-#page #content #tabs{
-	overflow:hidden;
-	clear:both;
-	width: 80%;
-	margin: 0 auto;
-}
-
-#page #content #tabs #tabButtons {
-	width: 100%;
-	height: 40px;
-	padding: 0;
-	margin-top: 2px;
-	margin-bottom: 20px;
-}
-
-#page #content #tabs #tabButtons ul {
-	list-style: none; 
-	margin: 0; 
-	padding: 0; 
-	display: inline-block; 
-	float:left;
-	margin-left: 100px;
-}
-
 #page #content #tabs #tabButtons li {
+    width: calc(99%/2);
+}
+
+#page #navigation #borrowing {
+    background-image: url('../pictures/icons/borrowing-red.png');
+    background-color: #ccd9ff !important;
+    color: #990000 !important;
+}
+
+#page #content #tabs #tab1 #userwrapper, #itemwrapper, #page #content #tabs #tab2 #userwrapper, #itemwrapper {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;  
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+    font-weight: bold;
+    text-align: center;
+}
+
+#page #content #tabs #tab1 #userwrapper > *, #page #content #tabs #tab1 #itemwrapper > *, #page #content #tabs #tab2 #userwrapper > *, #page #content #tabs #tab2 #itemwrapper > * {
+    padding-top: 10px;
+    flex: auto;
+}
+
+#page #content #tabs #tab1 #userwrapper #searchuser, #itemwrapper #searchitem, #tab2 #itemwrapper #searchitem {
+    width: 100%;
+}
+
+#page #content #tabs #tab1 #userwrapper #searchuser label, #itemwrapper #searchitem label, #tab2 #itemwrapper #searchitem label {
+    display: block;
+    font-weight: bold;
+    font-size: small;
+    text-transform: uppercase;
+    font-size: 0.7em;
+    margin-bottom: 0.35em;
+    float: left;
+    color: dimgray;
+}
+
+#page #content #tabs #tab1 #userwrapper #searchuser input.searchbar, #itemwrapper #searchitem input.searchbar, #tab2 #itemwrapper #searchitem input.searchbar {
+    float: left; 
+    height: 30px; 
+    width: 100%;
+    padding: 8px 13px 8px 40px;
+    background: #fff; 
+    border: 1px solid red;
+    color: black;
+
+    background-image: url("../pictures/icons/search-gray.png");
+    background-size: 28px,28px;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    font-size: 16px;
+}
+
+#page #content #tabs #tab1 #userwrapper #userimage, #itemwrapper #itemimage, #tab2 #userwrapper #userimage, #itemwrapper #itemimage {
+    width: 160px;
+}
+
+#page #content #tabs #tab1 #userwrapper #userimage img, #itemwrapper #itemimage img, #tab2 #userwrapper #userimage img, #itemwrapper #itemimage img {
+    width: auto;
+    height: auto;
+    max-width:130px;
+    max-height:140px;
+}
+
+#page #content #tabs #tab1 #userwrapper #usertext, #itemwrapper #itemtext, #tab2 #userwrapper #usertext, #itemwrapper #itemtext {
     display: inline-block;
-	float:left;
-	width: calc(99%/2);
-	background-color: #b3c6ff;
+    margin-left: 20px;
+    width: 50%;
+    text-align:left;
+}
+
+#page #content #tabs #tab1 #userwrapper #usertext h5, #itemwrapper #itemtext h5, #tab2 #userwrapper #usertext h5, #itemwrapper #itemtext h5 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    color: #990000;
+}
+
+#page #content #tabs #tab1 #userwrapper #usertext h6, #itemwrapper #itemtext h6, #tab2 #userwrapper #usertext h6, #itemwrapper #itemtext h6 {
+    font-size: 15px;
+    font-weight: normal;
+    margin-top: 0px;
+}
+
+#page #content #tabs #tab1 #borrowbutton, #tab2 #returnbutton {
+    min-width: 100%;
+}
+
+@media all and (min-width: 300px) {
+    #userimage { flex: 1; }
+    #usertext { flex: 1; }
+    #itemimage { flex: 1; }
+    #itemtext { flex: 1; }
+}
+
+@media all and (min-width: 400px) {
+    #userimage { order: 1; }
+    #usertext { order: 2; }
+    #itemimage { order: 1; }
+    #itemtext { order: 2; }
+}
+
+
+#page #content #tabs #tab2 #returnbutton {
+    margin-top:53px;
+}
+
+#page #content #tabs #tab1 #borrowbutton, #tab2 #returnbutton {
+    width: 80%;
+    margin: 0 auto;
+    bottom : 25px;
+    height : 30px;
+}
+
+#page #content #tabs #tab1 #borrowbutton input[type=button], #tab2 #returnbutton input[type=button] {
+    display: inline-block;
+    float: right;
+    height: 30px;
+    width: 110px;
+    background-color: #990000;
+    border: 1px solid #990000;
     color: white;
     text-decoration: none;
-    font-size: 18px;
-	text-align: center;
+    font-size: 14px;
+    text-align: center;
+    margin-right: 10px;
 }
 
-#page #content #tabs #tabButtons li a{
-    text-decoration: none;
-    color: #FFFFFF;
-    display: block;
-	padding-top: 5px;
-	padding-bottom: 5px;
-}
- 
-#page #content #tabs #tabButtons li:hover {
-    text-decoration: none;
-    background-color: #ccd9ff;
-	color: #990000;
+#page #content #tabs #tab1 #borrowbutton input[type=button]:hover, #tab2 #returnbutton input[type=button]:hover {
+    background-color: #cc0000;
+    color: white;
 }
 
-#page #content #tabs #tabButtons li a.active{
-	text-decoration: none;
-	color: #990000;
-	background: #ccd9ff;
-	border-bottom: 1px solid #990000;
-}
-
-#page #content #tabs .tabcontent{
-	clear: both;
-	padding:5px;
-	font-size:13px;
-	display:none;
+#page #content #tabs #tab2 #searchuser #userinfo{
+    margin-top: 50px;
 }

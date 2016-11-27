@@ -1,82 +1,123 @@
 html, body {
     height: 100%;
     margin: 0;
-	background-color: #b3c6ff;
+    background-image: url(../pictures/background.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
 }
 
-#login {
-	width: 40vh;
-	height: 40vh;
-    padding: 25px;
-	background:rgba(255,255,255,0.3);
-	border-radius: 10px;
-	text-align: center;
-	overflow: hidden;
-	position: relative;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);	
+@font-face {
+    font-family: logoFont;
+    src: url(../font/watermelon.ttf);
 }
 
-#login #logo {
-	font-size: 25px;
-	margin-bottom: 15px;
-	text-transform: uppercase;
+#flexcontent {
+    height: 100%;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
 }
 
-#login #logo img {
-	float: left;
-	margin-left: 30px;
+#content {
+    max-width: 300px;
+    min-width: 250px;
+    padding: 25px 25px 25px 25px;
+    background: rgba(255,255,255,0.4);
+    border-radius: 10px;
+    text-align: center;	
 }
 
-#login hr {
+#content #logo {
+    width: 100%;
+    margin: 0 auto;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 10px;
+}
+
+#content #logo #logopicture {
+    width: 50px;
+    height: auto;
+    float: left;
+    align-self: center;
+}
+
+#content #logo p {
+    font-family: logoFont;
+    float: left;
+    font-size: 35px;
+    color: #990000;
+    align-self: center;
+    margin-left: 10px;
+}
+
+#content hr {
     border: 0;
     height: 1px;
     background-color: grey;
-	margin-bottom: 15px;
+    margin-bottom: 15px;
 }
 
-#login #form input{
-	outline: 0;
-	background: #f2f2f2;
-	width: 100%;
-	border: 0;
-	margin: 0 0 15px;
-	padding: 12px;
-	box-sizing: border-box;
-	font-size: 14px;
+#content #form input {
+    outline: 0;
+    background: #f2f2f2;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 12px;
+    box-sizing: border-box;
+    font-size: 14px;
+    border-radius: 5px;
 }
 
-#login #form button {
-	text-transform: uppercase;
-	outline: 0;
-	background: #990000;
-	width: 100%;
-	border: 0;
-	padding: 12px;
-	color: white;
-	font-size: 14px;
-	-webkit-transition: all 0.3 ease;
-	transition: all 0.3 ease;
-	cursor: pointer;
-	margin-bottom: 15px;
+#content #form button {
+    text-transform: uppercase;
+    outline: 0;
+    background: #990000;
+    width: 100%;
+    border: 0;
+    padding: 12px;
+    color: white;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+    margin-bottom: 15px;
+    border-radius: 5px;
 }
 
-#login #form button:hover,.form button:active,.form button:focus {
-  background: #cc0000;
+#content #form button:hover,.form button:active,.form button:focus {
+    background: #cc0000;
 }
 
-#login #form .message {
-  margin: 15px 0 0;
-  color: gray;
-  font-size: 14px;
+#content #form label {
+    display: block;
+    font-weight: bold;
+    font-size: small;
+    text-transform: uppercase;
+    font-size: 0.7em;
+    margin-bottom: 0.35em;
+    float:left;
+    color: dimgray;
 }
 
-#login #form .message a {
-  color: #990000;
-  text-decoration: none;
+#content #form .message {
+    margin: 15px 0 0;
+    color: dimgray;
+    font-size: 14px;
 }
 
-#login #form .message a:hover {
-  color: #cc0000;
+#content #form .message a {
+    color: #990000;
+    text-decoration: none;
+}
+
+#content #form .message a:hover {
+    color: #cc0000;
 }

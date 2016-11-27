@@ -2,9 +2,9 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>ITEM REQUEST</title>
+        <title>EDIT</title>
         <link href="css/base.css" rel="stylesheet" type="text/css"/>
-        <link href="css/itemrequest.css" rel="stylesheet" type="text/css"/>
+        <link href="css/edit.css" rel="stylesheet" type="text/css"/>
         <script src="js/toggle.js"></script>
         <script src="js/responsive.js"></script>
     </head>
@@ -19,14 +19,13 @@
                     <p id="logotext">Biblios</p>
                 </div>
                 <hr>
-                <input type="button" id="myitems" class="nav-item" onclick="location.href='myitems.html';" value="MY ITEMS" />
-                <input type="button" id="itemrequest" class="nav-item" onclick="location.href='itemrequest.html';" value="ITEM REQUEST" />
+                <input type="button" id="manageitems" class="nav-item" onclick="location.href='manageitems.html';" value="MANAGE ITEMS" />
+                <input type="button" id="manageusers" class="nav-item" onclick="location.href='manageusers.html';" value="MANAGE USERS" />
                 <hr>
-                <input type="button" id="search" class="nav-item" onclick="location.href='search.html';" value="SEARCH" />
-                <input type="button" id="statistics" class="nav-item" onclick="location.href='statistics-user.html';" value="STATISTICS" />
-                <input type="button" id="settings" class="nav-item" onclick="location.href='settings.html';" value="SETTINGS" />
+                <input type="button" id="borrowing" class="nav-item" onclick="location.href='borrowing.html';" value="BORROWING" />
+                <input type="button" id="statistics" class="nav-item" onclick="location.href='statistics-admin.html';" value="STATISTICS" />
                 <hr>
-                <input type="button" id="asadmin" class="nav-item" onclick="location.href='manageitems.html';" value="ADMIN VIEW" />
+                <input type="button" id="asuser" class="nav-item" onclick="location.href='myitems.html';" value="USER VIEW" />
                 <input type="button" id="logout" class="nav-item" onclick="location.href='index.html';" value="LOG OUT" />
                 <hr>
             </div>
@@ -36,20 +35,20 @@
                 <div id="banner2">
                     <p> username </p>
                 </div>
-                <h2> ITEM REQUEST </h2>
+                <h2> EDIT ITEM </h2>
                 <div id="itemwrapper">
                     <div id="itempicture">
                         <!-- UPLOAD PICTURE (with php?)-->
                         <img src="https://goo.gl/Pq42Lm">
                     </div>
                     <div id="itemtext">
-                        <label>add title</label>
+                        <label>edit title</label>
                         <input type="text" name="title" required>
-                        <label>add author(s)</label>
+                        <label>edit author(s)</label>
                         <input type="text" name="author" required>
-                        <label>add ISBN/ISSN</label>
+                        <label>edit ISBN/ISSN</label>
                         <input type="text" name="ISBN" required>
-                        <label>add date</label>
+                        <label>edit date</label>
                         <input type = "date" pattern="\d{1,2}/\d{1,2}/\d{4}" />
                         <div id="subjectwrapper">
                             <select id="selectmenu5">
@@ -68,11 +67,11 @@
                         </div>
                     </div>
                     <div id="itemcontent">
-                        <label>add description</label>
+                        <label>edit description</label>
                         <textarea name="content"></textarea>
                     </div>
-                    <div id="requestbutton">
-                        <input type="button" onclick="location.href='itemrequest.html';" value="REQUEST" />
+                    <div id="submitbutton">
+                        <input type="button" onclick="location.href='manageitems.html';" value="SUBMIT" />
                     </div>
                 </div>
             </div>

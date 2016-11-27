@@ -1,157 +1,104 @@
-html, body {
-    height: 90%;
-    margin: 0;
-	padding: 0;
+#page #navigation #settings {
+    background-image: url('../pictures/icons/settings-red.png');
+    background-color: #ccd9ff !important;
+    color: #990000 !important;
 }
 
-#banner {
-	width: 100%;
-	background-color: #b3c6ff;
-	height: 5vh;
-	z-index: 100;
-	position: fixed;
-	top: 0;
-	border-bottom: 1.5px solid grey;
+#page #content {
+    padding-bottom: 10px;
 }
 
-#banner p {
-	text-align: right;
-	margin-right: 30px;
-	margin-top: 5px;
-	right: 0;
-}
-
-#page {
-	margin-left: 230px;
-	margin-top: 5vh;
-	background-color: white;
-	z-index: -1;
-	min-height: 100%;
-}
-
-#page #side {
-    position: fixed;
+#page #content #centered #profilewrapper {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+    flex-wrap: wrap;
+    font-weight: bold;
+    text-align: center;
+    width: 60%;
     height: 100%;
-    top: 0;
-    left: 0;
-    background: #b3c6ff;
-    width: 230px;
-	z-index: 101;
-	border-right: 1.5px solid grey;
+    margin: 0 auto ;
+    margin-top: 20px;
 }
 
-#page #side #logo {
-	margin-top: 15px;
-	margin-left: 15px;
-	background: #b3c6ff;
-	font-size: 30px;
+#page #content #centered #profilewrapper > * {
+    padding: 10px;
+    flex: 1 auto;
 }
 
-#page #side hr {
+#page #content #centered #profilewrapper #profilepicture {
+    flex: 1;
+    min-width: 250px;
+    align-self: center;
+}
+
+#page #content #centered #profilewrapper #profilepicture img {
+    width: auto;
+    height: auto;
+    max-width: 240px;
+    max-height: 240px;
+    margin: 0 auto;
+}
+
+#page #content #centered #profilewrapper #profiletext {
+    flex: 2;
+    min-width: 250px;
+    text-align: justify;
+}
+
+#page #content #centered #profilewrapper #profiletext #sUsername {
+    font-size: 24px;
+    text-align: justify;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #990000;
+}
+
+#page #content #centered #profilewrapper #profiletext p {
+    font-size: 14px;
+    text-align: justify;
+    font-weight: normal;
+    color: black;
+    margin-bottom: 10px;
+}
+
+#page #content #centered #profilewrapper #profiletext hr {
     border: 0;
     height: 1px;
-    background-color: grey;
-}
-
-#page #side input[type=button] {
-    display: inline-block;
-    background-image: url('https://goo.gl/A1BorP');
-    background-repeat: no-repeat;
-    background-position: center left 25px;
-    height: 50px;
     width: 100%;
-	background-color: #b3c6ff;
-    border: 1px solid #b3c6ff;
-    color: white;
-    text-decoration: none;
-    font-size: 13px;
-	text-align: left;
-	padding-left: 80px;
- }
- 
-#page #side input[type=button]:hover {
-	background-color: #ccd9ff;
-	color: #990000;
+    margin-top: 10px;
 }
 
-#page #side #highlight {
-	background-color: #ccd9ff;
-	color: #990000;
+#page #content #centered #profilewrapper #editbutton {
+    min-width: 100%;
+    margin-top: 50px;
 }
 
-#page #content h2{
-	color: #990000;
-	font-size: 30px;
-	margin-left: 100px;
-	padding-top: 55px;
-	padding-bottom: 30px;
-}
-
-#page #content #centered {
-	width:60%;
-	height:100%;
-	margin:0 auto ;
-	overflow:auto;
-}
-
-#page #content #centered #picture {
-	height:100%;
-	float: left;
-	width: 35%;
-}
-
-#page #content #centered #picture img {
-	max-width: 100%;
-}
-
-#page #content #centered #text {
-	color: black;
-	text-align: justify;
-	height:100%;
-	margin-left:45%;
-}
-
-#page #content #centered #text #sUsername {
-	color: #990000;
-	text-decoration: none;
-	text-transform: uppercase;
-	font-weight: bold;
-	font-size: 26px;
-	margin-bottom: 30px;
-}
-
-#page #content #centered #text p {
-	color: black;
-	text-decoration: none;
-	text-transform: capitalize;
-	font-size: 16px;
-	margin-bottom: 20px;
-}
-
-#page #content #centered #editbutton {
-	width:50%;
-	margin:0 auto;
-	overflow: hidden;
-	position : absolute;
-    bottom : 40px;
-    height : 30px;
-}
-
-#page #content #centered #editbutton input[type=button] {
-	overflow: hidden;
-	float: right;
+#page #content #centered #profilewrapper #editbutton input[type=button] {
+    display: inline-block;
+    float: right;
     height: 30px;
-    width: 120px;
-	background-color: #990000;
+    width: 110px;
+    background-color: #990000;
     border: 1px solid #990000;
     color: white;
     text-decoration: none;
     font-size: 14px;
-	text-align: center;
-	margin-right: 30px;
+    text-align: center;
+    margin-right: 10px;
 }
 
-#page #content #centered #editbutton input[type=button]:hover {
-	background-color: #cc0000;
-	color: white;
+#page #content #centered #profilewrapper #editbutton input[type=button]:hover {
+    background-color: #cc0000;
+    color: white;
+}
+
+@media all and (min-width: 599px) {
+    #profilepicture { flex: 1; }
+    #profiletext { flex: 2; }
 }

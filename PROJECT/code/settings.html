@@ -1,60 +1,60 @@
 <!doctype html>
 <html>
-<head>
-	<meta charset="utf-8">
-	<title>SETTINGS</title>
-	<link href="css/settings.css" rel="stylesheet" type="text/css"/>
-</head>
-
-<body>
-	<div id="banner">
-		<p> username </p>
-	</div>
-	<div id="page">
-		<div id="side">
-			<div id="logo">
-				<img src="https://goo.gl/RXSMxe" height="50px" width="50px">
-				library
-			</div>
-			<br />
-			<hr>
-			<input type="button" onclick="location.href='manageitems.html';" value="MANAGE ITEMS" />
-			<input type="button" onclick="location.href='manageusers.html';" value="MANAGE USERS" />
-			<input type="button" onclick="location.href='borrowing.html';" value="BORROWING" />
-			<hr>
-			<input type="button" onclick="location.href='statistics.html';" value="STATISTICS" />
-			<input type="button" onclick="location.href='search.html';" value="SEARCH" />
-			<hr>
-			<input type="button" id="highlight" onclick="location.href='settings.html';" value="SETTINGS" />
-			<input type="button" onclick="location.href='about.html';" value="INFO" />
-			<input type="button" onclick="location.href='login.html';" value="LOG OUT" />
-			<hr>
-		</div>
-		<div id="content">
-			<h2> SETTINGS </h2>
-			<div id="centered">
-				<div id="picture">
-					<br />
-					<img src="https://s-media-cache-ak0.pinimg.com/236x/1f/73/ef/1f73ef29799e15a21403822d3361c4f2.jpg">
-				</div>
-				
-				<div id="text">
-					<p id = "sUsername">USERNAME </p>
-					<p id = "sName">SURNAME, NAME</p>
-					<p id = "sAge">AGE</p>
-					<p id = "sEmail">EMAIL</p>
-					<p id = "sPhone">PHONE NUMBER</p>
-					<p id = "sAddress">ADDRESS</p>
-					<p id = "sMember">MEMBER SINCE: DATE</p>
-				</div>
-				
-				<div id="editbutton">
-					<input type="button" onclick="location.href='settings.html';" value="EDIT" />
-				</div>
-			</div>			
-		</div>
-		
-		
-	</div>
-</body>
+    <head>
+        <meta charset="utf-8">
+        <title>SETTINGS</title>
+        <link href="css/base.css" rel="stylesheet" type="text/css"/>
+        <link href="css/settings.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <div id="banner1">
+            <p> username </p>
+        </div>
+        <div id="page">
+            <div id="navigation">
+                <div id="logo">
+                    <img id="logopicture" src="pictures/icons/library1-red.png" height="60px" width="60px">
+                    <p id="logotext">Biblios</p>
+                </div>
+                <hr>
+                <input type="button" id="myitems" class="nav-item" onclick="location.href='myitems.html';" value="MY ITEMS" />
+                <input type="button" id="itemrequest" class="nav-item" onclick="location.href='itemrequest.html';" value="ITEM REQUEST" />
+                <hr>
+                <input type="button" id="search" class="nav-item" onclick="location.href='search.html';" value="SEARCH" />
+                <input type="button" id="statistics" class="nav-item" onclick="location.href='statistics-user.html';" value="STATISTICS" />
+                <input type="button" id="settings" class="nav-item" onclick="location.href='settings.html';" value="SETTINGS" />
+                <hr>
+                <input type="button" id="asadmin" class="nav-item" onclick="location.href='manageitems.html';" value="ADMIN VIEW" />
+                <input type="button" id="logout" class="nav-item" onclick="location.href='index.html';" value="LOG OUT" />
+                <hr>
+            </div>
+            <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+            <label for="nav-trigger"></label>
+            <div id="content">
+                <div id="banner2">
+                    <p> username </p>
+                </div>
+                <h2> PROFILE </h2>
+                <div id="centered" class="tabcontent">
+                    <div id="profilewrapper">
+                        <div id="profilepicture">
+                            <img src="https://s-media-cache-ak0.pinimg.com/236x/1f/73/ef/1f73ef29799e15a21403822d3361c4f2.jpg">
+                        </div>
+                        <div id="profiletext">
+                            <p id = "sUsername">USERNAME </p>
+                            <p id = "sName">SURNAME, NAME</p>
+                            <p id = "sAge">AGE</p>
+                            <p id = "sEmail">EMAIL</p>
+                            <p id = "sPhone">PHONE NUMBER</p>
+                            <p id = "sAddress">ADDRESS</p>
+                            <p id = "sMember">MEMBER SINCE: DATE</p>
+                        </div>
+                        <div id="editbutton">
+                            <input type="button" onclick="location.href='settings.html';" value="EDIT" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
 </html>

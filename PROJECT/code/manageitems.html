@@ -3,180 +3,286 @@
     <head>
         <meta charset="utf-8">
         <title>MANAGE ITEMS</title>
+        <link href="css/base.css" rel="stylesheet" type="text/css"/>
+        <link href="css/tabs.css" rel="stylesheet" type="text/css"/>
         <link href="css/manageitems.css" rel="stylesheet" type="text/css"/>
-        <script src="js/toggle.js"></script>
+        <script src="js/toggletabs.js"></script>
+        <script src="js/responsive.js"></script>
     </head>
     <body>
-        <div id="banner">
+        <div id="banner1">
             <p> username </p>
         </div>
         <div id="page">
-            <div id="side">
+            <div id="navigation">
                 <div id="logo">
-                    <img src="https://goo.gl/RXSMxe" height="50px" width="50px">
-                    library
+                    <img id="logopicture" src="pictures/icons/library1-red.png" height="60px" width="60px">
+                    <p id="logotext">Biblios</p>
                 </div>
-                <br />
                 <hr>
-                <input type="button" id="highlight" onclick="location.href='manageitems.html';" value="MANAGE ITEMS" />
-                <input type="button" onclick="location.href='manageusers.html';" value="MANAGE USERS" />
-                <input type="button" onclick="location.href='borrowing.html';" value="BORROWING" />
+                <input type="button" id="manageitems" class="nav-item" onclick="location.href='manageitems.html';" value="MANAGE ITEMS" />
+                <input type="button" id="manageusers" class="nav-item" onclick="location.href='manageusers.html';" value="MANAGE USERS" />
                 <hr>
-                <input type="button" onclick="location.href='statistics.html';" value="STATISTICS" />
-                <input type="button" onclick="location.href='search.html';" value="SEARCH" />
+                <input type="button" id="borrowing" class="nav-item" onclick="location.href='borrowing.html';" value="BORROWING" />
+                <input type="button" id="statistics" class="nav-item" onclick="location.href='statistics-admin.html';" value="STATISTICS" />
                 <hr>
-                <input type="button" onclick="location.href='settings.html';" value="SETTINGS" />
-                <input type="button" onclick="location.href='about.html';" value="INFO" />
-                <input type="button" onclick="location.href='login.html';" value="LOG OUT" />
+                <input type="button" id="asuser" class="nav-item" onclick="location.href='myitems.html';" value="USER VIEW" />
+                <input type="button" id="logout" class="nav-item" onclick="location.href='index.html';" value="LOG OUT" />
                 <hr>
             </div>
+            <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+            <label for="nav-trigger"></label>
             <div id="content">
+                <div id="banner2">
+                    <p> username </p>
+                </div>
                 <h2> MANAGE ITEMS </h2>
                 <div id="tabs">
                     <ul id="tabButtons">
-                        <li><a href="javascript:void(0)" class="tablinks" onclick="openTab(event, 'tab1')">NEW ITEM</a></li>
-                        <li><a href="javascript:void(0)" class="tablinks" onclick="openTab(event, 'tab2')">EDIT/DELETE ITEM</a></li>
-                        <li><a href="javascript:void(0)" class="tablinks" onclick="openTab(event, 'tab3')">REQUESTED ITEMS</a></li>
+                        <li><a href="javascript:void(0)" class="tablinks" onclick="openTab(event)">ALL ITEMS</a></li>
+                        <li><a href="javascript:void(0)" class="tablinks" onclick="openTab(event)">NEW ITEM</a></li>
+                        <li><a href="javascript:void(0)" class="tablinks" onclick="openTab(event)">REQUESTED ITEMS</a></li>
                     </ul>
                     <div id="tab1" class="tabcontent">
-                        <div id="toppart">
-                            <div id="floatleft">
+                        <div id="search">
+                            <form method="get">
+                                <label>Search</label>
+                                <input type="text" class="searchbar"/>
+                            </form>
+                        </div>
+                        <hr>
+                        <p> ORDER BY: </p>
+                        <div id="itemwrapper">
+                            <ul id="first">
+                                <li>
+                                    <input type="radio" name="orderby1" value="author" id="radio1" checked="checked"/>
+                                    <label for="radio1">author</label>
+                                </li>
+                                <li>
+                                    <input type="radio" name="orderby1" value="date" id="radio2"/>
+                                    <label for="radio2">date</label>
+                                </li>
+                            </ul>
+                            <ul id="second">
+                                <li>
+                                    <input type="radio" name="orderby1" value="title" id="radio3"/>
+                                    <label for="radio3">title</label>
+                                </li>
+                            </ul>
+                            <ul id="third">
+                                <li>
+                                    <input type="radio" name="ascdesc1" value="ascending" id="radio4" checked="checked"/>
+                                    <label for="radio4">ascending</label>
+                                </li>
+                                <li>
+                                    <input type="radio" name="ascdesc1" value="descending" id="radio5"/>
+                                    <label for="radio5">descending</label>
+                                </li>					
+                            </ul>
+                        </div>
+                        <div id="itemTable">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <th>title</th> 
+                                        <th>author</th>
+                                        <th>isbn/issn</th>
+                                        <th>date</th> 
+                                        <th>status</th>
+                                    </tr>
+                                    <tr onclick= "chooseElement(event)">
+                                        <td>Eldest</td> 
+                                        <td>Christopher Paolini</td>
+                                        <td>9780552552110</td>
+                                        <td>24.10.2016</td> 
+                                        <td>borrowed</td>
+                                    </tr>
+                                    <!-- delete block -->
+                                    <tr onclick= "chooseElement(event)">
+                                        <td>Fingers in the Sparkle Jar: A Memoir</td> 
+                                        <td>Chris Packham</td>
+                                        <td>9781785033483</td>
+                                        <td>13.10.2016</td> 
+                                        <td>borrowed</td>
+                                    </tr>
+                                    <tr onclick= "chooseElement(event)">
+                                        <td>The Magicians:(Book 1)</td> 
+                                        <td>Lev Grossman</td>
+                                        <td>9780099534440</td>
+                                        <td>11.11.2016</td> 
+                                        <td>returned</td>
+                                    </tr>
+                                    <tr onclick= "chooseElement(event)">
+                                        <td>A Game of Thrones (A Song of Ice and Fire, Book 1)</td> 
+                                        <td>George R.R. Martin</td>
+                                        <td>9780007548231</td>
+                                        <td>26.10.2016</td> 
+                                        <td>borrowed</td>
+                                    </tr>
+                                    <tr onclick= "chooseElement(event)">
+                                        <td>Fingers in the Sparkle Jar: A Memoir</td> 
+                                        <td>Chris Packham</td>
+                                        <td>9781785033483</td>
+                                        <td>01.11.2016</td> 
+                                        <td>returned</td>
+                                    </tr>
+                                    <!-- delete block -->
+                                </tbody>
+                            </table>
+                        </div>
+                        <div id="pages">
+                            <ul class="tab1">
+                                <a class="pagination active" href="#t1page1" onclick="getPage(event)"><li>1</li></a>
+                                <a class="pagination" href="#t1page2" onclick="getPage(event)"><li>2</li></a>
+                                <a class="pagination" href="#t1page3" onclick="getPage(event)"><li>3</li></a>
+                                <a class="pagination" href="#t1page4" onclick="getPage(event)"><li>4</li></a>
+                                <a class="pagination" href="#t1page5" onclick="getPage(event)"><li>5</li></a>
+                            </ul>
+                        </div>
+                        <div id="buttons">
+                            <input type="button" onclick="location.href='manageitems.html';" value="DELETE" />
+                            <input type="button" onclick="location.href='edit.html';" value="EDIT" />
+                        </div>
+                    </div>
+                    <div id="tab2" class="tabcontent">
+                        <div id="itemwrapper">
+                            <div id="itempicture">
                                 <!-- UPLOAD PICTURE (with php?)-->
                                 <img src="https://goo.gl/Pq42Lm">
                             </div>
-                            <div id="floatright">
-                                <input type="text" placeholder="add title" name="title" required>
-                                <input type="text" placeholder="add author(s)" name="author" required>
-                                <input type="text" placeholder="add ISBN/ISSN" name="ISBN" required>
-                                <div id="date">
-                                    <!-- CHECK FOR INVALID DATE! -->
-                                    <input type="number" placeholder="YYYY" name="year" min="2000" max="2016" required>
-                                    <input type="number" placeholder="MM" name="month" min="1" max="12" required>
-                                    <input type="number" placeholder="DD" name="day" min="1" max="31" required>
-                                    <!-- CHECK FOR INVALID DATE! -->
+                            <div id="itemtext">
+                                <label>add title</label>
+                                <input type="text" name="title" required>
+                                <label>add author(s)</label>
+                                <input type="text" name="author" required>
+                                <label>add ISBN/ISSN</label>
+                                <input type="text" name="ISBN" required>
+                                <label>add date</label>
+                                <input type = "date" pattern="\d{1,2}/\d{1,2}/\d{4}" />
+                                <div id="subjectwrapper">
+                                    <select id="selectmenu5">
+                                        <option selected disabled class="hideoption">Select subject</option>
+                                        <!-- READ from database -->
+                                        <option>subject 1</option>
+                                        <option>subject 2</option>
+                                        <option>subject 3</option>
+                                        <option>subject 4</option>
+                                        <!-- REPLACE BLOCK -->
+                                    </select>
+                                    <div id="floatright">
+                                        <label id="subjectlabel">or choose new subject</label>
+                                        <input id="newsubject" type="text" name="newsubject" required>
+                                    </div>
                                 </div>
-                                <select id="selectmenu5">
-                                    <option selected disabled class="hideoption">Select subject</option>
-                                    <!-- READ from database -->
-                                    <option>subject 1</option>
-                                    <option>subject 2</option>
-                                    <option>subject 3</option>
-                                    <option>subject 4</option>
-                                    <!-- REPLACE BLOCK -->
-                                </select>
-                                <input id="newsubject" type="text" placeholder="OR new subject" name="newsubject" required>
-
+                            </div>
+                            <div id="itemcontent">
+                                <label>add description</label>
+                                <textarea name="content"></textarea>
+                            </div>
+                            <div id="addbutton">
+                                <input type="button" onclick="location.href='manageitems.html';" value="SUBMIT" />
                             </div>
                         </div>
-                        <div id="bottompart">
-                            <textarea name="content" placeholder="add description"></textarea>
-                        </div>
-                        <div id="addbutton">
-                            <input type="button" onclick="location.href='manageitems.html';" value="SUBMIT" />
-                        </div>
-
-                    </div>
-                    <div id="tab2" class="tabcontent">
-                        <img src="#">
-                        <input type="text" placeholder="title" name="title" required>
-                        <input type="text" placeholder="author(s)" name="author" required>
-                        <input type="text" placeholder="ISBN/ISSN" name="ISBN" required>
-                        <input type="text" placeholder="YYYY" name="year" required>
-                        <input type="text" placeholder="MM" name="month" required>
-                        <input type="text" placeholder="DD" name="day" required>
-                        <p>choose subject (dropdown)</p>
-                        <input type="text" placeholder="OR new subject" name="newsubject" required>
-                        <textarea name="content">description</textarea>
-                        <input type="button" onclick="location.href='manageitems.html';" value="SUBMIT" />
                     </div>
                     <div id="tab3" class="tabcontent">
                         <p> ORDER BY: </p>
-                        <ul id="leftbutton">
-                            <li>
-                                <input type="radio" name="orderby" value="username" id="radio1" checked="checked"/>
-                                <label for="radio1">username</label>
-                            </li>
-                            <li>
-                                <input type="radio" name="orderby" value="author" id="radio2"/>
-                                <label for="radio2">author</label>
-                            </li>
-                            <li>
-                                <input type="radio" name="orderby" value="date" id="radio3"/>
-                                <label for "radio3">date</label>
-                            </li>
-                            <li>
-                                <input type="radio" name="orderby" value="title" id="radio4"/>
-                                <label for "radio4">title</label>
-                            </li>
-                        </ul>
-                        <ul id="rightbutton">
-                            <li>
-                                <input type="radio" name="ascdesc" value="ascending" id="radio5" checked="checked"/>
-                                <label for "radio5">ascending</label>
-                            </li>
-
-                            <li>
-                                <input type="radio" name="ascdesc" value="descending" id="radio6"/>
-                                <label for "radio6">descending</label>
-                            </li>						
-                        </ul>
-
-                        <table id="itemTable">
-                            <tbody>
-                                <tr>
-                                    <th>username</th>
-                                    <th>title</th> 
-                                    <th>author</th>
-                                    <th>isbn/issn</th>
-                                    <th>date</th> 
-                                    <th>status</th>
-                                </tr>
-                                <!-- delete block -->
-                                <tr>
-                                    <td>Nephena</td>
-                                    <td>Eldest</td> 
-                                    <td>Christopher Paolini</td>
-                                    <td>9780552552110</td>
-                                    <td>24.10.2016</td> 
-                                    <td>requested</td>
-                                </tr>
-                                <tr>
-                                    <td>Anne1847</td>
-                                    <td>Fingers in the Sparkle Jar: A Memoir</td> 
-                                    <td>Chris Packham</td>
-                                    <td>9781785033483</td>
-                                    <td>13.10.2016</td> 
-                                    <td>requested</td>
-                                </tr>
-                                <tr>
-                                    <td>Eupheme</td>
-                                    <td>The Magicians:(Book 1)</td> 
-                                    <td>Lev Grossman</td>
-                                    <td>9780099534440</td>
-                                    <td>11.11.2016</td> 
-                                    <td>requested</td>
-                                </tr>
-                                <tr>
-                                    <td>L4rchy</td>
-                                    <td>A Game of Thrones (A Song of Ice and Fire, Book 1)</td> 
-                                    <td>George R.R. Martin</td>
-                                    <td>9780007548231</td>
-                                    <td>26.10.2016</td> 
-                                    <td>requested</td>
-                                </tr>
-                                <tr>
-                                    <td>Anne1847</td>
-                                    <td>Fingers in the Sparkle Jar: A Memoir</td> 
-                                    <td>Chris Packham</td>
-                                    <td>9781785033483</td>
-                                    <td>01.11.2016</td> 
-                                    <td>requested</td>
-                                </tr>
-                                <!-- delete block -->
-                            </tbody>
-                        </table>
-
-                        <ul id="bottombutton">
+                        <div id="itemwrapper">
+                            <ul id="first">
+                                <li>
+                                    <input type="radio" name="orderby2" value="title" id="radio6" checked="checked"/>
+                                    <label for="radio6">title</label>
+                                </li>
+                                <li>
+                                    <input type="radio" name="orderby2" value="author" id="radio7"/>
+                                    <label for="radio7">author</label>
+                                </li>
+                            </ul>
+                            <ul id="second">
+                                <li>
+                                    <input type="radio" name="orderby2" value="username" id="radio8"/>
+                                    <label for="radio8">username</label>
+                                </li>
+                                <li>
+                                    <input type="radio" name="orderby2" value="date" id="radio9"/>
+                                    <label for="radio9">date</label>
+                                </li>
+                            </ul>
+                            <ul id="third">
+                                <li>
+                                    <input type="radio" name="ascdesc2" value="ascending" id="radio10" checked="checked"/>
+                                    <label for="radio10">ascending</label>
+                                </li>
+                                <li>
+                                    <input type="radio" name="ascdesc2" value="descending" id="radio11"/>
+                                    <label for="radio11">descending</label>
+                                </li>					
+                            </ul>
+                        </div>
+                        <div id="itemTable">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <th>username</th>
+                                        <th>title</th> 
+                                        <th>author</th>
+                                        <th>isbn/issn</th>
+                                        <th>date</th> 
+                                        <th>status</th>
+                                    </tr>
+                                    <!-- delete block -->
+                                    <tr onclick= "chooseElement(event)">
+                                        <td>Nephena</td>
+                                        <td>Eldest</td> 
+                                        <td>Christopher Paolini</td>
+                                        <td>9780552552110</td>
+                                        <td>24.10.2016</td> 
+                                        <td>requested</td>
+                                    </tr>
+                                    <tr onclick= "chooseElement(event)">
+                                        <td>Anne1847</td>
+                                        <td>Fingers in the Sparkle Jar: A Memoir</td> 
+                                        <td>Chris Packham</td>
+                                        <td>9781785033483</td>
+                                        <td>13.10.2016</td> 
+                                        <td>requested</td>
+                                    </tr>
+                                    <tr onclick= "chooseElement(event)">
+                                        <td>Eupheme</td>
+                                        <td>The Magicians:(Book 1)</td> 
+                                        <td>Lev Grossman</td>
+                                        <td>9780099534440</td>
+                                        <td>11.11.2016</td> 
+                                        <td>requested</td>
+                                    </tr>
+                                    <tr onclick= "chooseElement(event)">
+                                        <td>L4rchy</td>
+                                        <td>A Game of Thrones (A Song of Ice and Fire, Book 1)</td> 
+                                        <td>George R.R. Martin</td>
+                                        <td>9780007548231</td>
+                                        <td>26.10.2016</td> 
+                                        <td>requested</td>
+                                    </tr>
+                                    <tr onclick= "chooseElement(event)">
+                                        <td>Anne1847</td>
+                                        <td>Fingers in the Sparkle Jar: A Memoir</td> 
+                                        <td>Chris Packham</td>
+                                        <td>9781785033483</td>
+                                        <td>01.11.2016</td> 
+                                        <td>requested</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div id="pages">
+                            <ul class="tab3">
+                                <a class="pagination active" href="#t3page1" onclick="getPage(event)"><li>1</li></a>
+                                <a class="pagination" href="#t3page2" onclick="getPage(event)"><li>2</li></a>
+                                <a class="pagination" href="#t3page3" onclick="getPage(event)"><li>3</li></a>
+                                <a class="pagination" href="#t3page4" onclick="getPage(event)"><li>4</li></a>
+                                <a class="pagination" href="#t3page5" onclick="getPage(event)"><li>5</li></a>
+                            </ul>
+                        </div>
+                        <ul id="acceptitem">
                             <li>
                                 <input type="radio" name="request" value="accept" id="accept" checked="checked"/>
                                 <label for="accept">accept</label>

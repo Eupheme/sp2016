@@ -3,71 +3,112 @@
     <head>
         <meta charset="utf-8">
         <title>BORROWING</title>
+        <link href="css/base.css" rel="stylesheet" type="text/css"/>
+        <link href="css/tabs.css" rel="stylesheet" type="text/css"/>
         <link href="css/borrowing.css" rel="stylesheet" type="text/css"/>
-        <script src="js/toggle.js"></script>
+        <script src="js/toggletabs.js"></script>
     </head>
-
     <body>
-        <div id="banner">
+        <div id="banner1">
             <p> username </p>
         </div>
-        <div id="page">
-            <div id="side">
+        <div id="page">        
+            <div id="navigation">
                 <div id="logo">
-                    <img src="https://goo.gl/RXSMxe" height="50px" width="50px">
-                    library
+                    <img id="logopicture" src="pictures/icons/library1-red.png" height="60px" width="60px">
+                    <p id="logotext">Biblios</p>
                 </div>
-                <br />
                 <hr>
-                <input type="button" onclick="location.href='manageitems.html';" value="MANAGE ITEMS" />
-                <input type="button" onclick="location.href='manageusers.html';" value="MANAGE USERS" />
-                <input type="button" id="highlight" onclick="location.href='borrowing.html';" value="BORROWING" />
+                <input type="button" id="manageitems" class="nav-item" onclick="location.href='manageitems.html';" value="MANAGE ITEMS" />
+                <input type="button" id="manageusers" class="nav-item" onclick="location.href='manageusers.html';" value="MANAGE USERS" />
                 <hr>
-                <input type="button" onclick="location.href='statistics.html';" value="STATISTICS" />
-                <input type="button" onclick="location.href='search.html';" value="SEARCH" />
+                <input type="button" id="borrowing" class="nav-item" onclick="location.href='borrowing.html';" value="BORROWING" />
+                <input type="button" id="statistics" class="nav-item" onclick="location.href='statistics-admin.html';" value="STATISTICS" />
                 <hr>
-                <input type="button" onclick="location.href='settings.html';" value="SETTINGS" />
-                <input type="button" onclick="location.href='about.html';" value="INFO" />
-                <input type="button" onclick="location.href='login.html';" value="LOG OUT" />
+                <input type="button" id="asuser" class="nav-item" onclick="location.href='myitems.html';" value="USER VIEW" />
+                <input type="button" id="logout" class="nav-item" onclick="location.href='index.html';" value="LOG OUT" />
                 <hr>
             </div>
+            <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+            <label for="nav-trigger"></label>
             <div id="content">
+                <div id="banner2">
+                    <p> username </p>
+                </div>
                 <h2> BORROWING </h2>
-                <div class="tabs">
+                <div id="tabs">
                     <ul id="tabButtons">
-                        <li><a href="#tab1" class="active">BORROW ITEM</a></li>
-                        <li><a href="#tab2">RETURN ITEM</a></li>
+                        <li><a href="javascript:void(0)" class="tablinks" onclick="openTab(event)">BORROW ITEM</a></li>
+                        <li><a href="javascript:void(0)" class="tablinks" onclick="openTab(event)">RETURN ITEM</a></li>
                     </ul>
+                    <div id="tab1" class="tabcontent">
+                        <div id="userwrapper">
+                            <div id="searchuser">
+                                <label>Search user by user id</label>
+                                <form method="get">
+                                    <input type="text" class="searchbar"/>
+                                </form>
 
-                    <div id="tab1">
-                        <form method="get">
-                            <input type="text" class="searchbar" placeholder="Search user by user ID.."/>
-                        </form>
-                        <img src="#">
-                        <p>SURNAME, NAME</p>
-                        <p>USER ID</p>
+                            </div>
+                            <div id="userimage">
+                                <img src="https://s-media-cache-ak0.pinimg.com/236x/1f/73/ef/1f73ef29799e15a21403822d3361c4f2.jpg">
+                            </div>
+                            <div id="usertext">
+                                <h5>SURNAME, NAME</h6>
+                                <h6>USER ID</h6>
+                            </div>
+                        </div>
 
-                        <form method="get">
-                            <input type="text" class="searchbar" placeholder="Search item by ISBN/ISSN.."/>
-                        </form>
+                        <div id="itemwrapper">
+                            <div id="searchitem">
+                                <label>Search item by ISBN/ISSN</label>
+                                <form method="get">
+                                    <input type="text" class="searchbar"/>
+                                </form>
+                            </div>
+                            <div id="itemimage">
+                                <img src="https://goo.gl/Pq42Lm">
+                            </div>
+                            <div id="itemtext">
+                                <h5>TITLE</h5>
+                                <h6>ISBN/ISSN</h6>
+                            </div>
+                        </div>
 
-                        <img src="#">
-                        <p>TITLE</p>
-                        <p>ISBN/ISSN</p>
+                        <div id="borrowbutton">
+                            <input type="button" onclick="location.href='borrowing.html';" value="BORROW" />
+                        </div>
                     </div>
+                    <div id="tab2" class="tabcontent">
+                        <div id="itemwrapper">
+                            <div id="searchitem">
+                                <label>Search item by ISBN/ISSN</label>
+                                <form method="get">
+                                    <input type="text" class="searchbar"/>
+                                </form>
+                            </div>
+                            <div id="itemimage">
+                                <img src="https://goo.gl/Pq42Lm">
+                            </div>
+                            <div id="itemtext">
+                                <h5>TITLE</h5>
+                                <h6>ISBN/ISSN</h6>
+                            </div>
+                        </div>
 
-                    <div id="tab2">
-                        <form method="get">
-                            <input type="text" class="searchbar" placeholder="Search item by ISBN/ISSN.."/>
-                        </form>
-                        <img src="#">
-                        <p>TITLE</p>
-                        <p>ISBN/ISSN</p>
-                        <img src="#">
-                        <p>SURNAME, NAME</p>
-                        <p>USER ID</p>
+                        <div id="userwrapper">
+                            <div id="userimage">
+                                <img src="https://s-media-cache-ak0.pinimg.com/236x/1f/73/ef/1f73ef29799e15a21403822d3361c4f2.jpg">
+                            </div>
+                            <div id="usertext">
+                                <h5>SURNAME, NAME</h6>
+                                <h6>USER ID</h6>
+                            </div>
+                        </div>
+                        <div id="returnbutton">
+                            <input type="button" onclick="location.href='borrowing.html';" value="RETURN" />
+                        </div>
                     </div>
-
                 </div>
             </div>
         </div>

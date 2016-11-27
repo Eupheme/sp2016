@@ -1,99 +1,28 @@
-html, body {
-    height: 90%;
-    margin: 0;
-}
-
-#banner {
-	width: 100%;
-	background-color: #b3c6ff;
-	height: 5vh;
-	z-index: 100;
-	position: fixed;
-	top: 0;
-	border-bottom: 1.5px solid grey;
-}
-
-#banner p {
-	text-align: right;
-	margin-right: 30px;
-	margin-top: 5px;
-	right: 0;
-}
-
-#page {
-	margin-left: 230px;
-	margin-top: 5vh;
-	background-color: white;
-	z-index: -1;
-	min-height: 100%;
-}
-
-#page #side {
-    position: fixed;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background: #b3c6ff;
-    width: 230px;
-	z-index: 101;
-	border-right: 1.5px solid grey;
-}
-
-#page #side #logo {
-	margin-top: 15px;
-	margin-left: 15px;
-	background: #b3c6ff;
-	font-size: 30px;
-}
-
-#page #side hr {
-    border: 0;
-    height: 1px;
-    background-color: grey;
-}
-
-#page #side input[type=button] {
-    display: inline-block;
-    background-image: url('https://goo.gl/A1BorP');
-    background-repeat: no-repeat;
-    background-position: center left 25px;
-    height: 50px;
-    width: 100%;
-	background-color: #b3c6ff;
-    border: 1px solid #b3c6ff;
-    color: white;
-    text-decoration: none;
-    font-size: 13px;
-	text-align: left;
-	padding-left: 80px;
-}
- 
-#page #side input[type=button]:hover {
-	background-color: #ccd9ff;
-	color: #990000;
-}
-
-#page #side #highlight {
-	background-color: #ccd9ff;
-	color: #990000;
-}
-
-#page #content h2{
-	color: #990000;
-	font-size: 30px;
-	margin-left: 100px;
-	padding-top: 55px;
-	padding-bottom: 30px;
+#page #navigation #search {
+    background-image: url('../pictures/icons/search-red.png');
+    background-color: #ccd9ff !important;
+    color: #990000 !important;
 }
 
 #page #content #search form {
 	overflow: hidden; 
 	margin: 0 0 30px 0;
 	margin-left: 15%;
-	margin-right:15%;
+	margin-right: 15%;
 	width: 70%;
 	outline: none;
-}	
+}
+
+#page #content #search label {
+    display: block;
+    font-weight: bold;
+    font-size: small;
+    text-transform: uppercase;
+    font-size: 0.7em;
+    margin-bottom: 0.35em;
+    float: left;
+    color: dimgray;
+}
 
 #page #content #search input.searchbar {
 	float: left; 
@@ -103,8 +32,7 @@ html, body {
 	background: #fff; 
 	border: 1px solid red;
 	color: black;
-	
-	background-image: url("http://goo.gl/3S7uSi");
+	background-image: url(../pictures/icons/search-gray.png);
 	background-repeat: no-repeat;
 	box-sizing: border-box;
     border: 2px solid #ccc;
@@ -115,100 +43,124 @@ html, body {
     border: 0;
 	height: 10px;
 	width: 80%;
+    margin: 0 auto;
 	margin-top: 70px;
 	box-shadow: 0 10px 10px -10px #8c8b8b inset;
 }
 
-#page #content #book {
-	width: 80%;
-	height: 100%;
-	min-height: 200px;
-	padding-top: 30px;
-	margin: 0 auto;
-	border-style: solid;
-    border-width: 1px;
-	border-color: grey;
-	margin-bottom: 20px;
-	background-color: #e6ecff;
+#page #content #bookwrapper {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+    flex-wrap: wrap;
+    width: 80%;
+    min-width: 260px;
+    margin: 0 auto;
+    font-weight: bold;
+    text-align: center;
+    background-color: #e6ecff;
+    border: 1px solid #f2f2f2;
+    border-radius: 5px;
+    margin-top: 30px;
 }
 
-#page #content #book #picture{
-	width: 22%;
-	height: 100%;
-	float:left;
-	display: block;
+#page #content #bookwrapper > *{
+    padding: 10px;
+    flex: auto;
 }
 
-#page #content #book #picture img {
-	display: block;
-	width: auto;
+#page #content #bookwrapper #picture {
+    flex: 1;
+    min-width: 180px;
+    align-self: center;
+}
+
+#page #content #bookwrapper #picture img {
+    width: auto;
 	height: auto;
-	max-width:130px;
-	max-height:170px;
-	margin: 0 auto;
+	max-width: 140px;
+	max-height: 180px;
+    margin: 0 auto;
 }
 
-#page #content #book #about {
-	height:100%;
-	margin-bottom: 5%;
-	margin-left:25%;
-	margin-top: -30px;
-	margin-right: 4%;
+#page #content #bookwrapper #about {
+    flex: 3;
+    min-width: 250px;
 }
 
-#page #content #book #about h3 {
-	font-size: 24px;
+#page #content #bookwrapper #about h3 {
+    font-size: 24px;
 	text-align: justify;
 	text-transform: uppercase;
 	font-weight: bold;
-	margin-bottom: -10px;
 	color: #990000;
+    margin-bottom: 10px;
 }
 
-#page #content #book #about h4 {
-	font-size: 15px;
+#page #content #bookwrapper #about h4 {
+    font-size: 15px;
 	text-align: justify;
 	text-transform: uppercase;
 	font-weight: bold;
-	margin-bottom: -10px;
+    margin-bottom: 5px;
 }
 
-#page #content #book #about h5 {
-	font-size: 14px;
+#page #content #bookwrapper #about h5 {
+    font-size: 14px;
+	text-align: justify;
+	font-weight: normal;
+    margin-bottom: 5px;
+}
+
+#page #content #bookwrapper #about p {
+    font-size: 14px;
 	text-align: justify;
 	font-weight: normal;
 }
 
-#page #content #book #about p {
-	font-size: 14px;
-	text-align: justify;
-	font-weight: normal;
-}
-
-#page #content #book #about hr {
+#page #content #bookwrapper #about hr {
 	border: 0;
 	height: 1px;
 	width: 100%;
 	margin-top: 10px;
+    margin-bottom: 10px;
 }
 
-#page #content #book #about input[type=button] {
-	float: right;
-	overflow: hidden;
-    height: 25px;
-    width: 80px;
-	background-color: #990000;
-    border: 1px solid #990000;
-    color: white;
+@media all and (min-width: 500px) {
+    #picture { flex: 1; }
+    #about { flex: 1; }
+}
+
+@media all and (min-width: 600px) {
+    #picture { order: 1; }
+    #about { order: 2; }
+}
+
+#page #content #pages ul {
+    list-style-type: none;
+    max-width: 240px;
+    padding-top: 20px;
+    margin: 0 auto;
+}
+
+#page #content #pages a {
+    display: inline-block;
+    padding: 10px 18px;
+    color: #222;
     text-decoration: none;
-    font-size: 13px;
-	text-align: center;
-	margin-left: 15px;
-	margin-bottom: 15px;
-	margin-top: 5px;
+    font-size: 14px;
 }
 
-#page #content #book #about input[type=button]:hover {
-	background-color: #cc0000;
-	color: white;
+#page #content #pages a:hover {
+    background-color: #cc0000;
+    color: #fff;
+}
+
+#page #content #pages .active {
+    background-color: #990000;
+    color: #fff;
 }
