@@ -1,5 +1,4 @@
 window.addEventListener("load", function () {
-    console.log("loaded");
     var graphs;
     graphs = document.querySelectorAll(".graph");
     plotgraph(graphs[0].id);
@@ -12,7 +11,6 @@ itemName = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct"
 itemVal = [15, 4, 3, 6, 11, 23, 4, 3, 10, 1, 2, 9]; //number of books/items
 
 function plotgraph(canvasid) {
-    console.log(canvasid);
     var step, columnSize, rowSize, margin, width, height, c;
 
     sections = itemVal.length;    
@@ -32,9 +30,6 @@ function plotgraph(canvasid) {
     canvas.height = 250;
     width = canvas.width;
     height = canvas.height;
-    
-    console.log(width);
-    console.log(height);
     
     xScale = (width - rowSize) / (sections + 0.5);
     yScale = (height - columnSize - margin) / (max);
@@ -71,6 +66,5 @@ function plotgraph(canvasid) {
     for(i = 0; i < sections; i++) {
         cnt.fillRect(i+1, 0, 0.5, itemVal[i]);
     }
-    console.log("end");
 
 }
