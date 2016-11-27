@@ -8,28 +8,23 @@
     color: #990000 !important;
 }
 
-#page #content #tabs #tab1 #userwrapper, #itemwrapper, #page #content #tabs #tab2 #userwrapper, #itemwrapper {
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;  
-    -webkit-flex-flow: row wrap;
+#page #content #tabs #tab1 #userwrapper1, #itemwrapper1, #page #content #tabs #tab2 #userwrapper2, #itemwrapper2 {
+    display: flex;
     flex-flow: row wrap;
     font-weight: bold;
     text-align: center;
 }
 
-#page #content #tabs #tab1 #userwrapper > *, #page #content #tabs #tab1 #itemwrapper > *, #page #content #tabs #tab2 #userwrapper > *, #page #content #tabs #tab2 #itemwrapper > * {
+#page #content #tabs #tab1 #userwrapper1 > *, #page #content #tabs #tab1 #itemwrapper1 > *, #page #content #tabs #tab2 #userwrapper2 > *, #page #content #tabs #tab2 #itemwrapper2 > * {
     padding-top: 10px;
     flex: auto;
 }
 
-#page #content #tabs #tab1 #userwrapper #searchuser, #itemwrapper #searchitem, #tab2 #itemwrapper #searchitem {
+#page #content #tabs #tab1 #userwrapper1 #searchuser1, #itemwrapper1 #searchitem1, #tab2 #itemwrapper2 #searchitem2 {
     width: 100%;
 }
 
-#page #content #tabs #tab1 #userwrapper #searchuser label, #itemwrapper #searchitem label, #tab2 #itemwrapper #searchitem label {
+#page #content #tabs #tab1 #userwrapper1 #searchuser1 label, #itemwrapper1 #searchitem1 label, #tab2 #itemwrapper2 #searchitem2 label {
     display: block;
     font-weight: bold;
     font-size: small;
@@ -40,7 +35,7 @@
     color: dimgray;
 }
 
-#page #content #tabs #tab1 #userwrapper #searchuser input.searchbar, #itemwrapper #searchitem input.searchbar, #tab2 #itemwrapper #searchitem input.searchbar {
+#page #content #tabs #tab1 #userwrapper1 #searchuser1 input.searchbar, #itemwrapper1 #searchitem1 input.searchbar, #tab2 #itemwrapper2 #searchitem2 input.searchbar {
     float: left; 
     height: 30px; 
     width: 100%;
@@ -57,25 +52,25 @@
     font-size: 16px;
 }
 
-#page #content #tabs #tab1 #userwrapper #userimage, #itemwrapper #itemimage, #tab2 #userwrapper #userimage, #itemwrapper #itemimage {
+#page #content #tabs #tab1 #userwrapper1 #userimage1, #itemwrapper1 #itemimage1, #tab2 #userwrapper2 #userimage2, #itemwrapper2 #itemimage2 {
     width: 160px;
 }
 
-#page #content #tabs #tab1 #userwrapper #userimage img, #itemwrapper #itemimage img, #tab2 #userwrapper #userimage img, #itemwrapper #itemimage img {
+#page #content #tabs #tab1 #userwrapper1 #userimage1 img, #itemwrapper1 #itemimage1 img, #tab2 #userwrapper2 #userimage2 img, #itemwrapper2 #itemimage2 img {
     width: auto;
     height: auto;
     max-width:130px;
     max-height:140px;
 }
 
-#page #content #tabs #tab1 #userwrapper #usertext, #itemwrapper #itemtext, #tab2 #userwrapper #usertext, #itemwrapper #itemtext {
+#page #content #tabs #tab1 #userwrapper1 #usertext1, #itemwrapper1 #itemtext1, #tab2 #userwrapper2 #usertext2, #itemwrapper2 #itemtext2 {
     display: inline-block;
     margin-left: 20px;
     width: 50%;
     text-align:left;
 }
 
-#page #content #tabs #tab1 #userwrapper #usertext h5, #itemwrapper #itemtext h5, #tab2 #userwrapper #usertext h5, #itemwrapper #itemtext h5 {
+#page #content #tabs #tab1 #userwrapper1 #usertext1 h5, #itemwrapper1 #itemtext1 h5, #tab2 #userwrapper2 #usertext2 h5, #itemwrapper2 #itemtext2 h5 {
     font-size: 20px;
     font-weight: bold;
     margin-top: 30px;
@@ -83,13 +78,13 @@
     color: #990000;
 }
 
-#page #content #tabs #tab1 #userwrapper #usertext h6, #itemwrapper #itemtext h6, #tab2 #userwrapper #usertext h6, #itemwrapper #itemtext h6 {
+#page #content #tabs #tab1 #userwrapper1 #usertext1 h6, #itemwrapper1 #itemtext1 h6, #tab2 #userwrapper2 #usertext2 h6, #itemwrapper2 #itemtext2 h6 {
     font-size: 15px;
     font-weight: normal;
     margin-top: 0px;
 }
 
-#page #content #tabs #tab1 #borrowbutton, #tab2 #returnbutton {
+#page #content #tabs #tab1 #borrowbutton1, #tab2 #returnbutton2 {
     min-width: 100%;
 }
 
@@ -108,24 +103,23 @@
 }
 
 
-#page #content #tabs #tab2 #returnbutton {
+#page #content #tabs #tab2 #returnbutton2 {
     margin-top:53px;
 }
 
-#page #content #tabs #tab1 #borrowbutton, #tab2 #returnbutton {
+#page #content #tabs #tab1 #borrowbutton1, #tab2 #returnbutton2 {
     width: 80%;
     margin: 0 auto;
     bottom : 25px;
     height : 30px;
 }
 
-#page #content #tabs #tab1 #borrowbutton input[type=button], #tab2 #returnbutton input[type=button] {
+#page #content #tabs #tab1 #borrowbutton1 input[type=button], #tab2 #returnbutton2 input[type=button] {
     display: inline-block;
     float: right;
     height: 30px;
     width: 110px;
     background-color: #990000;
-    border: 1px solid #990000;
     color: white;
     text-decoration: none;
     font-size: 14px;
@@ -133,11 +127,11 @@
     margin-right: 10px;
 }
 
-#page #content #tabs #tab1 #borrowbutton input[type=button]:hover, #tab2 #returnbutton input[type=button]:hover {
+#page #content #tabs #tab1 #borrowbutton1 input[type=button]:hover, #tab2 #returnbutton2 input[type=button]:hover {
     background-color: #cc0000;
     color: white;
 }
 
-#page #content #tabs #tab2 #searchuser #userinfo{
+#page #content #tabs #tab2 #searchuser2 #userinfo2 {
     margin-top: 50px;
 }

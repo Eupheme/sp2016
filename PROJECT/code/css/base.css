@@ -46,8 +46,8 @@ html, body{
     height: 50px;
     width: 100%;
     background-color: #b3c6ff;
+    border: 0px;
     color: white;
-    border: 1px solid #b3c6ff;
     text-decoration: none;
     font-size: 13px;
     text-align: left;

@@ -14,11 +14,8 @@ html, body {
 
 #flexcontent {
     height: 100%;
-    display: -webkit-flex;
     display: flex;
-    -webkit-align-items: center;
     align-items: center;
-    -webkit-justify-content: center;
     justify-content: center;
 }
 
@@ -85,8 +82,6 @@ html, body {
     padding: 12px;
     color: white;
     font-size: 14px;
-    -webkit-transition: all 0.3 ease;
-    transition: all 0.3 ease;
     cursor: pointer;
     margin-bottom: 15px;
     border-radius: 5px;

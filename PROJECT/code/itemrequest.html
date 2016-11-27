@@ -15,7 +15,7 @@
         <div id="page">
             <div id="navigation">
                 <div id="logo">
-                    <img id="logopicture" src="pictures/icons/library1-red.png" height="60px" width="60px">
+                    <img id="logopicture" src="pictures/icons/library1-red.png" alt="logo">
                     <p id="logotext">Biblios</p>
                 </div>
                 <hr>
@@ -40,7 +40,7 @@
                 <div id="itemwrapper">
                     <div id="itempicture">
                         <!-- UPLOAD PICTURE (with php?)-->
-                        <img src="https://goo.gl/Pq42Lm">
+                        <img src="https://goo.gl/Pq42Lm" alt="item image">
                     </div>
                     <div id="itemtext">
                         <label>add title</label>
@@ -50,7 +50,7 @@
                         <label>add ISBN/ISSN</label>
                         <input type="text" name="ISBN" required>
                         <label>add date</label>
-                        <input type = "date" pattern="\d{1,2}/\d{1,2}/\d{4}" />
+                        <input type = "date" name="date" required/>
                         <div id="subjectwrapper">
                             <select id="selectmenu5">
                                 <option selected disabled class="hideoption">Select subject</option>

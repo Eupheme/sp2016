@@ -16,7 +16,7 @@
         <div id="page">
             <div id="navigation">
                 <div id="logo">
-                    <img id="logopicture" src="pictures/icons/library1-red.png" height="60px" width="60px">
+                    <img id="logopicture" src="pictures/icons/library1-red.png" alt="logo">
                     <p id="logotext">Biblios</p>
                 </div>
                 <hr>
@@ -52,8 +52,8 @@
                         </div>
                         <hr>
                         <p> ORDER BY: </p>
-                        <div id="itemwrapper">
-                            <ul id="first">
+                        <div id="itemwrapper1">
+                            <ul id="first1">
                                 <li>
                                     <input type="radio" name="orderby1" value="author" id="radio1" checked="checked"/>
                                     <label for="radio1">author</label>
@@ -63,13 +63,13 @@
                                     <label for="radio2">date</label>
                                 </li>
                             </ul>
-                            <ul id="second">
+                            <ul id="second1">
                                 <li>
                                     <input type="radio" name="orderby1" value="title" id="radio3"/>
                                     <label for="radio3">title</label>
                                 </li>
                             </ul>
-                            <ul id="third">
+                            <ul id="third1">
                                 <li>
                                     <input type="radio" name="ascdesc1" value="ascending" id="radio4" checked="checked"/>
                                     <label for="radio4">ascending</label>
@@ -80,7 +80,7 @@
                                 </li>					
                             </ul>
                         </div>
-                        <div id="itemTable">
+                        <div id="itemTable1">
                             <table>
                                 <tbody>
                                     <tr>
@@ -130,7 +130,7 @@
                                 </tbody>
                             </table>
                         </div>
-                        <div id="pages">
+                        <div id="pages1">
                             <ul class="tab1">
                                 <a class="pagination active" href="#t1page1" onclick="getPage(event)"><li>1</li></a>
                                 <a class="pagination" href="#t1page2" onclick="getPage(event)"><li>2</li></a>
@@ -145,10 +145,10 @@
                         </div>
                     </div>
                     <div id="tab2" class="tabcontent">
-                        <div id="itemwrapper">
+                        <div id="itemwrapper2">
                             <div id="itempicture">
                                 <!-- UPLOAD PICTURE (with php?)-->
-                                <img src="https://goo.gl/Pq42Lm">
+                                <img src="https://goo.gl/Pq42Lm" alt="item image">
                             </div>
                             <div id="itemtext">
                                 <label>add title</label>
@@ -158,7 +158,7 @@
                                 <label>add ISBN/ISSN</label>
                                 <input type="text" name="ISBN" required>
                                 <label>add date</label>
-                                <input type = "date" pattern="\d{1,2}/\d{1,2}/\d{4}" />
+                                <input type = "date" name="date" required/>
                                 <div id="subjectwrapper">
                                     <select id="selectmenu5">
                                         <option selected disabled class="hideoption">Select subject</option>
@@ -186,8 +186,8 @@
                     </div>
                     <div id="tab3" class="tabcontent">
                         <p> ORDER BY: </p>
-                        <div id="itemwrapper">
-                            <ul id="first">
+                        <div id="itemwrapper3">
+                            <ul id="first3">
                                 <li>
                                     <input type="radio" name="orderby2" value="title" id="radio6" checked="checked"/>
                                     <label for="radio6">title</label>
@@ -197,7 +197,7 @@
                                     <label for="radio7">author</label>
                                 </li>
                             </ul>
-                            <ul id="second">
+                            <ul id="second3">
                                 <li>
                                     <input type="radio" name="orderby2" value="username" id="radio8"/>
                                     <label for="radio8">username</label>
@@ -207,7 +207,7 @@
                                     <label for="radio9">date</label>
                                 </li>
                             </ul>
-                            <ul id="third">
+                            <ul id="third3">
                                 <li>
                                     <input type="radio" name="ascdesc2" value="ascending" id="radio10" checked="checked"/>
                                     <label for="radio10">ascending</label>
@@ -218,7 +218,7 @@
                                 </li>					
                             </ul>
                         </div>
-                        <div id="itemTable">
+                        <div id="itemTable3">
                             <table>
                                 <tbody>
                                     <tr>
@@ -273,7 +273,7 @@
                                 </tbody>
                             </table>
                         </div>
-                        <div id="pages">
+                        <div id="pages3">
                             <ul class="tab3">
                                 <a class="pagination active" href="#t3page1" onclick="getPage(event)"><li>1</li></a>
                                 <a class="pagination" href="#t3page2" onclick="getPage(event)"><li>2</li></a>
