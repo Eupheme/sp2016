@@ -1,0 +1,137 @@
+#page #content #tabs #tabButtons li {
+    width: calc(99%/2);
+}
+
+#page #navigation #borrowing {
+    background-image: url('../pictures/icons/borrowing-red.png');
+    background-color: #ccd9ff !important;
+    color: #990000 !important;
+}
+
+#page #content #tabs #tab1 #userwrapper1, #itemwrapper1, #page #content #tabs #tab2 #userwrapper2, #itemwrapper2 {
+    display: flex;
+    flex-flow: row wrap;
+    font-weight: bold;
+    text-align: center;
+}
+
+#page #content #tabs #tab1 #userwrapper1 > *, #page #content #tabs #tab1 #itemwrapper1 > *, #page #content #tabs #tab2 #userwrapper2 > *, #page #content #tabs #tab2 #itemwrapper2 > * {
+    padding-top: 10px;
+    flex: auto;
+}
+
+#page #content #tabs #tab1 #userwrapper1 #searchuser1, #itemwrapper1 #searchitem1, #tab2 #itemwrapper2 #searchitem2 {
+    width: 100%;
+}
+
+#page #content #tabs #tab1 #userwrapper1 #searchuser1 label, #itemwrapper1 #searchitem1 label, #tab2 #itemwrapper2 #searchitem2 label {
+    display: block;
+    font-weight: bold;
+    font-size: small;
+    text-transform: uppercase;
+    font-size: 0.7em;
+    margin-bottom: 0.35em;
+    float: left;
+    color: dimgray;
+}
+
+#page #content #tabs #tab1 #userwrapper1 #searchuser1 input.searchbar, #itemwrapper1 #searchitem1 input.searchbar, #tab2 #itemwrapper2 #searchitem2 input.searchbar {
+    float: left; 
+    height: 30px; 
+    width: 100%;
+    padding: 8px 13px 8px 40px;
+    background: #fff; 
+    border: 1px solid red;
+    color: black;
+
+    background-image: url("../pictures/icons/search-gray.png");
+    background-size: 28px,28px;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    font-size: 16px;
+}
+
+#page #content #tabs #tab1 #userwrapper1 #userimage1, #itemwrapper1 #itemimage1, #tab2 #userwrapper2 #userimage2, #itemwrapper2 #itemimage2 {
+    width: 160px;
+}
+
+#page #content #tabs #tab1 #userwrapper1 #userimage1 img, #itemwrapper1 #itemimage1 img, #tab2 #userwrapper2 #userimage2 img, #itemwrapper2 #itemimage2 img {
+    width: auto;
+    height: auto;
+    max-width:130px;
+    max-height:140px;
+}
+
+#page #content #tabs #tab1 #userwrapper1 #usertext1, #itemwrapper1 #itemtext1, #tab2 #userwrapper2 #usertext2, #itemwrapper2 #itemtext2 {
+    display: inline-block;
+    margin-left: 20px;
+    width: 50%;
+    text-align:left;
+}
+
+#page #content #tabs #tab1 #userwrapper1 #usertext1 h5, #itemwrapper1 #itemtext1 h5, #tab2 #userwrapper2 #usertext2 h5, #itemwrapper2 #itemtext2 h5 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    color: #990000;
+}
+
+#page #content #tabs #tab1 #userwrapper1 #usertext1 h6, #itemwrapper1 #itemtext1 h6, #tab2 #userwrapper2 #usertext2 h6, #itemwrapper2 #itemtext2 h6 {
+    font-size: 15px;
+    font-weight: normal;
+    margin-top: 0px;
+}
+
+#page #content #tabs #tab1 #borrowbutton1, #tab2 #returnbutton2 {
+    min-width: 100%;
+}
+
+@media all and (min-width: 300px) {
+    #userimage { flex: 1; }
+    #usertext { flex: 1; }
+    #itemimage { flex: 1; }
+    #itemtext { flex: 1; }
+}
+
+@media all and (min-width: 400px) {
+    #userimage { order: 1; }
+    #usertext { order: 2; }
+    #itemimage { order: 1; }
+    #itemtext { order: 2; }
+}
+
+
+#page #content #tabs #tab2 #returnbutton2 {
+    margin-top:53px;
+}
+
+#page #content #tabs #tab1 #borrowbutton1, #tab2 #returnbutton2 {
+    width: 80%;
+    margin: 0 auto;
+    bottom : 25px;
+    height : 30px;
+}
+
+#page #content #tabs #tab1 #borrowbutton1 input[type=button], #tab2 #returnbutton2 input[type=button] {
+    display: inline-block;
+    float: right;
+    height: 30px;
+    width: 110px;
+    background-color: #990000;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    text-align: center;
+    margin-right: 10px;
+}
+
+#page #content #tabs #tab1 #borrowbutton1 input[type=button]:hover, #tab2 #returnbutton2 input[type=button]:hover {
+    background-color: #cc0000;
+    color: white;
+}
+
+#page #content #tabs #tab2 #searchuser2 #userinfo2 {
+    margin-top: 50px;
+}

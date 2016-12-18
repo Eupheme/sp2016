@@ -1,0 +1,257 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>STATISTICS</title>
+        <link href="css/base.css" rel="stylesheet" type="text/css"/>
+        <link href="css/tabs.css" rel="stylesheet" type="text/css"/>
+        <link href="css/statistics.css" rel="stylesheet" type="text/css"/>
+        <script src="js/toggletabs.js"></script>
+        <script src="js/responsive.js"></script>
+        <script src="js/bookgraph.js"></script>
+    </head>
+    <body>
+        <div id="banner1">
+            <p> username </p>
+        </div>
+        <div id="page">
+            <div id="navigation">
+                <div id="logo">
+                    <img id="logopicture" src="pictures/icons/library1-red.png" alt="logo">
+                    <p id="logotext">Biblios</p>
+                </div>
+                <hr>
+                <input type="button" id="myitems" class="nav-item" onclick="location.href='myitems.html';" value="MY ITEMS" />
+                <input type="button" id="itemrequest" class="nav-item" onclick="location.href='itemrequest.html';" value="ITEM REQUEST" />
+                <hr>
+                <input type="button" id="search" class="nav-item" onclick="location.href='search.html';" value="SEARCH" />
+                <input type="button" id="statistics" class="nav-item" onclick="location.href='statistics-user.html';" value="STATISTICS" />
+                <input type="button" id="settings" class="nav-item" onclick="location.href='settings.html';" value="SETTINGS" />
+                <hr>
+                <input type="button" id="asadmin" class="nav-item" onclick="location.href='manageitems.html';" value="ADMIN VIEW" />
+                <input type="button" id="logout" class="nav-item" onclick="location.href='index.html';" value="LOG OUT" />
+                <hr>
+            </div>
+            <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+            <label for="nav-trigger"></label>
+            <div id="content">
+                <div id="banner2">
+                    <p> username </p>
+                </div>
+                <h2> STATISTICS </h2>
+                <div id="tabs">
+                    <ul id="tabButtons">
+                        <li><a href="javascript:void(0)" class="tablinks" onclick="openTab(event, 'tab1')">TRANSACTION HISTORY</a></li>
+                        <li><a href="javascript:void(0)" class="tablinks" onclick="openTab(event, 'tab2')">ITEM STATISTICS</a></li>
+                        <li><a href="javascript:void(0)" class="tablinks" onclick="openTab(event, 'tab3')">USER STATISTICS</a></li>
+                    </ul>
+                    <div id="tab1" class="tabcontent">
+                        <p> ORDER BY: </p>
+                        <div id="itemwrapper">
+                            <ul id="first">
+                                <li>
+                                    <input type="radio" name="orderby" value="username" id="radio1" checked="checked"/>
+                                    <label for="radio1">username</label>
+                                </li>
+                                <li>
+                                    <input type="radio" name="orderby" value="author" id="radio2"/>
+                                    <label for="radio2">author</label>
+                                </li>
+                            </ul>
+                            <ul id="second">
+                                <li>
+                                    <input type="radio" name="orderby" value="title" id="radio3"/>
+                                    <label for="radio3">title</label>
+                                </li>
+                            </ul>
+                            <ul id="third">
+                                <li>
+                                    <input type="radio" name="ascdesc" value="ascending" id="radio5" checked="checked"/>
+                                    <label for="radio5">ascending</label>
+                                </li>
+                                <li>
+                                    <input type="radio" name="ascdesc" value="descending" id="radio6"/>
+                                    <label for="radio6">descending</label>
+                                </li>					
+                            </ul>
+                        </div>
+                        <div id="itemTable">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <th>title</th> 
+                                        <th>author</th>
+                                        <th>isbn/issn</th>
+                                        <th>date</th> 
+                                        <th>status</th>
+                                    </tr>
+                                    <tr onclick= "chooseElement(event)">
+                                        <td>Eldest</td> 
+                                        <td>Christopher Paolini</td>
+                                        <td>9780552552110</td>
+                                        <td>24.10.2016</td> 
+                                        <td>borrowed</td>
+                                    </tr>
+                                    <!-- delete block -->
+                                    <tr onclick= "chooseElement(event)">
+                                        <td>Fingers in the Sparkle Jar: A Memoir</td> 
+                                        <td>Chris Packham</td>
+                                        <td>9781785033483</td>
+                                        <td>13.10.2016</td> 
+                                        <td>borrowed</td>
+                                    </tr>
+                                    <tr onclick= "chooseElement(event)">
+                                        <td>The Magicians:(Book 1)</td> 
+                                        <td>Lev Grossman</td>
+                                        <td>9780099534440</td>
+                                        <td>11.11.2016</td> 
+                                        <td>returned</td>
+                                    </tr>
+                                    <tr onclick= "chooseElement(event)">
+                                        <td>A Game of Thrones (A Song of Ice and Fire, Book 1)</td> 
+                                        <td>George R.R. Martin</td>
+                                        <td>9780007548231</td>
+                                        <td>26.10.2016</td> 
+                                        <td>borrowed</td>
+                                    </tr>
+                                    <tr onclick= "chooseElement(event)">
+                                        <td>Fingers in the Sparkle Jar: A Memoir</td> 
+                                        <td>Chris Packham</td>
+                                        <td>9781785033483</td>
+                                        <td>01.11.2016</td> 
+                                        <td>returned</td>
+                                    </tr>
+                                    <!-- delete block -->
+                                </tbody>
+                            </table>
+                        </div>
+                        <div id="pages">
+                            <ul>
+                                <li><a class="pagination active" href="#page1" onclick="getPage(event)">1</a></li>
+                                <li><a class="pagination" href="#page2" onclick="getPage(event)">2</a></li>
+                                <li><a class="pagination" href="#page3" onclick="getPage(event)">3</a></li>
+                                <li><a class="pagination" href="#page4" onclick="getPage(event)">4</a></li>
+                                <li><a class="pagination" href="#page5" onclick="getPage(event)">5</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div id="tab2" class="tabcontent">
+                        <div id="statswrapper2">
+                            <p> ITEMS ADDED BY MONTH:</p>
+                            <div id="graphwrap2">
+                                <canvas id="mycanvas" class="graph"></canvas>
+                            </div>
+                            <div id="leftside2">
+                                <p> TOP THREE BORROWED ITEMS:</p>
+                                <ul id="borroweditems2">
+                                    <li>
+                                        <input type="radio" name="borrowed" value="all" id="borrowed1" checked="checked" onClick="showMenu(0)"/>
+                                        <label for="borrowed1">all time</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="borrowed" value="month" id="borrowed2" onClick="showMenu(1)"/>
+                                        <label for="borrowed2">month, year</label>
+                                    </li>
+                                </ul>
+                                <div id="dropdowns2">
+                                    <input type = "text" id = "selectmenu1" class="dropdown"
+                                           placeholder = "Select a month" list = "months2" />
+                                    <datalist id = "months2">
+                                        <option value = "January">
+                                        <option value = "February">
+                                        <option value = "March">
+                                        <option value = "April">
+                                        <option value = "May">
+                                        <option value = "June">
+                                        <option value = "July">
+                                        <option value = "August">
+                                        <option value = "September">
+                                        <option value = "October">
+                                        <option value = "November">
+                                        <option value = "December">   
+                                    </datalist>
+                                    <input type = "text" id = "selectmenu2" class="dropdown"
+                                           placeholder = "Select year" list = "years2" />
+                                    <datalist id = "years2">
+                                        <option value = "2013">
+                                        <option value = "2014">
+                                        <option value = "2015">
+                                        <option value = "2016">  
+                                    </datalist>
+                                </div>
+                            </div>
+                            <div id="rightside2">
+                                <img src="https://goo.gl/Pq42Lm" alt="book image">
+                                <img src="https://cdn.pastemagazine.com/www/system/images/photo_albums/best-book-covers-so-far/large/screen-shot-2016-07-13-at-122806-pm.png?1384968217" alt="book image">
+                                <img src="https://s-media-cache-ak0.pinimg.com/564x/7a/d2/c3/7ad2c3be35fc75f6e284ec6e44a3edf7.jpg" alt="book image">
+                            </div>
+                        </div>
+                    </div>
+                    <div id="tab3" class="tabcontent">
+                        <div id="statswrapper3">
+                            <p> USER ACTIVITY:</p>
+                            <div id="graphwrap3">
+                                <div id="getuser">
+                                    <div id="picture">
+                                        <img src="https://s-media-cache-ak0.pinimg.com/236x/1f/73/ef/1f73ef29799e15a21403822d3361c4f2.jpg" alt="user image">
+                                    </div>
+                                    <div id="text">
+                                        <h5>USERNAME</h5>
+                                        <h6>NAME</h6>
+                                    </div>
+                                </div>
+                                <div id="canvasSide">
+                                    <canvas id="mycanvas2" class="graph"></canvas>
+                                </div>
+                            </div>
+                            <div id="leftside3">
+                                <p> TOP THREE BORROWED ITEMS:</p>
+                                <ul id = "borroweditems3">
+                                    <li>
+                                        <input type="radio" name="borrowed2" value="all" id="borrowed3" checked="checked" onClick="showMenu(2)"/>
+                                        <label for="borrowed3">all time</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="borrowed2" value="month" id="borrowed4" onClick="showMenu(3)"/>
+                                        <label for="borrowed4">month, year</label>
+                                    </li>
+                                </ul>
+                                <div id="dropdowns3">
+                                    <input type = "text" id = "selectmenu3" class="dropdown"
+                                           placeholder = "Select a month" list = "months3" />
+                                    <datalist id = "months3">
+                                        <option value = "January">
+                                        <option value = "February">
+                                        <option value = "March">
+                                        <option value = "April">
+                                        <option value = "May">
+                                        <option value = "June">
+                                        <option value = "July">
+                                        <option value = "August">
+                                        <option value = "September">
+                                        <option value = "October">
+                                        <option value = "November">
+                                        <option value = "December">   
+                                    </datalist>
+                                    <input type = "text" id = "selectmenu4" class="dropdown"
+                                           placeholder = "Select year" list = "years3" />
+                                    <datalist id = "years3">
+                                        <option value = "2013">
+                                        <option value = "2014">
+                                        <option value = "2015">
+                                        <option value = "2016">  
+                                    </datalist>
+                                </div>
+                            </div>
+                            <div id="rightside3">
+                                <img src="https://goo.gl/Pq42Lm" alt="book image">
+                                <img src="https://cdn.pastemagazine.com/www/system/images/photo_albums/best-book-covers-so-far/large/screen-shot-2016-07-13-at-122806-pm.png?1384968217" alt="book image">
+                                <img src="https://s-media-cache-ak0.pinimg.com/564x/7a/d2/c3/7ad2c3be35fc75f6e284ec6e44a3edf7.jpg" alt="book image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

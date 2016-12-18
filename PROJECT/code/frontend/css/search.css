@@ -1,0 +1,164 @@
+#page #navigation #searchbar {
+    background-image: url('../pictures/icons/search-red.png');
+    background-color: #ccd9ff !important;
+    color: #990000 !important;
+}
+
+#page #content #searchbar form {
+	overflow: hidden; 
+	margin: 0 0 30px 0;
+	margin-left: 15%;
+	margin-right: 15%;
+	width: 70%;
+	outline: none;
+}
+
+#page #content #searchbar label {
+    display: block;
+    font-weight: bold;
+    font-size: small;
+    text-transform: uppercase;
+    font-size: 0.7em;
+    margin-bottom: 0.35em;
+    float: left;
+    color: dimgray;
+}
+
+#page #content #searchbar input.searchbar {
+	float: left; 
+	height: 40px; 
+	width: 100%;
+	padding: 8px 13px 8px 40px;
+	background: #fff; 
+	color: black;
+	background-image: url(../pictures/icons/search-gray.png);
+	background-repeat: no-repeat;
+	box-sizing: border-box;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+#page #content hr {
+    border: 0;
+	height: 10px;
+	width: 80%;
+    margin: 0 auto;
+	margin-top: 70px;
+	box-shadow: 0 10px 10px -10px #8c8b8b inset;
+}
+
+#page #content #bookwrapper {
+    display: flex;
+    flex-flow: row wrap;
+    flex-wrap: wrap;
+    width: 80%;
+    min-width: 260px;
+    margin: 0 auto;
+    font-weight: bold;
+    text-align: center;
+    background-color: #e6ecff;
+    border: 1px solid #f2f2f2;
+    border-radius: 5px;
+    margin-top: 30px;
+}
+
+#page #content #bookwrapper > *{
+    padding: 10px;
+    flex: auto;
+}
+
+#page #content #bookwrapper #picture {
+    flex: 1;
+    min-width: 180px;
+    align-self: center;
+}
+
+#page #content #bookwrapper #picture img {
+    width: auto;
+	height: auto;
+	max-width: 140px;
+	max-height: 180px;
+    margin: 0 auto;
+}
+
+#page #content #bookwrapper #about {
+    flex: 3;
+    min-width: 250px;
+}
+
+#page #content #bookwrapper #about h3 {
+    font-size: 24px;
+	text-align: justify;
+	text-transform: uppercase;
+	font-weight: bold;
+	color: #990000;
+    margin-bottom: 10px;
+}
+
+#page #content #bookwrapper #about h4 {
+    font-size: 15px;
+	text-align: justify;
+	text-transform: uppercase;
+	font-weight: bold;
+    margin-bottom: 5px;
+}
+
+#page #content #bookwrapper #about h5 {
+    font-size: 14px;
+	text-align: justify;
+	font-weight: normal;
+    margin-bottom: 5px;
+}
+
+#page #content #bookwrapper #about p {
+    font-size: 14px;
+	text-align: justify;
+	font-weight: normal;
+}
+
+#page #content #bookwrapper #about hr {
+	border: 0;
+	height: 1px;
+	width: 100%;
+	margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+@media all and (min-width: 500px) {
+    #picture { flex: 1; }
+    #about { flex: 1; }
+}
+
+@media all and (min-width: 600px) {
+    #picture { order: 1; }
+    #about { order: 2; }
+}
+
+#page #content #pages ul {
+    list-style-type: none;
+    max-width: 240px;
+    padding-top: 20px;
+    margin: 0 auto;
+}
+
+#page #content #pages li {
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+#page #content #pages li a {
+    padding: 10px 18px;
+    color: #222;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+#page #content #pages li a:hover {
+    background-color: #cc0000;
+    color: #fff;
+}
+
+#page #content #pages li .active {
+    background-color: #990000;
+    color: #fff;
+}

@@ -1,0 +1,339 @@
+html, body{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    overflow-x: hidden;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+@font-face {
+    font-family: logoFont;
+    src: url(../font/watermelon.ttf);
+}
+
+#page #navigation #logo {
+    width: 90%;
+    height: 90px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+
+#page #navigation #logo #logopicture{
+    width: 60px;
+    height: 60px;
+    float: left;
+    margin-top: 20px;
+}
+
+#page #navigation #logo p{
+    font-family: logoFont;
+    width: 60%;
+    float: left;
+    font-size: 35px;
+    margin-left: 10px;
+    margin-top: 25px;
+    color: #990000;
+}
+
+#page #navigation hr {
+    border: 0;
+    height: 1px;
+    background-color: grey;
+}
+
+#page #navigation .nav-item {
+    display: inline-block;
+    height: 50px;
+    width: 100%;
+    background-color: #b3c6ff;
+    border: 0px;
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+    text-align: left;
+    padding-left: 80px;
+    background-repeat: no-repeat;
+}
+
+#page #navigation #asuser {
+    background-image: url('../pictures/icons/manageusers.png');
+    background-size: 45px 45px;
+    background-position: center left 25px;
+}
+
+#page #navigation #asadmin {
+    background-image: url('../pictures/icons/manageusers.png');
+    background-size: 45px 45px;
+    background-position: center left 25px;
+}
+
+#page #navigation #myitems {
+    background-image: url('../pictures/icons/items.png');
+    background-size: 45px 45px;
+    background-position: center left 25px;
+}
+
+#page #navigation #itemrequest {
+    background-image: url('../pictures/icons/itemrequest.png');
+    background-size: 45px 45px;
+    background-position: center left 25px;
+}
+
+#page #navigation #manageitems {
+    background-image: url('../pictures/icons/items.png');
+    background-size: 45px 45px;
+    background-position: center left 25px;
+}
+
+#page #navigation #manageusers {
+    background-image: url('../pictures/icons/manageusers.png');
+    background-size: 40px 40px;
+    background-position: center left 25px;
+}
+
+#page #navigation #borrowing {
+    background-image: url('../pictures/icons/borrowing.png');
+    background-size: 45px 45px;
+    background-position: center left 23px;
+}
+
+#page #navigation #statistics {
+    background-image: url('../pictures/icons/statistics.png');
+    background-size: 40px 40px;
+    background-position: center left 25px;
+}
+
+#page #navigation #search {
+    background-image: url('../pictures/icons/search.png');
+    background-size: 40px 40px;
+    background-position: center left 25px;
+}
+
+#page #navigation #settings {
+    background-image: url('../pictures/icons/settings.png');
+    background-size: 45px 45px;
+    background-position: center left 23px;
+}
+
+#page #navigation #logout {
+    background-image: url('../pictures/icons/logout.png');
+    background-size: 40px 40px;
+    background-position: center left 27px;
+}
+
+#page #navigation #asuser:hover {
+    background-image: url('../pictures/icons/manageusers-red.png');
+    background-color: #ccd9ff;
+    color: #990000;
+}
+
+#page #navigation #asadmin:hover {
+    background-image: url('../pictures/icons/manageusers-red.png');
+    background-color: #ccd9ff;
+    color: #990000;
+}
+
+#page #navigation #myitems:hover {
+    background-image: url('../pictures/icons/items-red.png');
+    background-color: #ccd9ff;
+    color: #990000;
+}
+
+#page #navigation #itemrequest:hover {
+    background-image: url('../pictures/icons/itemrequest-red.png');
+    background-color: #ccd9ff;
+    color: #990000;
+}
+
+#page #navigation #manageitems:hover {
+    background-image: url('../pictures/icons/items-red.png');
+    background-color: #ccd9ff;
+    color: #990000;
+}
+
+#page #navigation #manageusers:hover {
+    background-image: url('../pictures/icons/manageusers-red.png');
+    background-color: #ccd9ff;
+    color: #990000;
+}
+
+#page #navigation #borrowing:hover {
+    background-image: url('../pictures/icons/borrowing-red.png');
+    background-color: #ccd9ff;
+    color: #990000;
+}
+
+#page #navigation #statistics:hover {
+    background-image: url('../pictures/icons/statistics-red.png');
+    background-color: #ccd9ff;
+    color: #990000;
+}
+
+#page #navigation #search:hover {
+    background-image: url('../pictures/icons/search-red.png');
+    background-color: #ccd9ff;
+    color: #990000;
+}
+
+#page #navigation #settings:hover {
+    background-image: url('../pictures/icons/settings-red.png');
+    background-color: #ccd9ff;
+    color: #990000;
+}
+
+#page #navigation #logout:hover {
+    background-image: url('../pictures/icons/logout-red.png');
+    background-color: #ccd9ff;
+    color: #990000;
+}
+
+#page #content {
+    background-color: white;
+    z-index: 1;
+}
+
+#page #nav-trigger {
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+}
+
+@media screen and (min-width: 950px) {
+
+    #page {
+        margin-left: 230px;
+        background-color: white;
+        z-index: -1;
+        min-height: 100%;
+    }
+
+    #page {
+        width: 100%;
+    }
+
+    #page #navigation {
+        position: absolute;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: #b3c6ff;
+        width: 230px;
+        min-width: 230px;
+        z-index: 3;
+        border-right: 1.5px solid grey;
+    }
+
+    #page #content {
+        height: 50%;
+        width: 82%;
+        padding: 2em;
+    }
+
+    #banner1 {
+        width: 100%;
+        background-color: #b3c6ff;
+        height: 5vh;
+        z-index: 2;
+        position: fixed;
+        top: 0;
+        border-bottom: 1.5px solid grey;
+    }
+
+    #banner1 p {
+        text-align: right;
+        margin-right: 30px;
+        margin-top: 5px;
+        right: 0;
+    }
+
+    #page #banner2 {
+        display: none;
+    }
+
+    #page #content h2{
+        padding-top: 15px;   
+    }
+}
+
+@media screen and (max-width: 949px) {
+
+    #banner1 {
+        display: none;
+    }
+
+    #page #navigation {
+        width: 240px;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 0;
+        background: #b3c6ff;
+    }
+
+    #page #banner2 {
+        width: 100%;
+        background-color: #b3c6ff;
+        height: 5vh;
+        z-index: 3;
+        position: fixed;
+        top: 0;
+        border-bottom: 1.5px solid grey;
+        padding-top: 30px;
+    }
+
+    #page #banner2 p {
+        text-align: right;
+        margin-right: 30px;
+        margin-top: -25px;
+        right: 0;
+    }
+
+    #page label[for="nav-trigger"] {
+        position: fixed;
+        left: 15px;
+        z-index: 2;
+        height: 30px;
+        width: 30px;
+        cursor: pointer;
+        background-image: url('../pictures/icons/hamburger.png');
+        background-size: contain;
+    }
+
+    #page #nav-trigger + label, #content {
+        transition: left 0.2s;
+    }
+
+    #page #nav-trigger:checked + label {
+        left: 255px;
+    }
+
+    #page #nav-trigger:checked ~ #content {
+        left: 240px;
+        box-shadow: 0 0 5px 5px rgba(0,0,0,0.5);
+    }
+
+    #page #content {
+        min-height: 100vh;
+        position: relative;
+        padding-bottom: 2em;
+    }
+
+    #page #content h2{
+        padding-top: 55px;   
+    }
+}
+
+*,*:before,*:after{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+#page #content h2{
+    color: #990000;
+    font-size: 30px;
+    margin-left: 10%;
+    padding-bottom: 30px;
+}

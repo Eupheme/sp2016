@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>EDIT</title>
+        <link href="css/base.css" rel="stylesheet" type="text/css"/>
+        <link href="css/edit.css" rel="stylesheet" type="text/css"/>
+        <script src="js/toggle.js"></script>
+        <script src="js/responsive.js"></script>
+    </head>
+    <body>
+        <div id="banner1">
+            <p> username </p>
+        </div>
+        <div id="page">
+            <div id="navigation">
+                <div id="logo">
+                    <img id="logopicture" src="pictures/icons/library1-red.png" alt="logo">
+                    <p id="logotext">Biblios</p>
+                </div>
+                <hr>
+                <input type="button" id="manageitems" class="nav-item" onclick="location.href='manageitems.html';" value="MANAGE ITEMS" />
+                <input type="button" id="manageusers" class="nav-item" onclick="location.href='manageusers.html';" value="MANAGE USERS" />
+                <hr>
+                <input type="button" id="borrowing" class="nav-item" onclick="location.href='borrowing.html';" value="BORROWING" />
+                <input type="button" id="statistics" class="nav-item" onclick="location.href='statistics-admin.html';" value="STATISTICS" />
+                <hr>
+                <input type="button" id="asuser" class="nav-item" onclick="location.href='myitems.html';" value="USER VIEW" />
+                <input type="button" id="logout" class="nav-item" onclick="location.href='index.html';" value="LOG OUT" />
+                <hr>
+            </div>
+            <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+            <label for="nav-trigger"></label>
+            <div id="content">
+                <div id="banner2">
+                    <p> username </p>
+                </div>
+                <h2> EDIT ITEM </h2>
+                <div id="itemwrapper">
+                    <div id="itempicture">
+                        <!-- UPLOAD PICTURE (with php?)-->
+                        <img src="https://goo.gl/Pq42Lm" alt="item image">
+                    </div>
+                    <div id="itemtext">
+                        <label>edit title</label>
+                        <input type="text" name="title" required>
+                        <label>edit author(s)</label>
+                        <input type="text" name="author" required>
+                        <label>edit ISBN/ISSN</label>
+                        <input type="text" name="ISBN" required>
+                        <label>edit date</label>
+                        <input type = "date" name="date" required/>
+                        <div id="subjectwrapper">
+                            <select id="selectmenu5">
+                                <option selected disabled class="hideoption">Select subject</option>
+                                <!-- READ from database -->
+                                <option>subject 1</option>
+                                <option>subject 2</option>
+                                <option>subject 3</option>
+                                <option>subject 4</option>
+                                <!-- REPLACE BLOCK -->
+                            </select>
+                            <div id="floatright">
+                                <label id="subjectlabel">or choose new subject</label>
+                                <input id="newsubject" type="text" name="newsubject" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="itemcontent">
+                        <label>edit description</label>
+                        <textarea name="content"></textarea>
+                    </div>
+                    <div id="submitbutton">
+                        <input type="button" onclick="location.href='manageitems.html';" value="SUBMIT" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

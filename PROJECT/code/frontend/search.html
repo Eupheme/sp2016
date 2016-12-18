@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>SEARCH</title>
+        <link href="css/base.css" rel="stylesheet" type="text/css"/>
+        <link href="css/search.css" rel="stylesheet" type="text/css"/>
+        <script src="js/responsive.js"></script>
+    </head>
+    <body>
+        <div id="banner1">
+            <p> username </p>
+        </div>
+        <div id="page">
+            <div id="navigation">
+                <div id="logo">
+                    <img id="logopicture" src="pictures/icons/library1-red.png" alt="logo">
+                    <p id="logotext">Biblios</p>
+                </div>
+                <hr>
+                <input type="button" id="myitems" class="nav-item" onclick="location.href='myitems.html';" value="MY ITEMS" />
+                <input type="button" id="itemrequest" class="nav-item" onclick="location.href='itemrequest.html';" value="ITEM REQUEST" />
+                <hr>
+                <input type="button" id="search" class="nav-item" onclick="location.href='search.html';" value="SEARCH" />
+                <input type="button" id="statistics" class="nav-item" onclick="location.href='statistics-user.html';" value="STATISTICS" />
+                <input type="button" id="settings" class="nav-item" onclick="location.href='settings.html';" value="SETTINGS" />
+                <hr>
+                <input type="button" id="asadmin" class="nav-item" onclick="location.href='manageitems.html';" value="ADMIN VIEW" />
+                <input type="button" id="logout" class="nav-item" onclick="location.href='lindex.html';" value="LOG OUT" />
+                <hr>
+            </div>
+            <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+            <label for="nav-trigger"></label>
+            <div id="content">
+                <div id="banner2">
+                    <p> username </p>
+                </div>
+                <h2> SEARCH </h2>
+                <div id="searchbar">
+                    <form method="get">
+                        <label>Search</label>
+                        <input type="text" class="searchbar"/>
+                    </form>
+                </div>
+                <hr>
+                <div id="bookwrapper">
+                    <div id="picture">
+                        <img src="https://goo.gl/Pq42Lm" alt="book image">
+                    </div>
+                    <div id="about">
+                        <h3> TITLE </h3>
+                        <h4> AUTHOR(S) </h4>
+                        <h5> year; subject; ISSN; </h5>
+                        <hr>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam in venenatis lectus. Cras consectetur tincidunt ipsum, a suscipit odio ultrices sed. Curabitur quis massa tristique, consequat justo venenatis, mollis nunc. Donec pulvinar bibendum nisi, non efficitur augue laoreet pulvinar. Morbi lacus dui, posuere eget turpis sit amet, dapibus auctor justo. Morbi porta nunc nisi, ut gravida turpis interdum tristique. Aliquam eget ornare lectus, a mattis massa. Donec fringilla libero eros, eu tristique orci sagittis id. Suspendisse vitae nisi magna.
+                        </p>
+                    </div>
+                </div>
+                <div id="pages">
+                    <ul>
+                        <li><a class="pagination active" href="#page1" onclick="getPage(event)">1</a></li>
+                        <li><a class="pagination" href="#page2" onclick="getPage(event)">2</a></li>
+                        <li><a class="pagination" href="#page3" onclick="getPage(event)">3</a></li>
+                        <li><a class="pagination" href="#page4" onclick="getPage(event)">4</a></li>
+                        <li><a class="pagination" href="#page5" onclick="getPage(event)">5</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

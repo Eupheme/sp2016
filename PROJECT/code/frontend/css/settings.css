@@ -1,0 +1,98 @@
+#page #navigation #settings {
+    background-image: url('../pictures/icons/settings-red.png');
+    background-color: #ccd9ff !important;
+    color: #990000 !important;
+}
+
+#page #content {
+    padding-bottom: 10px;
+}
+
+#page #content #centered #profilewrapper {
+    display: flex;
+    flex-flow: row wrap;
+    flex-wrap: wrap;
+    font-weight: bold;
+    text-align: center;
+    width: 60%;
+    height: 100%;
+    margin: 0 auto ;
+    margin-top: 20px;
+}
+
+#page #content #centered #profilewrapper > * {
+    padding: 10px;
+    flex: 1 auto;
+}
+
+#page #content #centered #profilewrapper #profilepicture {
+    flex: 1;
+    min-width: 250px;
+    align-self: center;
+}
+
+#page #content #centered #profilewrapper #profilepicture img {
+    width: auto;
+    height: auto;
+    max-width: 240px;
+    max-height: 240px;
+    margin: 0 auto;
+}
+
+#page #content #centered #profilewrapper #profiletext {
+    flex: 2;
+    min-width: 250px;
+    text-align: justify;
+}
+
+#page #content #centered #profilewrapper #profiletext #sUsername {
+    font-size: 24px;
+    text-align: justify;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #990000;
+}
+
+#page #content #centered #profilewrapper #profiletext p {
+    font-size: 14px;
+    text-align: justify;
+    font-weight: normal;
+    color: black;
+    margin-bottom: 10px;
+}
+
+#page #content #centered #profilewrapper #profiletext hr {
+    border: 0;
+    height: 1px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+#page #content #centered #profilewrapper #editbutton {
+    min-width: 100%;
+    margin-top: 50px;
+}
+
+#page #content #centered #profilewrapper #editbutton input[type=button] {
+    display: inline-block;
+    float: right;
+    height: 30px;
+    width: 110px;
+    background-color: #990000;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    text-align: center;
+    margin-right: 10px;
+}
+
+#page #content #centered #profilewrapper #editbutton input[type=button]:hover {
+    background-color: #cc0000;
+    color: white;
+}
+
+@media all and (min-width: 599px) {
+    #profilepicture { flex: 1; }
+    #profiletext { flex: 2; }
+}

@@ -1,0 +1,16 @@
+{
+	"authors": [
+		"Žana"
+	],
+	"description": "A simple vibe.d server application.",
+	"name": "backend",
+	"dependencies": {
+		"vibe-d": "~>0.7.28",
+		"mysql-d": "~>0.3.3"
+	},
+	"license": "proprietary",
+	"copyright": "Copyright © 2016, Žana",
+	"versions": [
+		"VibeDefaultMain"
+	]
+}

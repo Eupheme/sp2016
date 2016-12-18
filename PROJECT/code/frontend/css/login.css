@@ -1,0 +1,118 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    background-image: url(../pictures/background.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+@font-face {
+    font-family: logoFont;
+    src: url(../font/watermelon.ttf);
+}
+
+#flexcontent {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#content {
+    max-width: 300px;
+    min-width: 250px;
+    padding: 25px 25px 25px 25px;
+    background: rgba(255,255,255,0.4);
+    border-radius: 10px;
+    text-align: center;	
+}
+
+#content #logo {
+    width: 100%;
+    margin: 0 auto;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 10px;
+}
+
+#content #logo #logopicture {
+    width: 50px;
+    height: auto;
+    float: left;
+    align-self: center;
+}
+
+#content #logo p {
+    font-family: logoFont;
+    float: left;
+    font-size: 35px;
+    color: #990000;
+    align-self: center;
+    margin-left: 10px;
+}
+
+#content hr {
+    border: 0;
+    height: 1px;
+    background-color: grey;
+    margin-bottom: 15px;
+}
+
+#content #form input {
+    outline: 0;
+    background: #f2f2f2;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 12px;
+    box-sizing: border-box;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+#content #form button {
+    text-transform: uppercase;
+    outline: 0;
+    background: #990000;
+    width: 100%;
+    border: 0;
+    padding: 12px;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+#content #form button:hover,.form button:active,.form button:focus {
+    background: #cc0000;
+}
+
+#content #form label {
+    display: block;
+    font-weight: bold;
+    font-size: small;
+    text-transform: uppercase;
+    font-size: 0.7em;
+    margin-bottom: 0.35em;
+    float:left;
+    color: dimgray;
+}
+
+#content #form .message {
+    margin: 15px 0 0;
+    color: dimgray;
+    font-size: 14px;
+}
+
+#content #form .message a {
+    color: #990000;
+    text-decoration: none;
+}
+
+#content #form .message a:hover {
+    color: #cc0000;
+}
