@@ -17,6 +17,13 @@ interface IAPI
 	void postLogout(string auth = "");
 }
 
+struct currentUser
+{
+	int user_id;
+	int status;
+	string username;
+}
+
 class APIImpl : IAPI
 {
 	private int[string] cookies;
@@ -50,13 +57,18 @@ class APIImpl : IAPI
 	
 	string postLogin(string username, string password)
 	{
-		auto rows = db.query("select user_id from users where username = ? and password = ?", username, password);
+		currentUser usr;
+		auto rows = db.query("select * from users where username = ? and password = ?", username, password);
 
+		usr.user_id = rows.front()["user_id"].to!int;
+		usr.username = rows.front()["username"];
+		usr.status = rows.front()["status"].to!int;
+		
 		if (rows.length == 0)
 			return "";
 
 		string cookie = getSalt();
-		cookies[cookie] = rows.front()["user_id"].to!int;
+		cookies[cookie] = usr;
 
 		return cookie;
 	}
