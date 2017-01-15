@@ -3,16 +3,18 @@
     <head>
         <meta charset="utf-8">
         <title>STATISTICS</title>
-        <link href="css/base.css" rel="stylesheet" type="text/css"/>
-        <link href="css/tabs.css" rel="stylesheet" type="text/css"/>
-        <link href="css/statistics.css" rel="stylesheet" type="text/css"/>
         <script src="js/toggletabs.js"></script>
         <script src="js/responsive.js"></script>
         <script src="js/bookgraph.js"></script>
+        <script src="js/jquery-3.1.1.min.js"></script>
+        <script src="js/statistics-admin.js"></script>
+        <script src="js/base.js"></script>
+        <link href="css/base.css" rel="stylesheet" type="text/css"/>
+        <link href="css/tabs.css" rel="stylesheet" type="text/css"/>
+        <link href="css/statistics-admin.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
         <div id="banner1">
-            <p> username </p>
         </div>
         <div id="page">
             <div id="navigation">
@@ -27,15 +29,13 @@
                 <input type="button" id="borrowing" class="nav-item" onclick="location.href='borrowing.html';" value="BORROWING" />
                 <input type="button" id="statistics" class="nav-item" onclick="location.href='statistics-admin.html';" value="STATISTICS" />
                 <hr>
+                <input type="button" id="logout" class="nav-item" value="LOG OUT" />
                 <input type="button" id="asuser" class="nav-item" onclick="location.href='myitems.html';" value="USER VIEW" />
-                <input type="button" id="logout" class="nav-item" onclick="location.href='index.html';" value="LOG OUT" />
-                <hr>
             </div>
             <input type="checkbox" id="nav-trigger" class="nav-trigger" />
             <label for="nav-trigger"></label>
             <div id="content">
                 <div id="banner2">
-                    <p> username </p>
                 </div>
                 <h2> STATISTICS </h2>
                 <div id="tabs">
@@ -49,88 +49,51 @@
                         <div id="itemwrapper">
                             <ul id="first">
                                 <li>
-                                    <input type="radio" name="orderby" value="username" id="radio1" checked="checked"/>
-                                    <label for="radio1">username</label>
+                                    <input type="radio" name="orderby" value="title" id="radio1" checked="checked"/>
+                                    <label for="radio1">title</label>
                                 </li>
                                 <li>
-                                    <input type="radio" name="orderby" value="date" id="radio2"/>
-                                    <label for="radio2">date</label>
+                                    <input type="radio" name="orderby" value="author" id="radio2"/>
+                                    <label for="radio2">author</label>
                                 </li>
                             </ul>
                             <ul id="second">
                                 <li>
-                                    <input type="radio" name="orderby" value="title" id="radio3"/>
-                                    <label for="radio3">title</label>
+                                    <input type="radio" name="orderby" value="borrowed" id="radio3"/>
+                                    <label for="radio3">borrowed date</label>
                                 </li>
                                 <li>
-                                    <input type="radio" name="orderby" value="author" id="radio4"/>
-                                    <label for="radio4">author</label>
+                                    <input type="radio" name="orderby" value="returned" id="radio4"/>
+                                    <label for="radio4">returned date</label>
                                 </li>
                             </ul>
                             <ul id="third">
                                 <li>
-                                    <input type="radio" name="ascdesc" value="ascending" id="radio5" checked="checked"/>
-                                    <label for="radio5">ascending</label>
+                                    <input type="radio" name="orderby" value="username" id="radio5"/>
+                                    <label for="radio5">username</label>
+                                </li>					
+                            </ul>
+                            <ul id="fourth">
+                                <li>
+                                    <input type="radio" name="ascdesc" value="ascending" id="radio6" checked="checked"/>
+                                    <label for="radio6">ascending</label>
                                 </li>
                                 <li>
-                                    <input type="radio" name="ascdesc" value="descending" id="radio6"/>
-                                    <label for="radio6">descending</label>
+                                    <input type="radio" name="ascdesc" value="descending" id="radio7"/>
+                                    <label for="radio7">descending</label>
                                 </li>					
                             </ul>
                         </div>
                         <div id="itemTable">
                             <table>
-                                <tbody>
+                                <tbody class="tableBody">
                                     <tr>
                                         <th>username</th>
                                         <th>title</th> 
                                         <th>author</th>
-                                        <th>isbn/issn</th>
-                                        <th>date</th> 
-                                        <th>status</th>
+                                        <th>borrowed date</th> 
+                                        <th>returned date</th>
                                     </tr>
-                                    <tr onclick= "chooseElement(event)">
-                                        <td>Nephena</td>
-                                        <td>Eldest</td> 
-                                        <td>Christopher Paolini</td>
-                                        <td>9780552552110</td>
-                                        <td>24.10.2016</td> 
-                                        <td>borrowed</td>
-                                    </tr>
-                                    <!-- delete block -->
-                                    <tr onclick= "chooseElement(event)">
-                                        <td>Anne1847</td>
-                                        <td>Fingers in the Sparkle Jar: A Memoir</td> 
-                                        <td>Chris Packham</td>
-                                        <td>9781785033483</td>
-                                        <td>13.10.2016</td> 
-                                        <td>borrowed</td>
-                                    </tr>
-                                    <tr onclick= "chooseElement(event)">
-                                        <td>Eupheme</td>
-                                        <td>The Magicians:(Book 1)</td> 
-                                        <td>Lev Grossman</td>
-                                        <td>9780099534440</td>
-                                        <td>11.11.2016</td> 
-                                        <td>returned</td>
-                                    </tr>
-                                    <tr onclick= "chooseElement(event)">
-                                        <td>L4rchy</td>
-                                        <td>A Game of Thrones (A Song of Ice and Fire, Book 1)</td> 
-                                        <td>George R.R. Martin</td>
-                                        <td>9780007548231</td>
-                                        <td>26.10.2016</td> 
-                                        <td>borrowed</td>
-                                    </tr>
-                                    <tr onclick= "chooseElement(event)">
-                                        <td>Anne1847</td>
-                                        <td>Fingers in the Sparkle Jar: A Memoir</td> 
-                                        <td>Chris Packham</td>
-                                        <td>9781785033483</td>
-                                        <td>01.11.2016</td> 
-                                        <td>returned</td>
-                                    </tr>
-                                    <!-- delete block -->
                                 </tbody>
                             </table>
                         </div>

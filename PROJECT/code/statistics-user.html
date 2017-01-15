@@ -3,16 +3,18 @@
     <head>
         <meta charset="utf-8">
         <title>STATISTICS</title>
-        <link href="css/base.css" rel="stylesheet" type="text/css"/>
-        <link href="css/tabs.css" rel="stylesheet" type="text/css"/>
-        <link href="css/statistics.css" rel="stylesheet" type="text/css"/>
         <script src="js/toggletabs.js"></script>
         <script src="js/responsive.js"></script>
         <script src="js/bookgraph.js"></script>
+        <script src="js/jquery-3.1.1.min.js"></script>
+        <script src="js/statistics.js"></script>
+        <script src="js/base.js"></script>
+        <link href="css/base.css" rel="stylesheet" type="text/css"/>
+        <link href="css/tabs.css" rel="stylesheet" type="text/css"/>
+        <link href="css/statistics.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
         <div id="banner1">
-            <p> username </p>
         </div>
         <div id="page">
             <div id="navigation">
@@ -28,15 +30,13 @@
                 <input type="button" id="statistics" class="nav-item" onclick="location.href='statistics-user.html';" value="STATISTICS" />
                 <input type="button" id="settings" class="nav-item" onclick="location.href='settings.html';" value="SETTINGS" />
                 <hr>
+                <input type="button" id="logout" class="nav-item" value="LOG OUT" />
                 <input type="button" id="asadmin" class="nav-item" onclick="location.href='manageitems.html';" value="ADMIN VIEW" />
-                <input type="button" id="logout" class="nav-item" onclick="location.href='index.html';" value="LOG OUT" />
-                <hr>
             </div>
             <input type="checkbox" id="nav-trigger" class="nav-trigger" />
             <label for="nav-trigger"></label>
             <div id="content">
                 <div id="banner2">
-                    <p> username </p>
                 </div>
                 <h2> STATISTICS </h2>
                 <div id="tabs">
@@ -50,8 +50,8 @@
                         <div id="itemwrapper">
                             <ul id="first">
                                 <li>
-                                    <input type="radio" name="orderby" value="username" id="radio1" checked="checked"/>
-                                    <label for="radio1">username</label>
+                                    <input type="radio" name="orderby" value="title" id="radio1" checked="checked"/>
+                                    <label for="radio1">title</label>
                                 </li>
                                 <li>
                                     <input type="radio" name="orderby" value="author" id="radio2"/>
@@ -60,8 +60,12 @@
                             </ul>
                             <ul id="second">
                                 <li>
-                                    <input type="radio" name="orderby" value="title" id="radio3"/>
-                                    <label for="radio3">title</label>
+                                    <input type="radio" name="orderby" value="borrowed" id="radio3"/>
+                                    <label for="radio3">borrowed date</label>
+                                </li>
+                                <li>
+                                    <input type="radio" name="orderby" value="returned" id="radio4"/>
+                                    <label for="radio4">returned date</label>
                                 </li>
                             </ul>
                             <ul id="third">
@@ -77,51 +81,13 @@
                         </div>
                         <div id="itemTable">
                             <table>
-                                <tbody>
+                                <tbody class="tableBody">
                                     <tr>
                                         <th>title</th> 
                                         <th>author</th>
-                                        <th>isbn/issn</th>
-                                        <th>date</th> 
-                                        <th>status</th>
+                                        <th>borrowed date</th> 
+                                        <th>returned date</th>
                                     </tr>
-                                    <tr onclick= "chooseElement(event)">
-                                        <td>Eldest</td> 
-                                        <td>Christopher Paolini</td>
-                                        <td>9780552552110</td>
-                                        <td>24.10.2016</td> 
-                                        <td>borrowed</td>
-                                    </tr>
-                                    <!-- delete block -->
-                                    <tr onclick= "chooseElement(event)">
-                                        <td>Fingers in the Sparkle Jar: A Memoir</td> 
-                                        <td>Chris Packham</td>
-                                        <td>9781785033483</td>
-                                        <td>13.10.2016</td> 
-                                        <td>borrowed</td>
-                                    </tr>
-                                    <tr onclick= "chooseElement(event)">
-                                        <td>The Magicians:(Book 1)</td> 
-                                        <td>Lev Grossman</td>
-                                        <td>9780099534440</td>
-                                        <td>11.11.2016</td> 
-                                        <td>returned</td>
-                                    </tr>
-                                    <tr onclick= "chooseElement(event)">
-                                        <td>A Game of Thrones (A Song of Ice and Fire, Book 1)</td> 
-                                        <td>George R.R. Martin</td>
-                                        <td>9780007548231</td>
-                                        <td>26.10.2016</td> 
-                                        <td>borrowed</td>
-                                    </tr>
-                                    <tr onclick= "chooseElement(event)">
-                                        <td>Fingers in the Sparkle Jar: A Memoir</td> 
-                                        <td>Chris Packham</td>
-                                        <td>9781785033483</td>
-                                        <td>01.11.2016</td> 
-                                        <td>returned</td>
-                                    </tr>
-                                    <!-- delete block -->
                                 </tbody>
                             </table>
                         </div>
@@ -181,9 +147,9 @@
                                 </div>
                             </div>
                             <div id="rightside2">
-                                <img src="https://goo.gl/Pq42Lm" alt="book image">
-                                <img src="https://cdn.pastemagazine.com/www/system/images/photo_albums/best-book-covers-so-far/large/screen-shot-2016-07-13-at-122806-pm.png?1384968217" alt="book image">
-                                <img src="https://s-media-cache-ak0.pinimg.com/564x/7a/d2/c3/7ad2c3be35fc75f6e284ec6e44a3edf7.jpg" alt="book image">
+                                <img src="" alt="book image">
+                                <img src="" alt="book image">
+                                <img src="" alt="book image">
                             </div>
                         </div>
                     </div>
@@ -193,7 +159,7 @@
                             <div id="graphwrap3">
                                 <div id="getuser">
                                     <div id="picture">
-                                        <img src="https://s-media-cache-ak0.pinimg.com/236x/1f/73/ef/1f73ef29799e15a21403822d3361c4f2.jpg" alt="user image">
+                                        <img src="" alt="user image">
                                     </div>
                                     <div id="text">
                                         <h5>USERNAME</h5>
@@ -244,9 +210,9 @@
                                 </div>
                             </div>
                             <div id="rightside3">
-                                <img src="https://goo.gl/Pq42Lm" alt="book image">
-                                <img src="https://cdn.pastemagazine.com/www/system/images/photo_albums/best-book-covers-so-far/large/screen-shot-2016-07-13-at-122806-pm.png?1384968217" alt="book image">
-                                <img src="https://s-media-cache-ak0.pinimg.com/564x/7a/d2/c3/7ad2c3be35fc75f6e284ec6e44a3edf7.jpg" alt="book image">
+                                <img src="" alt="book image">
+                                <img src="" alt="book image">
+                                <img src="" alt="book image">
                             </div>
                         </div>
                     </div>

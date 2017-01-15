@@ -1,6 +1,5 @@
 function checkInputs(i) {
     if (i === 0) { //login
-        console.log("111");
         var uname, passwd;
         uname = document.getElementById("username");
         passwd = document.getElementById("password");
@@ -83,24 +82,54 @@ function validate(x){
         var uname, passwd;
         uname = document.getElementById("username");
         passwd = document.getElementById("password");
-        if (uname.value == "Admin" && passwd.value == "admin123"){
-            window.location = "manageitems.html";
-            return false;
-        }
-        else if (uname.value == "User" && passwd.value == "user123"){
-            window.location = "myitems.html";
-            return false;
-        }
-        else{
-            uname.style.backgroundColor = "rgba(153, 0, 0, 0.7)";
-            passwd.style.backgroundColor = "rgba(153, 0, 0, 0.7)";
-            setTimeout( function ( ) {
-                alert("Wrong username or password");
-            }, 10);
-        }
+        
+        $.ajax({
+        	type: "POST",
+        	contentType: "application/json",
+        	url: "/api/login",
+        	data: JSON.stringify({username: uname.value, password: passwd.value}),
+        	success: function(data) {
+        		console.log("success");
+        		console.log(data);
+        		if (data == ""){
+        			uname.style.backgroundColor = "rgba(153, 0, 0, 0.7)";
+				    passwd.style.backgroundColor = "rgba(153, 0, 0, 0.7)";
+				    setTimeout( function ( ) {
+				        alert("Wrong username or password");
+				    }, 10);
+        		}
+        		else {
+        			document.cookie = "sess=" + data;
+        			window.location = "myitems.html";
+        		}
+        	},
+        	error: function() {
+        		console.log("fail");
+        	}
+        });
     }
 
     if (check === 2){
-        alert("You have been registered. Please wait for approval.");
+    	
+    	$.ajax({
+        	type: "POST",
+        	contentType: "application/json",
+        	url: "/api/register",
+        	data: JSON.stringify({first: allfields[0].value, last: allfields[1].value, username: allfields[2].value, email: allfields[3].value, password: allfields[4].value}),
+        	success: function(data) {
+        		console.log("success");
+        		console.log(data);
+        		if (data == true){
+        			alert("You have been registered. Please wait for approval.");
+        		}
+        		else {
+        			allfields[2].style.backgroundColor = "rgba(153, 0, 0, 0.7)";
+        			alert("This username is taken.");
+        		}
+        	},
+        	error: function() {
+        		console.log("fail");
+        	}
+        });
     }
 }

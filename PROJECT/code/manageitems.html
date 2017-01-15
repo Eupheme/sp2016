@@ -3,15 +3,17 @@
     <head>
         <meta charset="utf-8">
         <title>MANAGE ITEMS</title>
+        <script src="js/toggletabs.js"></script>
+        <script src="js/responsive.js"></script>
+        <script src="js/jquery-3.1.1.min.js"></script>
+        <script src="js/manageitems.js"></script>
+        <script src="js/base.js"></script>
         <link href="css/base.css" rel="stylesheet" type="text/css"/>
         <link href="css/tabs.css" rel="stylesheet" type="text/css"/>
         <link href="css/manageitems.css" rel="stylesheet" type="text/css"/>
-        <script src="js/toggletabs.js"></script>
-        <script src="js/responsive.js"></script>
     </head>
     <body>
         <div id="banner1">
-            <p> username </p>
         </div>
         <div id="page">
             <div id="navigation">
@@ -26,15 +28,13 @@
                 <input type="button" id="borrowing" class="nav-item" onclick="location.href='borrowing.html';" value="BORROWING" />
                 <input type="button" id="statistics" class="nav-item" onclick="location.href='statistics-admin.html';" value="STATISTICS" />
                 <hr>
+                <input type="button" id="logout" class="nav-item" value="LOG OUT" />
                 <input type="button" id="asuser" class="nav-item" onclick="location.href='myitems.html';" value="USER VIEW" />
-                <input type="button" id="logout" class="nav-item" onclick="location.href='index.html';" value="LOG OUT" />
-                <hr>
             </div>
             <input type="checkbox" id="nav-trigger" class="nav-trigger" />
             <label for="nav-trigger"></label>
             <div id="content">
                 <div id="banner2">
-                    <p> username </p>
                 </div>
                 <h2> MANAGE ITEMS </h2>
                 <div id="tabs">
@@ -45,28 +45,30 @@
                     </ul>
                     <div id="tab1" class="tabcontent">
                         <div id="search">
-                            <form method="get">
-                                <label>Search</label>
-                                <input type="text" class="searchbar"/>
-                            </form>
+                            <label>Search</label>
+                            <input type="text" class="searchbar"/>
                         </div>
                         <hr>
                         <p> ORDER BY: </p>
                         <div id="itemwrapper1">
                             <ul id="first1">
                                 <li>
-                                    <input type="radio" name="orderby1" value="author" id="radio1" checked="checked"/>
-                                    <label for="radio1">author</label>
+                                    <input type="radio" name="orderby1" value="title" id="radio1" checked="checked"/>
+                                    <label for="radio1">title</label>
                                 </li>
                                 <li>
-                                    <input type="radio" name="orderby1" value="date" id="radio2"/>
-                                    <label for="radio2">date</label>
+                                    <input type="radio" name="orderby1" value="author" id="radio2"/>
+                                    <label for="radio2">author</label>
                                 </li>
                             </ul>
                             <ul id="second1">
                                 <li>
-                                    <input type="radio" name="orderby1" value="title" id="radio3"/>
-                                    <label for="radio3">title</label>
+                                    <input type="radio" name="orderby1" value="date" id="radio3"/>
+                                    <label for="radio3">date</label>
+                                </li>
+                                <li>
+                                    <input type="radio" name="orderby1" value="status" id="radio4"/>
+                                    <label for="radio4">status</label>
                                 </li>
                             </ul>
                             <ul id="third1">
@@ -82,51 +84,14 @@
                         </div>
                         <div id="itemTable1">
                             <table>
-                                <tbody>
+                                <tbody class="tableBody1">
                                     <tr>
                                         <th>title</th> 
                                         <th>author</th>
                                         <th>isbn/issn</th>
-                                        <th>date</th> 
+                                        <th>published date</th>
                                         <th>status</th>
                                     </tr>
-                                    <tr onclick= "chooseElement(event)">
-                                        <td>Eldest</td> 
-                                        <td>Christopher Paolini</td>
-                                        <td>9780552552110</td>
-                                        <td>24.10.2016</td> 
-                                        <td>borrowed</td>
-                                    </tr>
-                                    <!-- delete block -->
-                                    <tr onclick= "chooseElement(event)">
-                                        <td>Fingers in the Sparkle Jar: A Memoir</td> 
-                                        <td>Chris Packham</td>
-                                        <td>9781785033483</td>
-                                        <td>13.10.2016</td> 
-                                        <td>borrowed</td>
-                                    </tr>
-                                    <tr onclick= "chooseElement(event)">
-                                        <td>The Magicians:(Book 1)</td> 
-                                        <td>Lev Grossman</td>
-                                        <td>9780099534440</td>
-                                        <td>11.11.2016</td> 
-                                        <td>returned</td>
-                                    </tr>
-                                    <tr onclick= "chooseElement(event)">
-                                        <td>A Game of Thrones (A Song of Ice and Fire, Book 1)</td> 
-                                        <td>George R.R. Martin</td>
-                                        <td>9780007548231</td>
-                                        <td>26.10.2016</td> 
-                                        <td>borrowed</td>
-                                    </tr>
-                                    <tr onclick= "chooseElement(event)">
-                                        <td>Fingers in the Sparkle Jar: A Memoir</td> 
-                                        <td>Chris Packham</td>
-                                        <td>9781785033483</td>
-                                        <td>01.11.2016</td> 
-                                        <td>returned</td>
-                                    </tr>
-                                    <!-- delete block -->
                                 </tbody>
                             </table>
                         </div>
@@ -140,14 +105,14 @@
                             </ul>
                         </div>
                         <div id="buttons">
-                            <input type="button" onclick="location.href='manageitems.html';" value="DELETE" />
-                            <input type="button" onclick="location.href='edit.html';" value="EDIT" />
+                            <input type="button" id="deletebtn" value="DELETE" />
+                            <input type="button" id="editbtn" value="EDIT" />
                         </div>
                     </div>
                     <div id="tab2" class="tabcontent">
                         <div id="itemwrapper2">
                             <div id="itempicture">
-                                <!-- UPLOAD PICTURE (with php?)-->
+                                <!-- UPLOAD PICTURE -->
                                 <img src="https://goo.gl/Pq42Lm" alt="item image">
                             </div>
                             <div id="itemtext">
@@ -156,18 +121,12 @@
                                 <label>add author(s)</label>
                                 <input type="text" name="author" required>
                                 <label>add ISBN/ISSN</label>
-                                <input type="text" name="ISBN" required>
+                                <input type="text" name="isbn" required>
                                 <label>add date</label>
                                 <input type = "date" name="date" required/>
                                 <div id="subjectwrapper">
                                     <select id="selectmenu5">
                                         <option selected disabled class="hideoption">Select subject</option>
-                                        <!-- READ from database -->
-                                        <option>subject 1</option>
-                                        <option>subject 2</option>
-                                        <option>subject 3</option>
-                                        <option>subject 4</option>
-                                        <!-- REPLACE BLOCK -->
                                     </select>
                                     <div id="floatright">
                                         <label id="subjectlabel">or choose new subject</label>
@@ -180,7 +139,7 @@
                                 <textarea name="content"></textarea>
                             </div>
                             <div id="addbutton">
-                                <input type="button" onclick="location.href='manageitems.html';" value="SUBMIT" />
+                                <input type="button" id="addbtn" value="SUBMIT" />
                             </div>
                         </div>
                     </div>
@@ -220,55 +179,13 @@
                         </div>
                         <div id="itemTable3">
                             <table>
-                                <tbody>
+                                <tbody class="tableBody2">
                                     <tr>
                                         <th>username</th>
                                         <th>title</th> 
                                         <th>author</th>
-                                        <th>isbn/issn</th>
-                                        <th>date</th> 
-                                        <th>status</th>
-                                    </tr>
-                                    <!-- delete block -->
-                                    <tr onclick= "chooseElement(event)">
-                                        <td>Nephena</td>
-                                        <td>Eldest</td> 
-                                        <td>Christopher Paolini</td>
-                                        <td>9780552552110</td>
-                                        <td>24.10.2016</td> 
-                                        <td>requested</td>
-                                    </tr>
-                                    <tr onclick= "chooseElement(event)">
-                                        <td>Anne1847</td>
-                                        <td>Fingers in the Sparkle Jar: A Memoir</td> 
-                                        <td>Chris Packham</td>
-                                        <td>9781785033483</td>
-                                        <td>13.10.2016</td> 
-                                        <td>requested</td>
-                                    </tr>
-                                    <tr onclick= "chooseElement(event)">
-                                        <td>Eupheme</td>
-                                        <td>The Magicians:(Book 1)</td> 
-                                        <td>Lev Grossman</td>
-                                        <td>9780099534440</td>
-                                        <td>11.11.2016</td> 
-                                        <td>requested</td>
-                                    </tr>
-                                    <tr onclick= "chooseElement(event)">
-                                        <td>L4rchy</td>
-                                        <td>A Game of Thrones (A Song of Ice and Fire, Book 1)</td> 
-                                        <td>George R.R. Martin</td>
-                                        <td>9780007548231</td>
-                                        <td>26.10.2016</td> 
-                                        <td>requested</td>
-                                    </tr>
-                                    <tr onclick= "chooseElement(event)">
-                                        <td>Anne1847</td>
-                                        <td>Fingers in the Sparkle Jar: A Memoir</td> 
-                                        <td>Chris Packham</td>
-                                        <td>9781785033483</td>
-                                        <td>01.11.2016</td> 
-                                        <td>requested</td>
+                                        <th>subject</th>
+                                        <th>requested date</th>
                                     </tr>
                                 </tbody>
                             </table>
@@ -293,7 +210,7 @@
                             </li>					
                         </ul>
                         <div id="submitbutton">
-                            <input type="button" onclick="location.href='manageitems.html';" value="SUBMIT" />
+                            <input type="button" id="submitbtn" value="SUBMIT" />
                         </div>
                     </div>
                 </div>

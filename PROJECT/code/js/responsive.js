@@ -32,13 +32,10 @@ function showMenu(value) {
 function chooseElement(evt) {
     var elclass, ctrlkey;
     elclass = evt.currentTarget.className;
-    ctrlkey = event.ctrlKey;
 
-    if (!ctrlkey) { //hold ctrl to select multiple rows
-        var trs = document.querySelectorAll("tr");
-        for(var i = 0; i < trs.length; i++){
-            trs[i].className = "";   
-        }
+    var trs = document.querySelectorAll("tr");
+    for(var i = 0; i < trs.length; i++){
+        trs[i].className = "";   
     }
 
     if (elclass === "selected") {

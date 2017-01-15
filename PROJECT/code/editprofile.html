@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>EDIT PROFILE</title>
+        <script src="js/responsive.js"></script>
+        <script src="js/jquery-3.1.1.min.js"></script>
+        <script src="js/editprofile.js"></script>
+        <script src="js/base.js"></script>
+        <link href="css/base.css" rel="stylesheet" type="text/css"/>
+        <link href="css/editprofile.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <div id="banner1">
+        </div>
+        <div id="page">
+            <div id="navigation">
+                <div id="logo">
+                    <img id="logopicture" src="pictures/icons/library1-red.png" alt="logo">
+                    <p id="logotext">Biblios</p>
+                </div>
+                <hr>
+                <input type="button" id="myitems" class="nav-item" onclick="location.href='myitems.html';" value="MY ITEMS" />
+                <input type="button" id="itemrequest" class="nav-item" onclick="location.href='itemrequest.html';" value="ITEM REQUEST" />
+                <hr>
+                <input type="button" id="search" class="nav-item" onclick="location.href='search.html';" value="SEARCH" />
+                <input type="button" id="statistics" class="nav-item" onclick="location.href='statistics-user.html';" value="STATISTICS" />
+                <input type="button" id="settings" class="nav-item" onclick="location.href='settings.html';" value="SETTINGS" />
+                <hr>
+                <input type="button" id="logout" class="nav-item" value="LOG OUT" />
+                <input type="button" id="asadmin" class="nav-item" onclick="location.href='manageitems.html';" value="ADMIN VIEW" />
+            </div>
+            <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+            <label for="nav-trigger"></label>
+            <div id="content">
+                <div id="banner2">
+                </div>
+                <h2> EDIT PROFILE </h2>
+                <div id="itemwrapper">
+                    <div id="itempicture">
+                    	<input type="file" name="picture" required>
+                    	<img id="pic" src="#" alt="picture" />
+                        <!-- 
+                        <img src="https://goo.gl/Pq42Lm" alt="item image">-->
+                    </div>
+                    <div id="itemtext">
+                        <label>edit username</label>
+                        <input type="text" name="username" required>
+                        <label>edit first name</label>
+                        <input type="text" name="first" required>
+                        <label>edit last name</label>
+                        <input type="text" name="last" required>
+                        <label>edit email</label>
+                        <input type="text" name="email" required>
+                        <label>edit birth date</label>
+                        <input type = "date" name="date" required/>
+                    </div>
+                    <div id="itemcontent">
+                        <label>new password</label>
+                        <input type="password" name="pass1" required>
+                        <label>retype new password</label>
+                        <input type="password" name="pass2" required>
+                    </div>
+                    <div id="submitbutton">
+                        <input type="button" id="submitbtn" value="SUBMIT" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

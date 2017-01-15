@@ -1,20 +1,53 @@
-window.addEventListener("load", function () {
-    var graphs;
-    graphs = document.querySelectorAll(".graph");
-    plotgraph(graphs[0].id);
-    plotgraph(graphs[1].id);
-});
-
-var canvas, cnt, max, min, xScale, yScale, sections, y, itemName, itemVal;
+var canvas, cnt, max, min, xScale, yScale, sections, y, itemName;
 
 itemName = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-itemVal = [15, 4, 3, 6, 11, 23, 4, 3, 10, 1, 2, 9]; //number of books/items
 
-function plotgraph(canvasid) {
+window.addEventListener("load", function () {
+    getItemGraph();
+    getUserGraph();
+});
+
+function getItemGraph(){
+	$.ajax({
+        	type: "GET",
+        	contentType: "application/json",
+        	url: "/api/item_graph",
+        	success: function(data) {
+        		console.log("success");
+        		console.log(data);
+        		var itemVal = data;
+        		var graphs = document.querySelectorAll(".graph");
+        		plotgraph(graphs[0].id, itemVal);
+        	},
+        	error: function() {
+        		console.log("fail");
+        	}
+        });
+}
+
+function getUserGraph(){
+	$.ajax({
+        	type: "GET",
+        	contentType: "application/json",
+        	url: "/api/user_graph",
+        	success: function(data) {
+        		console.log("success");
+        		console.log(data);
+        		var userVal = data;
+        		var graphs = document.querySelectorAll(".graph");
+        		plotgraph(graphs[1].id, userVal);
+        	},
+        	error: function() {
+        		console.log("fail");
+        	}
+        });
+}
+
+function plotgraph(canvasid, table) {
     var step, columnSize, rowSize, margin, width, height, c;
-
-    sections = itemVal.length;    
-    max = Math.max.apply(null, itemVal); //max number of books
+    
+    sections = table.length;    
+    max = Math.max.apply(null, table); //max number of books
     if (max%2 !== 0) {
         max +=1;
     }
@@ -64,7 +97,7 @@ function plotgraph(canvasid) {
     cnt.scale(xScale,-1 * yScale);
 
     for(i = 0; i < sections; i++) {
-        cnt.fillRect(i+1, 0, 0.5, itemVal[i]);
+        cnt.fillRect(i+1, 0, 0.5, table[i]);
     }
 
 }

@@ -1,15 +1,13 @@
-#page #navigation #searchbar {
+#page #navigation #search {
     background-image: url('../pictures/icons/search-red.png');
     background-color: #ccd9ff !important;
     color: #990000 !important;
 }
 
-#page #content #searchbar form {
-	overflow: hidden; 
-	margin: 0 0 30px 0;
-	margin-left: 15%;
-	margin-right: 15%;
-	width: 70%;
+#page #content #searchbar {
+	overflow: hidden;
+	margin: auto;
+	width: 80%;
 	outline: none;
 }
 

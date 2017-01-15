@@ -3,13 +3,15 @@
     <head>
         <meta charset="utf-8">
         <title>SEARCH</title>
+        <script src="js/responsive.js"></script>
+        <script src="js/jquery-3.1.1.min.js"></script>
+        <script src="js/search.js"></script>
+        <script src="js/base.js"></script>
         <link href="css/base.css" rel="stylesheet" type="text/css"/>
         <link href="css/search.css" rel="stylesheet" type="text/css"/>
-        <script src="js/responsive.js"></script>
     </head>
     <body>
         <div id="banner1">
-            <p> username </p>
         </div>
         <div id="page">
             <div id="navigation">
@@ -25,36 +27,22 @@
                 <input type="button" id="statistics" class="nav-item" onclick="location.href='statistics-user.html';" value="STATISTICS" />
                 <input type="button" id="settings" class="nav-item" onclick="location.href='settings.html';" value="SETTINGS" />
                 <hr>
+                <input type="button" id="logout" class="nav-item" value="LOG OUT" />
                 <input type="button" id="asadmin" class="nav-item" onclick="location.href='manageitems.html';" value="ADMIN VIEW" />
-                <input type="button" id="logout" class="nav-item" onclick="location.href='lindex.html';" value="LOG OUT" />
-                <hr>
             </div>
             <input type="checkbox" id="nav-trigger" class="nav-trigger" />
             <label for="nav-trigger"></label>
             <div id="content">
                 <div id="banner2">
-                    <p> username </p>
                 </div>
                 <h2> SEARCH </h2>
                 <div id="searchbar">
-                    <form method="get">
-                        <label>Search</label>
-                        <input type="text" class="searchbar"/>
-                    </form>
+                    <label>Search</label>
+                    <input type="text" class="searchbar" list="items"/>
+                    <datalist id="items"></datalist>
                 </div>
                 <hr>
-                <div id="bookwrapper">
-                    <div id="picture">
-                        <img src="https://goo.gl/Pq42Lm" alt="book image">
-                    </div>
-                    <div id="about">
-                        <h3> TITLE </h3>
-                        <h4> AUTHOR(S) </h4>
-                        <h5> year; subject; ISSN; </h5>
-                        <hr>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam in venenatis lectus. Cras consectetur tincidunt ipsum, a suscipit odio ultrices sed. Curabitur quis massa tristique, consequat justo venenatis, mollis nunc. Donec pulvinar bibendum nisi, non efficitur augue laoreet pulvinar. Morbi lacus dui, posuere eget turpis sit amet, dapibus auctor justo. Morbi porta nunc nisi, ut gravida turpis interdum tristique. Aliquam eget ornare lectus, a mattis massa. Donec fringilla libero eros, eu tristique orci sagittis id. Suspendisse vitae nisi magna.
-                        </p>
-                    </div>
+                <div class="searchresults">
                 </div>
                 <div id="pages">
                     <ul>

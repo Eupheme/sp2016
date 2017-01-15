@@ -8,7 +8,7 @@ html, body{
 
 @font-face {
     font-family: logoFont;
-    src: url(../font/watermelon.ttf);
+    src: url(../font/Watermelon.ttf);
 }
 
 #page #navigation #logo {
@@ -65,6 +65,7 @@ html, body{
     background-image: url('../pictures/icons/manageusers.png');
     background-size: 45px 45px;
     background-position: center left 25px;
+    display: none;
 }
 
 #page #navigation #myitems {
@@ -239,6 +240,9 @@ html, body{
     }
 
     #banner1 p {
+    	font-weight: bold;
+    	text-transform: uppercase;
+    	color: #990000;
         text-align: right;
         margin-right: 30px;
         margin-top: 5px;
@@ -284,6 +288,9 @@ html, body{
     }
 
     #page #banner2 p {
+    	font-weight: bold;
+    	text-transform: uppercase;
+    	color: #990000;
         text-align: right;
         margin-right: 30px;
         margin-top: -25px;

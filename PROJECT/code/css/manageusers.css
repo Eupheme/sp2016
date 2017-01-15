@@ -9,13 +9,9 @@
 }
 
 #page #content #tabs #tab1 #search {
+    overflow: hidden; 
     width: 80%;
     margin: 0 auto;
-}
-
-#page #content #tabs #tab1 #search form {
-    overflow: hidden; 
-    width: 100%;
     outline: none;
 }
 
@@ -103,7 +99,7 @@
     margin-bottom: 30px;
 }
 
-#page #content #tabs #tab1 #userwrapper #usertext #adminbutton input[type=button] {
+#page #content #tabs #tab1 #userwrapper #usertext #statusbutton input[type=button] {
     margin-top: 20px;
 }
 
@@ -152,18 +148,20 @@
     min-width: 10em;
 }
 
-#page #content #tab2 #itemwrapper #first {
+#page #content #tab2 #itemwrapper #second {
     margin-right: 30px;
 }
 
 @media all and (min-width: 499px) {
     #first { flex: 1; }
     #second { flex: 1; }
+    #third { flex: 1; }
 }
 
 @media all and (min-width: 500px) {
     #first { order: 1; }
     #second { order: 2; }
+    #third { order: 3; }
 }
 
 #page #content #tabs #tab2 #itemTable {
@@ -256,7 +254,7 @@
     margin-top: 60px;
 }
 
-#page #content #tabs #tab1 #userwrapper #usertext #adminbutton input[type=button], #tab2 #submitbutton input[type=button] {
+#page #content #tabs #tab1 #userwrapper #usertext #statusbutton input[type=button], #tab2 #submitbutton input[type=button] {
     display: inline-block;
     float: right;
     height: 30px;
@@ -269,7 +267,7 @@
     margin-right: 10px;    
 }
 
-#page #content #tabs #tab1 #userwrapper #usertext #adminbutton input[type=button]:hover, #tab2 #submitbutton input[type=button]:hover {
+#page #content #tabs #tab1 #userwrapper #usertext #statusbutton input[type=button]:hover, #tab2 #submitbutton input[type=button]:hover {
     background-color: #cc0000;
     color: white;
 }

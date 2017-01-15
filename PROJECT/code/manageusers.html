@@ -3,15 +3,17 @@
     <head>
         <meta charset="utf-8">
         <title>MANAGE USERS</title>
+        <script src="js/toggletabs.js"></script>
+        <script src="js/responsive.js"></script>
+        <script src="js/jquery-3.1.1.min.js"></script>
+        <script src="js/manageusers.js"></script>
+        <script src="js/base.js"></script>
         <link href="css/base.css" rel="stylesheet" type="text/css"/>
         <link href="css/tabs.css" rel="stylesheet" type="text/css"/>
         <link href="css/manageusers.css" rel="stylesheet" type="text/css"/>
-        <script src="js/toggletabs.js"></script>
-        <script src="js/responsive.js"></script>
     </head>
     <body>
         <div id="banner1">
-            <p> username </p>
         </div>
         <div id="page">
             <div id="navigation">
@@ -26,15 +28,13 @@
                 <input type="button" id="borrowing" class="nav-item" onclick="location.href='borrowing.html';" value="BORROWING" />
                 <input type="button" id="statistics" class="nav-item" onclick="location.href='statistics-admin.html';" value="STATISTICS" />
                 <hr>
+                <input type="button" id="logout" class="nav-item" value="LOG OUT" />
                 <input type="button" id="asuser" class="nav-item" onclick="location.href='myitems.html';" value="USER VIEW" />
-                <input type="button" id="logout" class="nav-item" onclick="location.href='index.html';" value="LOG OUT" />
-                <hr>
             </div>
             <input type="checkbox" id="nav-trigger" class="nav-trigger" />
             <label for="nav-trigger"></label>
             <div id="content">
                 <div id="banner2">
-                    <p> username </p>
                 </div>
                 <h2> MANAGE USERS </h2>
                 <div id="tabs">
@@ -44,35 +44,19 @@
                     </ul>
                     <div id="tab1" class="tabcontent">
                         <div id="search">
-                            <form method="get">
-                                <label>Search user</label>
-                                <input type="text" class="searchbar"/>
-                            </form>
+                            <label>Search user</label>
+                            <input type="text" class="searchbar" list="results"/>
+                            <datalist id="results">
+                            </datalist>
                         </div>
                         <hr>
-                        <div id="userwrapper">
-                            <div id="userimage">
-                                <img src="https://s-media-cache-ak0.pinimg.com/236x/1f/73/ef/1f73ef29799e15a21403822d3361c4f2.jpg" alt="user image">
-                            </div>
-                            <div id="usertext">
-                                <p id = "sUsername">USERNAME </p>
-                                <p id = "sUserid">USER ID </p>
-                                <p id = "sName">SURNAME, NAME</p>
-                                <p id = "sAge">AGE</p>
-                                <p id = "sEmail">EMAIL</p>
-                                <p id = "sMember">MEMBER SINCE: DATE</p>
-                                <p id = "sStatus">STATUS: user</p>
-
-                                <div id="adminbutton">
-                                    <input type="button" onclick="location.href='manageitems.html';" value="ADD AS ADMIN" />
-                                </div>
-                            </div>
+                        <div class="userresults">
                         </div>
                     </div>
                     <div id="tab2" class="tabcontent">
                         <p> ORDER BY: </p>
                         <div id="itemwrapper">
-                            <ul id="first">
+                        	<ul id="first">
                                 <li>
                                     <input type="radio" name="orderby" value="username" id="radio1" checked="checked"/>
                                     <label for="radio1">username</label>
@@ -84,65 +68,29 @@
                             </ul>
                             <ul id="second">
                                 <li>
-                                    <input type="radio" name="ascdesc" value="ascending" id="radio5" checked="checked"/>
-                                    <label for="radio5">ascending</label>
+                                    <input type="radio" name="orderby" value="date" id="radio3"/>
+                                    <label for="radio3">date</label>
+                                </li>
+                            </ul>
+                            <ul id="third">
+                                <li>
+                                    <input type="radio" name="ascdesc" value="ascending" id="radio4" checked="checked"/>
+                                    <label for="radio4">ascending</label>
                                 </li>
                                 <li>
-                                    <input type="radio" name="ascdesc" value="descending" id="radio6"/>
-                                    <label for="radio6">descending</label>
+                                    <input type="radio" name="ascdesc" value="descending" id="radio5"/>
+                                    <label for="radio5">descending</label>
                                 </li>					
                             </ul>
                         </div>
                         <div id="itemTable">
                             <table>
-                                <tbody>
+                                <tbody class="tableBody">
                                     <tr>
                                         <th>username</th>
-                                        <th>name</th> 
-                                        <th>age</th>
+                                        <th>name</th>
                                         <th>email</th>
-                                        <th>address</th> 
-                                        <th>status</th>
-                                    </tr>
-                                    <tr onclick= "chooseElement(event)">
-                                        <td>Nephena</td>
-                                        <td>name, surname</td> 
-                                        <td>18</td>
-                                        <td>nephena@mail.com</td>
-                                        <td>address</td> 
-                                        <td>pending</td>
-                                    </tr>
-                                    <tr onclick= "chooseElement(event)">
-                                        <td>Nephena</td>
-                                        <td>name, surname</td> 
-                                        <td>18</td>
-                                        <td>nephena@mail.com</td>
-                                        <td>address</td> 
-                                        <td>pending</td>
-                                    </tr>
-                                    <tr onclick= "chooseElement(event)">
-                                        <td>Nephena</td>
-                                        <td>name, surname</td> 
-                                        <td>18</td>
-                                        <td>nephena@mail.com</td>
-                                        <td>address</td> 
-                                        <td>pending</td>
-                                    </tr>
-                                    <tr onclick= "chooseElement(event)">
-                                        <td>Nephena</td>
-                                        <td>name, surname</td> 
-                                        <td>18</td>
-                                        <td>nephena@mail.com</td>
-                                        <td>address</td> 
-                                        <td>pending</td>
-                                    </tr>
-                                    <tr onclick= "chooseElement(event)">
-                                        <td>Nephena</td>
-                                        <td>name, surname</td> 
-                                        <td>18</td>
-                                        <td>nephena@mail.com</td>
-                                        <td>address</td> 
-                                        <td>pending</td>
+                                        <th>added date</th> 
                                     </tr>
                                 </tbody>
                             </table>
@@ -158,20 +106,20 @@
                         </div>
                         <ul id="acceptuser">
                             <li>
-                                <input type="radio" name="request" value="accept" id="accept" checked="checked"/>
+                                <input type="radio" name="request" value="accept" id="accept"/>
                                 <label for="accept">accept</label>
                             </li>
                             <li>
-                                <input type="radio" name="request" value="deny" id="deny"/>
+                                <input type="radio" name="request" value="deny" id="deny" checked="checked"/>
                                 <label for="deny">deny</label>
                             </li>
                             <li>
-                                <input type="checkbox" name="admin" value="acceptadmin" id="acceptadmin"/>
+                                <input type="radio" name="request" value="acceptadmin" id="acceptadmin"/>
                                 <label for="acceptadmin">accept as admin</label>
                             </li>
                         </ul>
                         <div id="submitbutton">
-                            <input type="button" onclick="location.href='manageitems.html';" value="SUBMIT" />
+                            <input type="button" id="submitbtn" value="SUBMIT" />
                         </div>
                     </div>
                 </div>

@@ -3,12 +3,15 @@
     <head>
         <meta charset="utf-8">
         <title>SETTINGS</title>
+        <script src="js/jquery-3.1.1.min.js"></script>
+        <script src="js/base.js"></script>
+        <script src="js/settings.js"></script>
         <link href="css/base.css" rel="stylesheet" type="text/css"/>
         <link href="css/settings.css" rel="stylesheet" type="text/css"/>
+        
     </head>
     <body>
         <div id="banner1">
-            <p> username </p>
         </div>
         <div id="page">
             <div id="navigation">
@@ -24,33 +27,30 @@
                 <input type="button" id="statistics" class="nav-item" onclick="location.href='statistics-user.html';" value="STATISTICS" />
                 <input type="button" id="settings" class="nav-item" onclick="location.href='settings.html';" value="SETTINGS" />
                 <hr>
+                <input type="button" id="logout" class="nav-item" value="LOG OUT" />
                 <input type="button" id="asadmin" class="nav-item" onclick="location.href='manageitems.html';" value="ADMIN VIEW" />
-                <input type="button" id="logout" class="nav-item" onclick="location.href='index.html';" value="LOG OUT" />
-                <hr>
             </div>
             <input type="checkbox" id="nav-trigger" class="nav-trigger" />
             <label for="nav-trigger"></label>
             <div id="content">
                 <div id="banner2">
-                    <p> username </p>
                 </div>
                 <h2> PROFILE </h2>
                 <div id="centered" class="tabcontent">
                     <div id="profilewrapper">
                         <div id="profilepicture">
-                            <img src="https://s-media-cache-ak0.pinimg.com/236x/1f/73/ef/1f73ef29799e15a21403822d3361c4f2.jpg" alt="user image">
+                            <img src="" alt="user image">
                         </div>
                         <div id="profiletext">
-                            <p id = "sUsername">USERNAME </p>
-                            <p id = "sName">SURNAME, NAME</p>
-                            <p id = "sAge">AGE</p>
-                            <p id = "sEmail">EMAIL</p>
-                            <p id = "sPhone">PHONE NUMBER</p>
-                            <p id = "sAddress">ADDRESS</p>
-                            <p id = "sMember">MEMBER SINCE: DATE</p>
+                            <p id = "sUsername"></p>
+                            <p id = "sName"></p>
+                            <p id = "sStatus"></p>
+                            <p id = "sAge"></p>
+                            <p id = "sEmail"></p>
+                            <p id = "sMember"></p>
                         </div>
                         <div id="editbutton">
-                            <input type="button" onclick="location.href='settings.html';" value="EDIT" />
+                            <input type="button" onclick="location.href='editprofile.html';" value="EDIT" />
                         </div>
                     </div>
                 </div>

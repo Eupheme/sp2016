@@ -39,7 +39,6 @@ function getButtons(el, filter) {
     return buttons;
 }
 
-
 function openTab(evt) {
     var i, tabs, buttons;
     tabs = getSiblings(evt.currentTarget.parentNode.parentNode, 'tabcontent')
@@ -51,5 +50,11 @@ function openTab(evt) {
             tabs[i].style.display = "block";
             evt.currentTarget.className += " active";
         }
+    }
+    
+    //no row is selected
+    var trs = document.querySelectorAll("tr");
+    for(var i = 0; i < trs.length; i++){
+        trs[i].className = "";   
     }
 }

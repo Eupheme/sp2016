@@ -3,14 +3,15 @@
     <head>
         <meta charset="utf-8">
         <title>ITEM REQUEST</title>
+        <script src="js/responsive.js"></script>
+        <script src="js/jquery-3.1.1.min.js"></script>
+        <script src="js/itemrequest.js"></script>
+        <script src="js/base.js"></script>
         <link href="css/base.css" rel="stylesheet" type="text/css"/>
         <link href="css/itemrequest.css" rel="stylesheet" type="text/css"/>
-        <script src="js/toggle.js"></script>
-        <script src="js/responsive.js"></script>
     </head>
     <body>
         <div id="banner1">
-            <p> username </p>
         </div>
         <div id="page">
             <div id="navigation">
@@ -26,40 +27,24 @@
                 <input type="button" id="statistics" class="nav-item" onclick="location.href='statistics-user.html';" value="STATISTICS" />
                 <input type="button" id="settings" class="nav-item" onclick="location.href='settings.html';" value="SETTINGS" />
                 <hr>
+                <input type="button" id="logout" class="nav-item" value="LOG OUT" />
                 <input type="button" id="asadmin" class="nav-item" onclick="location.href='manageitems.html';" value="ADMIN VIEW" />
-                <input type="button" id="logout" class="nav-item" onclick="location.href='index.html';" value="LOG OUT" />
-                <hr>
             </div>
             <input type="checkbox" id="nav-trigger" class="nav-trigger" />
             <label for="nav-trigger"></label>
             <div id="content">
                 <div id="banner2">
-                    <p> username </p>
                 </div>
                 <h2> ITEM REQUEST </h2>
                 <div id="itemwrapper">
-                    <div id="itempicture">
-                        <!-- UPLOAD PICTURE (with php?)-->
-                        <img src="https://goo.gl/Pq42Lm" alt="item image">
-                    </div>
                     <div id="itemtext">
                         <label>add title</label>
                         <input type="text" name="title" required>
                         <label>add author(s)</label>
                         <input type="text" name="author" required>
-                        <label>add ISBN/ISSN</label>
-                        <input type="text" name="ISBN" required>
-                        <label>add date</label>
-                        <input type = "date" name="date" required/>
                         <div id="subjectwrapper">
                             <select id="selectmenu5">
                                 <option selected disabled class="hideoption">Select subject</option>
-                                <!-- READ from database -->
-                                <option>subject 1</option>
-                                <option>subject 2</option>
-                                <option>subject 3</option>
-                                <option>subject 4</option>
-                                <!-- REPLACE BLOCK -->
                             </select>
                             <div id="floatright">
                                 <label id="subjectlabel">or choose new subject</label>
@@ -72,7 +57,7 @@
                         <textarea name="content"></textarea>
                     </div>
                     <div id="requestbutton">
-                        <input type="button" onclick="location.href='itemrequest.html';" value="REQUEST" />
+                        <input type="button" id="requestbtn" value="REQUEST" />
                     </div>
                 </div>
             </div>
