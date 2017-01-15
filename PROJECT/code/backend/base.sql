@@ -10,3 +10,5 @@ CREATE TABLE `biblios`.`users` ( `user_id` INT NOT NULL AUTO_INCREMENT, `first_n
 CREATE TABLE `biblios`.`transactions` ( `user_id` INT NOT NULL , `item_id` INT NOT NULL , `borrowed_date` DATE NOT NULL , `returned_date` DATE DEFAULT NULL, FOREIGN KEY (user_id) REFERENCES users(user_id), FOREIGN KEY (item_id) REFERENCES items(item_id) ) ENGINE = InnoDB;
 
 CREATE TABLE `biblios`.`requests` (`request_id` INT NOT NULL AUTO_INCREMENT, `user_id` INT NOT NULL, `title` VARCHAR(25) NOT NULL , `author` VARCHAR(25) NOT NULL , `requested_date` DATE NOT NULL , `subject` INT NOT NULL , `description` TEXT NOT NULL , PRIMARY KEY (`request_id`), FOREIGN KEY (user_id) REFERENCES users(user_id), FOREIGN KEY (subject) REFERENCES subjects(subject_id)) ENGINE = InnoDB;
+
+INSERT INTO users(first_name, last_name, username, email, password, salt, status, picture, birth_date, added_date) VALUES ("defaultadmin", "defaultadmin", "defaultadmin", "default@admin.com", "89faac46e4b86e9b1201d1d3b8e6723aa78067", "qrjzvu5VXLWsBMULep5KhXylW6Hf2UVl", 1, "", NULL, "2017-01-15");
