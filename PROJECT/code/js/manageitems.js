@@ -29,9 +29,6 @@ function postAddItem(title, author, isbn, date, subject, desc){
         	url: "/api/add_item",
         	data: JSON.stringify({title: title, author:author, date:date, isbn:isbn, subject:subject, description:desc}),
         	success: function(data) {
-        		console.log("success");
-        		console.log(data);
-        		
         		alert("Item was successfully added.");
         		window.location.replace("manageitems.html");
         	},
@@ -47,15 +44,10 @@ function getSubjects() {
         	contentType: "application/json",
         	url: "/api/subjects",
         	success: function(data) {
-        		console.log("success");
-        		console.log(data);
-        		
         		var menu = $("#selectmenu5");
         		for (var k in data) {
         			menu.append($("<option/>").text(data[k]));
         		}
-        		
-        		
         	},
         	error: function() {
         		console.log("fail");
@@ -70,9 +62,6 @@ function getSearchItems(s, o, b){
         	url: "/api/search_items",
         	data: {search: s, order: o, by: b},
         	success: function(data) {
-        		console.log("success");
-        		console.log(data);
-        		
         		$("tr.entrysearch").remove();
         		
         		var table = $("tbody.tableBody1");
@@ -107,9 +96,6 @@ function getRequestedItems(o, b){
         	url: "/api/requested_items",
         	data: {order: o, by: b},
         	success: function(data) {
-        		console.log("success");
-        		console.log(data);
-        		
         		$("tr.entry").remove();
         		
         		var table = $("tbody.tableBody2");
@@ -138,9 +124,6 @@ function postDeleteItem(i) {
         	url: "/api/delete_item",
         	data: JSON.stringify({itm: ii}),
         	success: function(data) {
-        		console.log("success");
-        		console.log(data);
-        		
         		alert("Item was successfully deleted.");
         	},
         	error: function() {
@@ -157,9 +140,6 @@ function postDeleteRequest(r) {
         	url: "/api/delete_request",
         	data: JSON.stringify({req: rr}),
         	success: function(data) {
-        		console.log("success");
-        		console.log(data);
-        		
         		alert("Request was successfully deleted.");
         	},
         	error: function() {

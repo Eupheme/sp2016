@@ -8,9 +8,6 @@ function getAdminTransactionHistory(o, b){
         	url: "/api/admin_transaction_history",
         	data: {order: o, by: b},
         	success: function(data) {
-        		console.log("success");
-        		console.log(data);
-        		
         		$("tr.entry").remove();
         		
         		var table = $("tbody.tableBody");

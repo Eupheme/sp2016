@@ -8,9 +8,6 @@ function getMyItems(o, b){
         	url: "/api/my_items",
         	data: {order: o, by: b},
         	success: function(data) {
-        		console.log("success");
-        		console.log(data);
-        		
         		$("tr.entry").remove();
         		
         		var table = $("tbody.tableBody");

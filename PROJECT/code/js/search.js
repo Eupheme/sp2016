@@ -7,9 +7,6 @@ function getSearchItems(s){
         	url: "/api/search_items",
         	data: {search: s},
         	success: function(data) {
-        		console.log("success");
-        		console.log(data);
-        		
         		$(".entry").remove();
         		
         		var results = $(".searchresults");

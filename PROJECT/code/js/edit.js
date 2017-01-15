@@ -39,15 +39,10 @@ function getSubjects() {
         	contentType: "application/json",
         	url: "/api/subjects",
         	success: function(data) {
-        		console.log("success");
-        		console.log(data);
-        		
         		var menu = $("#selectmenu5");
         		for (var k in data) {
         			menu.append($("<option/>").text(data[k]));
         		}
-        		
-        		
         	},
         	error: function() {
         		console.log("fail");
@@ -63,16 +58,12 @@ function getEditItem(i) {
         	url: "/api/edit_item",
         	data: {itm: ii},
         	success: function(data) {
-        		console.log("success");
-        		console.log(data);
-        		
         		$("input[name=title]").val(data.title);
         		$("input[name=author]").val(data.author);
         		$("input[name=isbn]").val(data.isbn);
         		$("input[name=date]").val(data.published_date);
         		$("textarea[name=content]").val(data.description);
         		$("#selectmenu5").val(data.subject);
-        		
         	},
         	error: function() {
         		console.log("fail");
@@ -88,14 +79,10 @@ function getEditRequestedItem(r) {
         	url: "/api/edit_requested_item",
         	data: {req: rr},
         	success: function(data) {
-        		console.log("success");
-        		console.log(data);
-        		
         		$("input[name=title]").val(data.title);
         		$("input[name=author]").val(data.author);
         		$("textarea[name=content]").val(data.description);
         		$("#selectmenu5").val(data.subject);
-        		
         	},
         	error: function() {
         		console.log("fail");
@@ -110,9 +97,6 @@ function postAddItem(title, author, isbn, date, subject, desc){
         	url: "/api/add_item",
         	data: JSON.stringify({title: title, author:author, date:date, isbn:isbn, subject:subject, description:desc}),
         	success: function(data) {
-        		console.log("success");
-        		console.log(data);
-        		
         		alert("Item was successfully added.");
         		window.location.replace("manageitems.html");
         	},
@@ -130,9 +114,6 @@ function postEditItem(title, author, isbn, date, subject, desc){
         	url: "/api/edit_item",
         	data: JSON.stringify({itm:ii, title: title, author:author, published_date:date, isbn:isbn, subject:subject, description:desc}),
         	success: function(data) {
-        		console.log("success");
-        		console.log(data);
-        		
         		alert("Item was successfully edited.");
         		window.location.replace("manageitems.html");
         	},
@@ -150,9 +131,6 @@ function postDeleteRequest(r) {
         	url: "/api/delete_request",
         	data: JSON.stringify({req: rr}),
         	success: function(data) {
-        		console.log("success");
-        		console.log(data);
-        		
         		alert("Request was successfully deleted.");
         	},
         	error: function() {

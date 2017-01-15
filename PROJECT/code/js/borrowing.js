@@ -13,10 +13,7 @@ function getSearchUser(s, key){
         	contentType: "application/json",
         	url: "/api/search_user",
         	data: {search: s},
-        	success: function(data) {
-        		console.log("success");
-        		console.log(data);
-        		
+        	success: function(data) {        		
         		$(".uentry").remove();
         		
         		if (key == 1) {
@@ -67,10 +64,7 @@ function getSearchItem(s, key){
         	contentType: "application/json",
         	url: "/api/search_item",
         	data: {search: s},
-        	success: function(data) {
-        		console.log("success");
-        		console.log(data);
-        		
+        	success: function(data) {        		
         		$(".ientry").remove();
         		
         		if (key == 1) {
@@ -120,10 +114,7 @@ function getReturn(s, key){
         	contentType: "application/json",
         	url: "/api/return",
         	data: {search: s},
-        	success: function(data) {
-        		console.log("success");
-        		console.log(data);
-        		
+        	success: function(data) {        		
         		if (data.item.title != "" && data.user.username != "") {
 		    		$('input.searchbar').val(data.item.title);
 		    		$("#itemimage2").remove();
@@ -186,9 +177,6 @@ function getReturnItem(s){
         	url: "/api/return_item",
         	data: {search: s},
         	success: function(data) {
-        		console.log("success");
-        		console.log(data);
-        		
         		$(".entry").remove();
         		
 	    		var results = $("#items");
@@ -211,9 +199,6 @@ function postBorrow(u, i){
         	url: "/api/borrow",
         	data: JSON.stringify({user: u, item: i}),
         	success: function(data) {
-        		console.log("success");
-        		console.log(data);
-        		
         		alert("Item has been borrowed.");
         		
         	},
@@ -230,8 +215,6 @@ function postReturn(u,i) {
         	url: "/api/return",
         	data: JSON.stringify({user: u, item: i}),
         	success: function(data) {
-        		console.log("success");
-        		console.log(data);
         		alert("Item has been returned.");
         		
         	},
@@ -243,7 +226,6 @@ function postReturn(u,i) {
 
 $(document).ready(function(){
 	$('.usearchbar').keydown(function(e) {
-		console.log(e.keyCode);
 		if (e.keyCode == 13) {
 			usear = this.value;
 			getSearchUser(usear, 1);

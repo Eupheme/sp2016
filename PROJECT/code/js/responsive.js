@@ -9,7 +9,6 @@ window.addEventListener("load", function () {
 });
 
 function showMenu(value) {
-    console.log(value)
     if (value === 1) {
         document.getElementById('selectmenu1').disabled = false;
         document.getElementById('selectmenu2').disabled = false;

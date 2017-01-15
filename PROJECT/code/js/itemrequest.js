@@ -4,15 +4,10 @@ function getSubjects() {
         	contentType: "application/json",
         	url: "/api/subjects",
         	success: function(data) {
-        		console.log("success");
-        		console.log(data);
-        		
         		var menu = $("#selectmenu5");
         		for (var k in data) {
         			menu.append($("<option/>").text(data[k]));
         		}
-        		
-        		
         	},
         	error: function() {
         		console.log("fail");
@@ -43,9 +38,6 @@ function postRequestedItem(title, author, subject, desc){
         	url: "/api/requested_item",
         	data: JSON.stringify({title: title, author:author, subject:subject, description:desc}),
         	success: function(data) {
-        		console.log("success");
-        		console.log(data);
-        		
         		alert("Item was successfully requested.");
         		window.location.replace("itemrequest.html");
         	},

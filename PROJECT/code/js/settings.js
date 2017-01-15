@@ -4,8 +4,6 @@ function getProfile(){
         	contentType: "application/json",
         	url: "/api/profile",
         	success: function(data) {
-        		console.log("success");
-        		console.log(data);
         		var added_date = data.added_date;
         		var age = data.birth_date;
         		var email = data.email;
@@ -29,7 +27,6 @@ function getProfile(){
         		else if (status == 1) {
         			$('#sStatus').html("STATUS: admin");
         		}
-        		
         	},
         	error: function() {
         		console.log("fail");

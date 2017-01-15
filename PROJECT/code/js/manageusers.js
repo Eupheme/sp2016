@@ -11,9 +11,6 @@ function getSearchUser(s){
         	url: "/api/search_user",
         	data: {search: s},
         	success: function(data) {
-        		console.log("success");
-        		console.log(data);
-        		
         		$(".entry").remove();
         		
 	    		var results = $("#results");
@@ -35,10 +32,6 @@ function getProfileAdmin(s){
         	url: "/api/profile_admin",
         	data: {username: s},
         	success: function(data) {
-        		console.log("success");
-        		console.log(data);
-        		console.log(data);
-        		
         		$(".entry").remove();
         		$(".entryuser").remove();
         		
@@ -82,7 +75,6 @@ function getProfileAdmin(s){
 		    		usr = 0;
 		    		alert("This user does not exist.");
 		    	}
-        		
         	},
         	error: function() {
         		console.log("fail");
@@ -97,9 +89,6 @@ function postToUser(al){
         	url: "/api/to_user",
         	data: JSON.stringify({usr:usr}),
         	success: function(data) {
-        		console.log("success");
-        		console.log(data);
-        		
         		if (al == 0)
         			alert("Status was changed to user.");
         		else
@@ -119,9 +108,6 @@ function postToAdmin(al){
         	url: "/api/to_admin",
         	data: JSON.stringify({usr:usr}),
         	success: function(data) {
-        		console.log("success");
-        		console.log(data);
-        		
         		if (al == 0)
         			alert("Status was changed to admin.");
         		else
@@ -141,9 +127,6 @@ function getPendingUsers(o, b){
         	url: "/api/pending_users",
         	data: {order: o, by: b},
         	success: function(data) {
-        		console.log("success");
-        		console.log(data);
-        		
         		$("tr.entrytable").remove();
         		
         		var table = $("tbody.tableBody");
@@ -170,9 +153,6 @@ function postDeletePendingUser(){
         	url: "/api/delete_pending_user",
         	data: JSON.stringify({usr:usr}),
         	success: function(data) {
-        		console.log("success");
-        		console.log(data);
-        		
         		alert("User was successfully deleted.");
         		window.location.replace("manageusers.html");
         	},
@@ -189,9 +169,6 @@ function postDeleteUser(){
         	url: "/api/delete_user",
         	data: JSON.stringify({usr:usr}),
         	success: function(data) {
-        		console.log("success");
-        		console.log(data);
-        		
         		alert("User was successfully deleted.");
         		window.location.replace("manageusers.html");
         	},
@@ -268,14 +245,12 @@ $(document).ready(function(){
 		else if (this.value == "acceptadmin") {
 			req = 2;
 		}
-		console.log(req);
 	});
 	
 	$('#submitbtn').click(function() {
 		var x = $('.selected');
 		if (x.length != 0){
 			usr = parseInt(x.find("input")[0].value);
-			console.log(usr);
 			if (req == 0) {
 				postDeletePendingUser();
 			}

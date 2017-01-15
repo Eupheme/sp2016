@@ -13,8 +13,6 @@ function getItemGraph(){
         	contentType: "application/json",
         	url: "/api/item_graph",
         	success: function(data) {
-        		console.log("success");
-        		console.log(data);
         		var itemVal = data;
         		var graphs = document.querySelectorAll(".graph");
         		plotgraph(graphs[0].id, itemVal);
@@ -31,8 +29,6 @@ function getUserGraph(){
         	contentType: "application/json",
         	url: "/api/user_graph",
         	success: function(data) {
-        		console.log("success");
-        		console.log(data);
         		var userVal = data;
         		var graphs = document.querySelectorAll(".graph");
         		plotgraph(graphs[1].id, userVal);

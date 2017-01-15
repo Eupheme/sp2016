@@ -89,8 +89,6 @@ function validate(x){
         	url: "/api/login",
         	data: JSON.stringify({username: uname.value, password: passwd.value}),
         	success: function(data) {
-        		console.log("success");
-        		console.log(data);
         		if (data == ""){
         			uname.style.backgroundColor = "rgba(153, 0, 0, 0.7)";
 				    passwd.style.backgroundColor = "rgba(153, 0, 0, 0.7)";
@@ -117,8 +115,6 @@ function validate(x){
         	url: "/api/register",
         	data: JSON.stringify({first: allfields[0].value, last: allfields[1].value, username: allfields[2].value, email: allfields[3].value, password: allfields[4].value}),
         	success: function(data) {
-        		console.log("success");
-        		console.log(data);
         		if (data == true){
         			alert("You have been registered. Please wait for approval.");
         		}
