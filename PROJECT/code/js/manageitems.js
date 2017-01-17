@@ -5,6 +5,16 @@ var by2 = 0;
 var sear = "";
 var req = 0;
 
+function readURL(input) {
+    if (input.files && input.files[0]) {
+        var reader1 = new FileReader();
+        reader1.onload = function (e) {
+            $('#pic').attr('src', e.target.result);
+        }
+        reader1.readAsDataURL(input.files[0]);
+    }
+}
+
 function checkInputs() {
 
 	if ($("input[name=newsubject]").val().length == 0 && $("#selectmenu5").val().length == 0) {
@@ -97,7 +107,6 @@ function getRequestedItems(o, b){
         	data: {order: o, by: b},
         	success: function(data) {
         		$("tr.entry").remove();
-        		
         		var table = $("tbody.tableBody2");
         		for (var k in data) {
         			var tr = $("<tr class=\"entry\" onmousedown=\"chooseElement(event)\"/>");
@@ -284,5 +293,9 @@ $(document).ready(function(){
 		
 			postAddItem(title, author, isbn, date, subject, desc);
 		}
+	});
+	
+	$(document).on("change", "input[type=file]", function(){
+		readURL(this);
 	});
 });

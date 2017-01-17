@@ -7,13 +7,17 @@ function getSearchItems(s){
         	url: "/api/search_items",
         	data: {search: s},
         	success: function(data) {
+        		console.log(data);
         		$(".entry").remove();
         		
         		var results = $(".searchresults");
         		for (var k in data) {
         			var wrapper = $("<div id=\"bookwrapper\" class=\"entry\"/>");
         			var picture = $("<div id=\"picture\"/>");
-        			var img = $("<img src=\"\" alt = \"book image\"/>");
+        			var imgpath = data[k].picture;
+        			if (imgpath == "")
+        				imgpath = "item_default";
+        			var img = $("<img src=\"/backend/files/" + imgpath + ".jpg\" alt = \"book image\"/>");
         			picture.append(img);
         			
         			var about = $("<div id=\"about\"/>");

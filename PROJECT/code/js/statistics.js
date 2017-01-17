@@ -1,6 +1,31 @@
 var order = 0;
 var by = 0;
 
+function getMyProfile() {
+	$.ajax({
+        	type: "GET",
+        	contentType: "application/json",
+        	url: "/api/profile",
+        	success: function(data) {        		
+        		
+        		var results = $("#picture");
+        		var imgpath = data.picture;
+        		if (data.picture == "")
+        			imgpath = "user_default";
+        		var img = $("<img src=\"/backend/files/" + imgpath + ".jpg\" alt = \"book image\"/>");
+        		results.append(img);
+        		
+        		var results = $("#text");
+        		results.append($("<h5/>").text(data.username));
+        		results.append($("<h6/>").text(data.first_name + " " + data.last_name));
+        		
+        	},
+        	error: function() {
+        		console.log("fail");
+        	}
+        });
+}
+
 function getTransactionHistory(o, b){
 	$.ajax({
         	type: "GET",
@@ -53,5 +78,6 @@ $(document).ready(function(){
 		getTransactionHistory(order, by);
 	});
 	
+	getMyProfile();
 	getTransactionHistory(order, by);
 });

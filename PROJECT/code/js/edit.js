@@ -1,6 +1,16 @@
 var req = undefined;
 var id = undefined;
 
+function readURL(input) {
+    if (input.files && input.files[0]) {
+        var reader1 = new FileReader();
+        reader1.onload = function (e) {
+            $('#pic').attr('src', e.target.result);
+        }
+        reader1.readAsDataURL(input.files[0]);
+    }
+}
+
 function getUrlParameter(sParam) {
     var sPageURL = decodeURIComponent(window.location.search.substring(1)),
         sURLVariables = sPageURL.split('&'),
@@ -177,4 +187,8 @@ $(document).ready(function(){
 	else if (id !== undefined) {
 		getEditItem(id);
 	}
+	
+	$(document).on("change", "input[type=file]", function(){
+		readURL(this);
+	});
 });

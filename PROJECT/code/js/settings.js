@@ -27,6 +27,13 @@ function getProfile(){
         		else if (status == 1) {
         			$('#sStatus').html("STATUS: admin");
         		}
+        		
+        		var results = $("#profilepicture");
+        		var imgpath = data.picture;
+        		if (data.picture == "")
+        			imgpath = "user_default";
+        		var img = $("<img src=\"/backend/files/" + imgpath + ".jpg\" alt = \"book image\"/>");
+        		results.append(img);
         	},
         	error: function() {
         		console.log("fail");

@@ -8,7 +8,6 @@ function getProfile() {
         		usr1.append($("<p/>").text(data.username));
         		var usr2 = $("#banner2");
         		usr2.append($("<p/>").text(data.username));
-        		console.log(data.status);
         		if (data.status == 1){ // admin
         			$("#asadmin").show();
         		}

@@ -27,6 +27,32 @@ function getAdminTransactionHistory(o, b){
         });
 }
 
+
+function getMyProfile() {
+	$.ajax({
+        	type: "GET",
+        	contentType: "application/json",
+        	url: "/api/profile",
+        	success: function(data) {        		
+        		
+        		var results = $("#picture");
+        		var imgpath = data.picture;
+        		if (data.picture == "")
+        			imgpath = "user_default";
+        		var img = $("<img src=\"/backend/files/" + imgpath + ".jpg\" alt = \"book image\"/>");
+        		results.append(img);
+        		
+        		var results = $("#text");
+        		results.append($("<h5/>").text(data.username));
+        		results.append($("<h6/>").text(data.first_name + " " + data.last_name));
+        		
+        	},
+        	error: function() {
+        		console.log("fail");
+        	}
+        });
+}
+
 $(document).ready(function(){
 	$('input[type=radio][name=orderby]').change(function() {
 		if (this.value == "title") {
@@ -57,5 +83,6 @@ $(document).ready(function(){
 		getAdminTransactionHistory(order, by);
 	});
 	
+	getMyProfile();
 	getAdminTransactionHistory(order, by);
 });
